@@ -2,31 +2,31 @@
  "id": "620d442c-689f-42ec-92a7-0aee19cff430",
  "revision": 0,
  "last_node_id": 27,
- "last_link_id": 39,
+ "last_link_id": 32,
  "nodes": [
   {
    "id": 1,
    "type": "MarkdownNote",
    "pos": [
-    -760,
+    1070,
     0
    ],
    "size": [
-    700,
-    900
+    430,
+    390
    ],
    "flags": {},
    "order": 0,
    "mode": 0,
    "inputs": [],
    "outputs": [],
-   "title": "使い方 / How to use",
+   "title": "使い方",
    "properties": {},
    "widgets_values": [
-    "# 生成と写植 / Generate and letter\n\n**① 入力（左の青い枠）だけ編集すれば動きます。**\n\n1. 「人物1の画像」「人物2の画像」に参照キャラをアップロードします。3人目を使うときは、LoadImage を1つ足して「漫画ページ」の **人物3** へつなぎます（人物2がいるときだけ）。\n2. 「漫画ページ」の **画像からコマ割りを選ぶ** で見本を選びます。コマ数に合わせて「コマの内容」ノードが自動で増減します。\n3. 各「コマの内容」に、場面（英語）・登場人物・話者とセリフを入れます。場面の中では人物を「人物1」「人物2」「人物3」と書きます。画面の外の声やナレーションは「画面外・ナレーション（尾なし）」を選びます。\n4. 実行すると、セリフから吹き出しの位置と大きさが自動で決まり、空の吹き出しを描いたガイドを P-H3 に渡して漫画を描き、そのあとフォントで写植します。\n\n**② 吹き出しの位置**：生成前に、吹き出しの枠をマウスで動かせます。尾の先は各枠の desc に `{\"tail\":[x,y]}`（ページ全体を0〜1000）で書きます。セリフや コマ割りを変えると、自動配置からやり直しになります。\n\n**④ 写植**：生成後に文字の枠だけ調整して実行し直すと、P-H3 はやり直さず写植だけやり直します。\n\n- 文字はフォントで描いたもので、P-H3 の出力ではありません。文字なしの出力は別に保存されます。\n- P-H3 には MiniMax H3 Community License が適用されます（利用できない地域があり、生成物を公開するときは AI 生成である旨の表示が必要です）。\n\n---\nEdit only the blue **Inputs** group: upload character images, pick a layout with the button on the Page node (panel nodes are added or removed to match), and fill in each panel's scene (English, refer to characters as 人物1/2/3), characters and dialogue. Balloons are placed automatically from the dialogue and can be dragged in group ②. Lettering is rendered with fonts, not by the model."
+    "# 通常生成ワークフロー\n\n参照画像と、各コマの場面・登場人物を設定します。\n「漫画の編集」でコマ割りを選び、編集画面でセリフ・話者・吹き出し・尻尾を設定してください。\n変更を保存して閉じ、画面上部の通常の「実行」で漫画を生成します。\n\nこのワークフローはP-H3で作画する通常生成用です。保存画像で生成を省略する内部ノードは使用しません。\n\nセリフだけを修正する場合は、「文字なし漫画を保存」で保存したPNGを、別の02_letter_existing_page.jsonへ読み込んでください。02にはP-H3の生成処理がありません。\n\n文字なし画像は出力先のPH3_Manga/raw_...png、写植後の画像はPH3_Manga/lettered_...pngです。\n\n写植はフォントによる描画です。モデルが生成した文字ではありません。"
    ],
    "widgets_values_named": {
-    "text": "# 生成と写植 / Generate and letter\n\n**① 入力（左の青い枠）だけ編集すれば動きます。**\n\n1. 「人物1の画像」「人物2の画像」に参照キャラをアップロードします。3人目を使うときは、LoadImage を1つ足して「漫画ページ」の **人物3** へつなぎます（人物2がいるときだけ）。\n2. 「漫画ページ」の **画像からコマ割りを選ぶ** で見本を選びます。コマ数に合わせて「コマの内容」ノードが自動で増減します。\n3. 各「コマの内容」に、場面（英語）・登場人物・話者とセリフを入れます。場面の中では人物を「人物1」「人物2」「人物3」と書きます。画面の外の声やナレーションは「画面外・ナレーション（尾なし）」を選びます。\n4. 実行すると、セリフから吹き出しの位置と大きさが自動で決まり、空の吹き出しを描いたガイドを P-H3 に渡して漫画を描き、そのあとフォントで写植します。\n\n**② 吹き出しの位置**：生成前に、吹き出しの枠をマウスで動かせます。尾の先は各枠の desc に `{\"tail\":[x,y]}`（ページ全体を0〜1000）で書きます。セリフや コマ割りを変えると、自動配置からやり直しになります。\n\n**④ 写植**：生成後に文字の枠だけ調整して実行し直すと、P-H3 はやり直さず写植だけやり直します。\n\n- 文字はフォントで描いたもので、P-H3 の出力ではありません。文字なしの出力は別に保存されます。\n- P-H3 には MiniMax H3 Community License が適用されます（利用できない地域があり、生成物を公開するときは AI 生成である旨の表示が必要です）。\n\n---\nEdit only the blue **Inputs** group: upload character images, pick a layout with the button on the Page node (panel nodes are added or removed to match), and fill in each panel's scene (English, refer to characters as 人物1/2/3), characters and dialogue. Balloons are placed automatically from the dialogue and can be dragged in group ②. Lettering is rendered with fonts, not by the model."
+    "text": "# 通常生成ワークフロー\n\n参照画像と、各コマの場面・登場人物を設定します。\n「漫画の編集」でコマ割りを選び、編集画面でセリフ・話者・吹き出し・尻尾を設定してください。\n変更を保存して閉じ、画面上部の通常の「実行」で漫画を生成します。\n\nこのワークフローはP-H3で作画する通常生成用です。保存画像で生成を省略する内部ノードは使用しません。\n\nセリフだけを修正する場合は、「文字なし漫画を保存」で保存したPNGを、別の02_letter_existing_page.jsonへ読み込んでください。02にはP-H3の生成処理がありません。\n\n文字なし画像は出力先のPH3_Manga/raw_...png、写植後の画像はPH3_Manga/lettered_...pngです。\n\n写植はフォントによる描画です。モデルが生成した文字ではありません。"
    },
    "color": "#432",
    "bgcolor": "#653"
@@ -35,7 +35,7 @@
    "id": 2,
    "type": "LoadImage",
    "pos": [
-    0,
+    20,
     0
    ],
    "size": [
@@ -81,7 +81,7 @@
      "links": null
     }
    ],
-   "title": "人物1の画像 / Character 1",
+   "title": "人物1の画像",
    "properties": {
     "Node name for S&R": "LoadImage"
    },
@@ -98,8 +98,8 @@
    "id": 3,
    "type": "LoadImage",
    "pos": [
-    0,
-    540
+    560,
+    0
    ],
    "size": [
     400,
@@ -144,7 +144,7 @@
      "links": null
     }
    ],
-   "title": "人物2の画像 / Character 2",
+   "title": "人物2の画像",
    "properties": {
     "Node name for S&R": "LoadImage"
    },
@@ -159,268 +159,159 @@
   },
   {
    "id": 4,
-   "type": "PH3MangaPage",
+   "type": "PH3MangaStory",
+   "title": "場面・登場人物を生成の指示にまとめる",
    "pos": [
-    1000,
-    0
+    1070,
+    440
    ],
    "size": [
     430,
-    760
+    290
    ],
    "flags": {},
-   "order": 12,
+   "order": 0,
    "mode": 0,
    "inputs": [
     {
-     "localized_name": "人物1",
+     "name": "構成と話者",
+     "type": "STRING",
+     "link": 6
+    },
+    {
      "name": "人物1",
      "type": "IMAGE",
      "link": 4
     },
     {
-     "localized_name": "コマ1",
      "name": "コマ1",
      "type": "PH3_MANGA_PANEL",
      "link": 1
     },
     {
-     "localized_name": "コマ2",
      "name": "コマ2",
      "type": "PH3_MANGA_PANEL",
      "link": 2
     },
     {
-     "localized_name": "人物2",
      "name": "人物2",
-     "shape": 7,
      "type": "IMAGE",
-     "link": 5
+     "link": 5,
+     "shape": 7
     },
     {
-     "localized_name": "人物3",
      "name": "人物3",
-     "shape": 7,
      "type": "IMAGE",
-     "link": null
+     "link": null,
+     "shape": 7
     },
     {
-     "localized_name": "コマ3",
      "name": "コマ3",
-     "shape": 7,
      "type": "PH3_MANGA_PANEL",
-     "link": 3
+     "link": 3,
+     "shape": 7
     },
     {
-     "localized_name": "コマ4",
      "name": "コマ4",
-     "shape": 7,
      "type": "PH3_MANGA_PANEL",
-     "link": null
+     "link": null,
+     "shape": 7
     },
     {
-     "localized_name": "コマ5",
      "name": "コマ5",
-     "shape": 7,
      "type": "PH3_MANGA_PANEL",
-     "link": null
+     "link": null,
+     "shape": 7
     },
     {
-     "localized_name": "コマ6",
      "name": "コマ6",
-     "shape": 7,
      "type": "PH3_MANGA_PANEL",
-     "link": null
+     "link": null,
+     "shape": 7
     },
     {
-     "localized_name": "コマ割り",
-     "name": "コマ割り",
-     "type": "COMBO",
+     "name": "左から埋める癖を補正",
+     "type": "BOOLEAN",
+     "link": null,
+     "shape": 7,
      "widget": {
-      "name": "コマ割り"
-     },
-     "link": null
+      "name": "左から埋める癖を補正"
+     }
     }
    ],
    "outputs": [
     {
-     "localized_name": "コマ割り画像",
-     "name": "コマ割り画像",
-     "type": "IMAGE",
-     "links": [
-      7,
-      9
-     ]
-    },
-    {
-     "localized_name": "width",
-     "name": "width",
-     "type": "INT",
-     "links": [
-      16,
-      34
-     ]
-    },
-    {
-     "localized_name": "height",
-     "name": "height",
-     "type": "INT",
-     "links": [
-      17,
-      35
-     ]
-    },
-    {
-     "localized_name": "P-H3の指示文",
      "name": "P-H3の指示文",
      "type": "STRING",
      "links": [
-      6,
-      15
+      7,
+      16
      ]
     },
     {
-     "localized_name": "吹き出しの初期配置",
-     "name": "吹き出しの初期配置",
-     "type": "STRING",
-     "links": [
-      8
-     ]
-    },
-    {
-     "localized_name": "参照1",
      "name": "参照1",
      "type": "IMAGE",
      "links": [
-      19
+      13
      ]
     },
     {
-     "localized_name": "参照2",
      "name": "参照2",
      "type": "IMAGE",
      "links": [
-      20
+      14
      ]
     },
     {
-     "localized_name": "参照3",
      "name": "参照3",
      "type": "IMAGE",
      "links": [
-      21
+      15
      ]
     }
    ],
-   "title": "漫画ページ（コマ割り・人物・コマ）/ Page",
    "properties": {
-    "Node name for S&R": "PH3MangaPage",
-    "ph3RetiredPanels": {}
+    "Node name for S&R": "PH3MangaStory"
    },
    "widgets_values": [
-    "3コマ・通常01・1／1／1段組",
-    null,
-    ""
-   ],
-   "widgets_values_named": {
-    "コマ割り": "3コマ・通常01・1／1／1段組",
-    "画像からコマ割りを選ぶ": null,
-    "コマ割りの見本": ""
-   }
+    true
+   ]
   },
   {
    "id": 5,
-   "type": "PH3MangaPanel",
+   "type": "PH3MangaScene",
+   "title": "1コマ目の場面と登場人物",
    "pos": [
-    470,
-    0
+    560,
+    440
    ],
    "size": [
-    480,
-    560
+    450,
+    290
    ],
    "flags": {},
-   "order": 3,
+   "order": 0,
    "mode": 0,
    "inputs": [
     {
-     "localized_name": "場面",
      "name": "場面",
      "type": "STRING",
+     "link": null,
      "widget": {
       "name": "場面"
-     },
-     "link": null
+     }
     },
     {
-     "localized_name": "登場人物",
      "name": "登場人物",
      "type": "COMBO",
+     "link": null,
      "widget": {
       "name": "登場人物"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "話者1",
-     "name": "話者1",
-     "type": "COMBO",
-     "widget": {
-      "name": "話者1"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "セリフ1",
-     "name": "セリフ1",
-     "type": "STRING",
-     "widget": {
-      "name": "セリフ1"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "話者2",
-     "name": "話者2",
-     "type": "COMBO",
-     "widget": {
-      "name": "話者2"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "セリフ2",
-     "name": "セリフ2",
-     "type": "STRING",
-     "widget": {
-      "name": "セリフ2"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "話者3",
-     "name": "話者3",
-     "shape": 7,
-     "type": "COMBO",
-     "widget": {
-      "name": "話者3"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "セリフ3",
-     "name": "セリフ3",
-     "shape": 7,
-     "type": "STRING",
-     "widget": {
-      "name": "セリフ3"
-     },
-     "link": null
+     }
     }
    ],
    "outputs": [
     {
-     "localized_name": "コマ",
      "name": "コマ",
      "type": "PH3_MANGA_PANEL",
      "links": [
@@ -428,124 +319,49 @@
      ]
     }
    ],
-   "title": "1コマ目（1段目・右から1）",
    "properties": {
-    "Node name for S&R": "PH3MangaPanel"
+    "Node name for S&R": "PH3MangaScene"
    },
    "widgets_values": [
     "人物1 is shown chest-up, centered slightly right, standing at the school entrance after classes and holding a closed umbrella, looking toward a friend offscreen with a thoughtful but kind expression. A quiet gray screentone background.",
-    "人物1のみ",
-    "人物1",
-    "雨、やまないね。",
-    "画面外・ナレーション（尾なし）",
-    "傘なら\nもう一本あるよ。",
-    "セリフなし",
-    ""
-   ],
-   "widgets_values_named": {
-    "場面": "人物1 is shown chest-up, centered slightly right, standing at the school entrance after classes and holding a closed umbrella, looking toward a friend offscreen with a thoughtful but kind expression. A quiet gray screentone background.",
-    "登場人物": "人物1のみ",
-    "話者1": "人物1",
-    "セリフ1": "雨、やまないね。",
-    "話者2": "画面外・ナレーション（尾なし）",
-    "セリフ2": "傘なら\nもう一本あるよ。",
-    "話者3": "セリフなし",
-    "セリフ3": ""
-   }
+    "人物1のみ"
+   ]
   },
   {
    "id": 6,
-   "type": "PH3MangaPanel",
+   "type": "PH3MangaScene",
+   "title": "2コマ目の場面と登場人物",
    "pos": [
-    470,
-    600
+    560,
+    790
    ],
    "size": [
-    480,
-    560
+    450,
+    290
    ],
    "flags": {},
-   "order": 4,
+   "order": 0,
    "mode": 0,
    "inputs": [
     {
-     "localized_name": "場面",
      "name": "場面",
      "type": "STRING",
+     "link": null,
      "widget": {
       "name": "場面"
-     },
-     "link": null
+     }
     },
     {
-     "localized_name": "登場人物",
      "name": "登場人物",
      "type": "COMBO",
+     "link": null,
      "widget": {
       "name": "登場人物"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "話者1",
-     "name": "話者1",
-     "type": "COMBO",
-     "widget": {
-      "name": "話者1"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "セリフ1",
-     "name": "セリフ1",
-     "type": "STRING",
-     "widget": {
-      "name": "セリフ1"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "話者2",
-     "name": "話者2",
-     "type": "COMBO",
-     "widget": {
-      "name": "話者2"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "セリフ2",
-     "name": "セリフ2",
-     "type": "STRING",
-     "widget": {
-      "name": "セリフ2"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "話者3",
-     "name": "話者3",
-     "shape": 7,
-     "type": "COMBO",
-     "widget": {
-      "name": "話者3"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "セリフ3",
-     "name": "セリフ3",
-     "shape": 7,
-     "type": "STRING",
-     "widget": {
-      "name": "セリフ3"
-     },
-     "link": null
+     }
     }
    ],
    "outputs": [
     {
-     "localized_name": "コマ",
      "name": "コマ",
      "type": "PH3_MANGA_PANEL",
      "links": [
@@ -553,124 +369,49 @@
      ]
     }
    ],
-   "title": "2コマ目（2段目・右から1）",
    "properties": {
-    "Node name for S&R": "PH3MangaPanel"
+    "Node name for S&R": "PH3MangaScene"
    },
    "widgets_values": [
     "A wide cutaway of a school window and the rainy schoolyard beyond it. The glass has raindrops. Clean black ink and subtle gray screentones.",
-    "人物なし",
-    "画面外・ナレーション（尾なし）",
-    "駅まで\n歩くんでしょ？",
-    "画面外・ナレーション（尾なし）",
-    "うん。\n助かった。",
-    "セリフなし",
-    ""
-   ],
-   "widgets_values_named": {
-    "場面": "A wide cutaway of a school window and the rainy schoolyard beyond it. The glass has raindrops. Clean black ink and subtle gray screentones.",
-    "登場人物": "人物なし",
-    "話者1": "画面外・ナレーション（尾なし）",
-    "セリフ1": "駅まで\n歩くんでしょ？",
-    "話者2": "画面外・ナレーション（尾なし）",
-    "セリフ2": "うん。\n助かった。",
-    "話者3": "セリフなし",
-    "セリフ3": ""
-   }
+    "人物なし"
+   ]
   },
   {
    "id": 7,
-   "type": "PH3MangaPanel",
+   "type": "PH3MangaScene",
+   "title": "3コマ目の場面と登場人物",
    "pos": [
-    470,
-    1200
+    560,
+    1140
    ],
    "size": [
-    480,
-    560
+    450,
+    290
    ],
    "flags": {},
-   "order": 5,
+   "order": 0,
    "mode": 0,
    "inputs": [
     {
-     "localized_name": "場面",
      "name": "場面",
      "type": "STRING",
+     "link": null,
      "widget": {
       "name": "場面"
-     },
-     "link": null
+     }
     },
     {
-     "localized_name": "登場人物",
      "name": "登場人物",
      "type": "COMBO",
+     "link": null,
      "widget": {
       "name": "登場人物"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "話者1",
-     "name": "話者1",
-     "type": "COMBO",
-     "widget": {
-      "name": "話者1"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "セリフ1",
-     "name": "セリフ1",
-     "type": "STRING",
-     "widget": {
-      "name": "セリフ1"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "話者2",
-     "name": "話者2",
-     "type": "COMBO",
-     "widget": {
-      "name": "話者2"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "セリフ2",
-     "name": "セリフ2",
-     "type": "STRING",
-     "widget": {
-      "name": "セリフ2"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "話者3",
-     "name": "話者3",
-     "shape": 7,
-     "type": "COMBO",
-     "widget": {
-      "name": "話者3"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "セリフ3",
-     "name": "セリフ3",
-     "shape": 7,
-     "type": "STRING",
-     "widget": {
-      "name": "セリフ3"
-     },
-     "link": null
+     }
     }
    ],
    "outputs": [
     {
-     "localized_name": "コマ",
      "name": "コマ",
      "type": "PH3_MANGA_PANEL",
      "links": [
@@ -678,41 +419,24 @@
      ]
     }
    ],
-   "title": "3コマ目（3段目・右から1）",
    "properties": {
-    "Node name for S&R": "PH3MangaPanel"
+    "Node name for S&R": "PH3MangaScene"
    },
    "widgets_values": [
     "人物1 stands on the left facing right, and 人物2 stands on the right facing left, at the covered school entrance. 人物1 offers 人物2 a spare closed umbrella. They smile with relief. Both are shown from head to knees.",
-    "人物1と人物2",
-    "人物2",
-    "一緒に\n帰ろう。",
-    "人物1",
-    "ありがとう！",
-    "セリフなし",
-    ""
-   ],
-   "widgets_values_named": {
-    "場面": "人物1 stands on the left facing right, and 人物2 stands on the right facing left, at the covered school entrance. 人物1 offers 人物2 a spare closed umbrella. They smile with relief. Both are shown from head to knees.",
-    "登場人物": "人物1と人物2",
-    "話者1": "人物2",
-    "セリフ1": "一緒に\n帰ろう。",
-    "話者2": "人物1",
-    "セリフ2": "ありがとう！",
-    "話者3": "セリフなし",
-    "セリフ3": ""
-   }
+    "人物1と人物2"
+   ]
   },
   {
    "id": 8,
    "type": "PreviewAny",
    "pos": [
-    1000,
+    1070,
     820
    ],
    "size": [
     430,
-    900
+    390
    ],
    "flags": {},
    "order": 14,
@@ -722,7 +446,7 @@
      "localized_name": "ソース",
      "name": "source",
      "type": "*",
-     "link": 6
+     "link": 7
     }
    ],
    "outputs": [
@@ -733,7 +457,7 @@
      "links": null
     }
    ],
-   "title": "P-H3 に渡す指示文（実行後に表示）/ Prompt",
+   "title": "P-H3に渡す指示文（実行後に表示）",
    "properties": {
     "Node name for S&R": "PreviewAny"
    },
@@ -742,241 +466,126 @@
   },
   {
    "id": 9,
-   "type": "CreateBoundingBoxes",
+   "type": "PH3MangaBalloonEditor",
+   "title": "漫画の編集",
    "pos": [
-    1580,
-    0
+    20,
+    470
    ],
    "size": [
-    760,
-    1250
+    470,
+    620
    ],
    "flags": {},
-   "order": 15,
+   "order": 0,
    "mode": 0,
    "inputs": [
     {
-     "localized_name": "背景画像",
-     "name": "background",
-     "shape": 7,
+     "name": "コマ割り",
+     "type": "COMBO",
+     "link": null,
+     "widget": {
+      "name": "コマ割り"
+     }
+    },
+    {
+     "name": "編集データ",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "編集データ"
+     }
+    },
+    {
+     "name": "文字領域の比率",
+     "type": "FLOAT",
+     "link": null,
+     "widget": {
+      "name": "文字領域の比率"
+     }
+    },
+    {
+     "name": "線の太さ",
+     "type": "INT",
+     "link": null,
+     "widget": {
+      "name": "線の太さ"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "空吹き出しガイド",
      "type": "IMAGE",
-     "link": 7
+     "links": [
+      12
+     ]
     },
     {
-     "localized_name": "bboxes",
-     "name": "bboxes",
-     "shape": 7,
-     "type": "BOUNDING_BOX,ARRAY,STRING",
-     "link": 8
-    },
-    {
-     "localized_name": "幅",
      "name": "width",
      "type": "INT",
-     "widget": {
-      "name": "width"
-     },
-     "link": null
+     "links": [
+      17
+     ]
     },
     {
-     "localized_name": "高さ",
      "name": "height",
      "type": "INT",
-     "widget": {
-      "name": "height"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "エディタ状態",
-     "name": "editor_state",
-     "type": "BOUNDING_BOXES",
-     "widget": {
-      "name": "editor_state"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "last_incoming",
-     "name": "last_incoming",
-     "shape": 7,
-     "type": "BOUNDING_BOXES",
-     "widget": {
-      "name": "last_incoming"
-     },
-     "link": null
-    }
-   ],
-   "outputs": [
-    {
-     "localized_name": "プレビュー",
-     "name": "preview",
-     "type": "IMAGE",
-     "links": null
-    },
-    {
-     "localized_name": "バウンディングボックス",
-     "name": "bboxes",
-     "type": "BOUNDING_BOX",
-     "links": null
-    },
-    {
-     "localized_name": "要素",
-     "name": "elements",
-     "type": "ARRAY",
      "links": [
-      10
-     ]
-    }
-   ],
-   "title": "吹き出しの位置とセリフ（マウスで調整）/ Balloons",
-   "properties": {
-    "Node name for S&R": "CreateBoundingBoxes"
-   },
-   "widgets_values": [
-    1024,
-    1536,
-    [],
-    []
-   ],
-   "widgets_values_named": {
-    "width": 1024,
-    "height": 1536,
-    "editor_state": [],
-    "last_incoming": []
-   }
-  },
-  {
-   "id": 10,
-   "type": "PH3MangaBalloonGuide",
-   "pos": [
-    2400,
-    0
-   ],
-   "size": [
-    420,
-    200
-   ],
-   "flags": {},
-   "order": 16,
-   "mode": 0,
-   "inputs": [
-    {
-     "localized_name": "image",
-     "name": "image",
-     "type": "IMAGE",
-     "link": 9
-    },
-    {
-     "localized_name": "elements",
-     "name": "elements",
-     "type": "ARRAY",
-     "link": 10
-    },
-    {
-     "localized_name": "inner_ratio",
-     "name": "inner_ratio",
-     "type": "FLOAT",
-     "widget": {
-      "name": "inner_ratio"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "line_width",
-     "name": "line_width",
-     "type": "INT",
-     "widget": {
-      "name": "line_width"
-     },
-     "link": null
-    }
-   ],
-   "outputs": [
-    {
-     "localized_name": "guide",
-     "name": "guide",
-     "type": "IMAGE",
-     "links": [
-      11,
       18
      ]
     },
     {
-     "localized_name": "text_elements",
-     "name": "text_elements",
+     "name": "構成と話者",
+     "type": "STRING",
+     "links": [
+      6
+     ]
+    },
+    {
+     "name": "セリフと文字領域",
      "type": "ARRAY",
      "links": [
-      33
+      30
      ]
     }
    ],
-   "title": "空の吹き出しを描いたガイド / Balloon guide",
    "properties": {
-    "Node name for S&R": "PH3MangaBalloonGuide"
+    "Node name for S&R": "PH3MangaBalloonEditor",
+    "ph3Layout": "normal_3_01",
+    "ph3PanelBoxes": [
+     [
+      0.045,
+      0.045,
+      0.955,
+      0.330333
+     ],
+     [
+      0.045,
+      0.357333,
+      0.955,
+      0.642667
+     ],
+     [
+      0.045,
+      0.669667,
+      0.955,
+      0.955
+     ]
+    ]
    },
    "widgets_values": [
+    "3コマ・通常01・1／1／1段組",
+    "[{\"id\": \"panel1-balloon1\", \"panel\": 1, \"bbox\": [59.244791666666664, 655.2734375, 224.609375, 762.6953125], \"speaker\": \"人物1\", \"text\": \"雨、やまないね。\", \"tail\": [721.875, 240.36458333333334]}, {\"id\": \"panel1-balloon2\", \"panel\": 1, \"bbox\": [76.171875, 246.09375, 232.421875, 335.9375], \"speaker\": \"画面外・ナレーション（尾なし）\", \"text\": \"傘なら\\nもう一本あるよ。\", \"tail\": null}, {\"id\": \"panel2-balloon1\", \"panel\": 2, \"bbox\": [371.7447916666667, 659.1796875, 548.828125, 759.765625], \"speaker\": \"画面外・ナレーション（尾なし）\", \"text\": \"駅まで\\n歩くんでしょ？\", \"tail\": null}, {\"id\": \"panel2-balloon2\", \"panel\": 2, \"bbox\": [388.671875, 237.3046875, 527.9947916666666, 344.7265625], \"speaker\": \"画面外・ナレーション（尾なし）\", \"text\": \"うん。\\n助かった。\", \"tail\": null}, {\"id\": \"panel3-balloon1\", \"panel\": 3, \"bbox\": [684.2447916666666, 655.2734375, 798.1770833333334, 762.6953125], \"speaker\": \"人物2\", \"text\": \"一緒に\\n帰ろう。\", \"tail\": [721.875, 813.9322916666667]}, {\"id\": \"panel3-balloon2\", \"panel\": 3, \"bbox\": [701.171875, 259.765625, 866.5364583333334, 321.2890625], \"speaker\": \"人物1\", \"text\": \"ありがとう！\", \"tail\": [297.91015625, 875.5598958333334]}]",
     0.7,
     2
-   ],
-   "widgets_values_named": {
-    "inner_ratio": 0.7,
-    "line_width": 2
-   }
-  },
-  {
-   "id": 11,
-   "type": "SaveImage",
-   "pos": [
-    2400,
-    280
-   ],
-   "size": [
-    420,
-    700
-   ],
-   "flags": {},
-   "order": 17,
-   "mode": 0,
-   "inputs": [
-    {
-     "localized_name": "画像",
-     "name": "images",
-     "type": "IMAGE",
-     "link": 11
-    },
-    {
-     "localized_name": "ファイル名_プレフィックス",
-     "name": "filename_prefix",
-     "type": "STRING",
-     "widget": {
-      "name": "filename_prefix"
-     },
-     "link": null
-    }
-   ],
-   "outputs": [
-    {
-     "localized_name": "images",
-     "name": "images",
-     "type": "IMAGE",
-     "links": null
-    }
-   ],
-   "title": "ガイドを保存 / Save guide",
-   "properties": {},
-   "widgets_values": [
-    "PH3_Manga/guide"
-   ],
-   "widgets_values_named": {
-    "filename_prefix": "PH3_Manga/guide"
-   }
+   ]
   },
   {
    "id": 12,
    "type": "UNETLoader",
    "pos": [
-    2980,
+    1580,
     0
    ],
    "size": [
@@ -1012,11 +621,11 @@
      "name": "MODEL",
      "type": "MODEL",
      "links": [
-      12
+      9
      ]
     }
    ],
-   "title": "P-H3 本体 / Model",
+   "title": "P-H3 本体",
    "properties": {
     "Node name for S&R": "UNETLoader"
    },
@@ -1033,7 +642,7 @@
    "id": 13,
    "type": "CLIPLoader",
    "pos": [
-    2980,
+    1580,
     180
    ],
    "size": [
@@ -1079,11 +688,11 @@
      "name": "CLIP",
      "type": "CLIP",
      "links": [
-      13
+      10
      ]
     }
    ],
-   "title": "テキストエンコーダー / Text encoder",
+   "title": "テキストエンコーダー",
    "properties": {
     "Node name for S&R": "CLIPLoader"
    },
@@ -1102,7 +711,7 @@
    "id": 14,
    "type": "VAELoader",
    "pos": [
-    2980,
+    1580,
     380
    ],
    "size": [
@@ -1129,8 +738,8 @@
      "name": "VAE",
      "type": "VAE",
      "links": [
-      14,
-      30
+      11,
+      27
      ]
     }
    ],
@@ -1149,7 +758,7 @@
    "id": 15,
    "type": "RandomNoise",
    "pos": [
-    2980,
+    1580,
     530
    ],
    "size": [
@@ -1176,11 +785,11 @@
      "name": "NOISE",
      "type": "NOISE",
      "links": [
-      24
+      21
      ]
     }
    ],
-   "title": "シード / Seed",
+   "title": "シード",
    "properties": {
     "Node name for S&R": "RandomNoise"
    },
@@ -1197,7 +806,7 @@
    "id": 16,
    "type": "MiniMaxH3SigmaShift",
    "pos": [
-    3460,
+    2060,
     0
    ],
    "size": [
@@ -1212,7 +821,7 @@
      "localized_name": "model",
      "name": "model",
      "type": "MODEL",
-     "link": 12
+     "link": 9
     },
     {
      "localized_name": "ビデオシフト",
@@ -1239,17 +848,17 @@
      "name": "MODEL",
      "type": "MODEL",
      "links": [
-      22
+      19
      ]
     }
    ],
-   "title": "シフト 1.0/1.0 / Sigma shift",
+   "title": "シフト 1.0/1.0",
    "properties": {
     "Node name for S&R": "MiniMaxH3SigmaShift"
    },
    "widgets_values": [
-    12,
-    3
+    1.0,
+    1.0
    ],
    "widgets_values_named": {
     "shift_video": 12,
@@ -1260,7 +869,7 @@
    "id": 17,
    "type": "PH3ImageConditioning",
    "pos": [
-    3460,
+    2060,
     170
    ],
    "size": [
@@ -1275,42 +884,42 @@
      "localized_name": "clip",
      "name": "clip",
      "type": "CLIP",
-     "link": 13
+     "link": 10
     },
     {
      "localized_name": "vae",
      "name": "vae",
      "shape": 7,
      "type": "VAE",
-     "link": 14
+     "link": 11
     },
     {
      "localized_name": "image_1",
      "name": "images.image_1",
      "shape": 7,
      "type": "IMAGE",
-     "link": 18
+     "link": 12
     },
     {
      "localized_name": "image_2",
      "name": "images.image_2",
      "shape": 7,
      "type": "IMAGE",
-     "link": 19
+     "link": 13
     },
     {
      "localized_name": "image_3",
      "name": "images.image_3",
      "shape": 7,
      "type": "IMAGE",
-     "link": 20
+     "link": 14
     },
     {
      "localized_name": "image_4",
      "name": "images.image_4",
      "shape": 7,
      "type": "IMAGE",
-     "link": 21
+     "link": 15
     },
     {
      "localized_name": "image_5",
@@ -1347,7 +956,7 @@
      "widget": {
       "name": "prompt"
      },
-     "link": 15
+     "link": 16
     },
     {
      "localized_name": "width",
@@ -1356,7 +965,7 @@
      "widget": {
       "name": "width"
      },
-     "link": 16
+     "link": 17
     },
     {
      "localized_name": "height",
@@ -1365,7 +974,7 @@
      "widget": {
       "name": "height"
      },
-     "link": 17
+     "link": 18
     }
    ],
    "outputs": [
@@ -1374,7 +983,7 @@
      "name": "positive",
      "type": "CONDITIONING",
      "links": [
-      23
+      20
      ]
     },
     {
@@ -1382,11 +991,11 @@
      "name": "LATENT",
      "type": "LATENT",
      "links": [
-      28
+      25
      ]
     }
    ],
-   "title": "参照画像と指示文 / Conditioning",
+   "title": "参照画像と指示文",
    "properties": {
     "Node name for S&R": "PH3ImageConditioning"
    },
@@ -1405,7 +1014,7 @@
    "id": 18,
    "type": "BasicGuider",
    "pos": [
-    3460,
+    2060,
     450
    ],
    "size": [
@@ -1420,13 +1029,13 @@
      "localized_name": "モデル",
      "name": "model",
      "type": "MODEL",
-     "link": 22
+     "link": 19
     },
     {
      "localized_name": "コンディショニング",
      "name": "conditioning",
      "type": "CONDITIONING",
-     "link": 23
+     "link": 20
     }
    ],
    "outputs": [
@@ -1435,11 +1044,11 @@
      "name": "GUIDER",
      "type": "GUIDER",
      "links": [
-      25
+      22
      ]
     }
    ],
-   "title": "ガイダー / Guider",
+   "title": "ガイダー",
    "properties": {
     "Node name for S&R": "BasicGuider"
    }
@@ -1448,7 +1057,7 @@
    "id": 19,
    "type": "KSamplerSelect",
    "pos": [
-    3460,
+    2060,
     590
    ],
    "size": [
@@ -1475,11 +1084,11 @@
      "name": "SAMPLER",
      "type": "SAMPLER",
      "links": [
-      26
+      23
      ]
     }
    ],
-   "title": "サンプラー euler / Sampler",
+   "title": "サンプラー euler",
    "properties": {
     "Node name for S&R": "KSamplerSelect"
    },
@@ -1494,7 +1103,7 @@
    "id": 20,
    "type": "ManualSigmas",
    "pos": [
-    3460,
+    2060,
     730
    ],
    "size": [
@@ -1521,11 +1130,11 @@
      "name": "SIGMAS",
      "type": "SIGMAS",
      "links": [
-      27
+      24
      ]
     }
    ],
-   "title": "8ステップ / Eight steps",
+   "title": "8ステップ",
    "properties": {
     "Node name for S&R": "ManualSigmas"
    },
@@ -1540,7 +1149,7 @@
    "id": 21,
    "type": "SamplerCustomAdvanced",
    "pos": [
-    3900,
+    2500,
     0
    ],
    "size": [
@@ -1555,31 +1164,31 @@
      "localized_name": "ノイズ",
      "name": "noise",
      "type": "NOISE",
-     "link": 24
+     "link": 21
     },
     {
      "localized_name": "ガイダー",
      "name": "guider",
      "type": "GUIDER",
-     "link": 25
+     "link": 22
     },
     {
      "localized_name": "サンプラー",
      "name": "sampler",
      "type": "SAMPLER",
-     "link": 26
+     "link": 23
     },
     {
      "localized_name": "シグマ",
      "name": "sigmas",
      "type": "SIGMAS",
-     "link": 27
+     "link": 24
     },
     {
      "localized_name": "潜在イメージ",
      "name": "latent_image",
      "type": "LATENT",
-     "link": 28
+     "link": 25
     }
    ],
    "outputs": [
@@ -1588,7 +1197,7 @@
      "name": "output",
      "type": "LATENT",
      "links": [
-      29
+      26
      ]
     },
     {
@@ -1598,7 +1207,7 @@
      "links": null
     }
    ],
-   "title": "漫画を生成 / Generate",
+   "title": "漫画を生成",
    "properties": {
     "Node name for S&R": "SamplerCustomAdvanced"
    }
@@ -1607,7 +1216,7 @@
    "id": 22,
    "type": "VAEDecode",
    "pos": [
-    3900,
+    2500,
     220
    ],
    "size": [
@@ -1622,13 +1231,13 @@
      "localized_name": "サンプル",
      "name": "samples",
      "type": "LATENT",
-     "link": 29
+     "link": 26
     },
     {
      "localized_name": "vae",
      "name": "vae",
      "type": "VAE",
-     "link": 30
+     "link": 27
     }
    ],
    "outputs": [
@@ -1637,13 +1246,12 @@
      "name": "IMAGE",
      "type": "IMAGE",
      "links": [
-      31,
-      32,
-      36
+      28,
+      29
      ]
     }
    ],
-   "title": "文字なしの漫画 / Decode",
+   "title": "文字なしの漫画",
    "properties": {
     "Node name for S&R": "VAEDecode"
    }
@@ -1652,22 +1260,22 @@
    "id": 23,
    "type": "SaveImage",
    "pos": [
-    3900,
-    360
+    3010,
+    0
    ],
    "size": [
-    460,
-    760
+    490,
+    430
    ],
    "flags": {},
-   "order": 22,
+   "order": 0,
    "mode": 0,
    "inputs": [
     {
      "localized_name": "画像",
      "name": "images",
      "type": "IMAGE",
-     "link": 31
+     "link": 28
     },
     {
      "localized_name": "ファイル名_プレフィックス",
@@ -1687,7 +1295,7 @@
      "links": null
     }
    ],
-   "title": "モデル出力（文字なし）を保存 / Save raw",
+   "title": "文字なし漫画を保存（セリフ修正用）",
    "properties": {},
    "widgets_values": [
     "PH3_Manga/raw"
@@ -1697,117 +1305,11 @@
    }
   },
   {
-   "id": 24,
-   "type": "CreateBoundingBoxes",
-   "pos": [
-    4520,
-    0
-   ],
-   "size": [
-    760,
-    1250
-   ],
-   "flags": {},
-   "order": 23,
-   "mode": 0,
-   "inputs": [
-    {
-     "localized_name": "背景画像",
-     "name": "background",
-     "shape": 7,
-     "type": "IMAGE",
-     "link": 32
-    },
-    {
-     "localized_name": "bboxes",
-     "name": "bboxes",
-     "shape": 7,
-     "type": "BOUNDING_BOX,ARRAY,STRING",
-     "link": 33
-    },
-    {
-     "localized_name": "幅",
-     "name": "width",
-     "type": "INT",
-     "widget": {
-      "name": "width"
-     },
-     "link": 34
-    },
-    {
-     "localized_name": "高さ",
-     "name": "height",
-     "type": "INT",
-     "widget": {
-      "name": "height"
-     },
-     "link": 35
-    },
-    {
-     "localized_name": "エディタ状態",
-     "name": "editor_state",
-     "type": "BOUNDING_BOXES",
-     "widget": {
-      "name": "editor_state"
-     },
-     "link": null
-    },
-    {
-     "localized_name": "last_incoming",
-     "name": "last_incoming",
-     "shape": 7,
-     "type": "BOUNDING_BOXES",
-     "widget": {
-      "name": "last_incoming"
-     },
-     "link": null
-    }
-   ],
-   "outputs": [
-    {
-     "localized_name": "プレビュー",
-     "name": "preview",
-     "type": "IMAGE",
-     "links": null
-    },
-    {
-     "localized_name": "バウンディングボックス",
-     "name": "bboxes",
-     "type": "BOUNDING_BOX",
-     "links": null
-    },
-    {
-     "localized_name": "要素",
-     "name": "elements",
-     "type": "ARRAY",
-     "links": [
-      37
-     ]
-    }
-   ],
-   "title": "写植の枠（生成後に調整できる）/ Text boxes",
-   "properties": {
-    "Node name for S&R": "CreateBoundingBoxes"
-   },
-   "widgets_values": [
-    1024,
-    1024,
-    [],
-    []
-   ],
-   "widgets_values_named": {
-    "width": 1024,
-    "height": 1024,
-    "editor_state": [],
-    "last_incoming": []
-   }
-  },
-  {
    "id": 25,
    "type": "PH3MangaLettering",
    "pos": [
-    5340,
-    0
+    3010,
+    520
    ],
    "size": [
     420,
@@ -1821,14 +1323,14 @@
      "localized_name": "image",
      "name": "image",
      "type": "IMAGE",
-     "link": 36
+     "link": 29
     },
     {
      "localized_name": "elements",
      "name": "elements",
      "shape": 7,
      "type": "ARRAY",
-     "link": 37
+     "link": 30
     },
     {
      "localized_name": "kana_font",
@@ -1874,7 +1376,7 @@
      "name": "image",
      "type": "IMAGE",
      "links": [
-      39
+      32
      ]
     },
     {
@@ -1882,11 +1384,11 @@
      "name": "info",
      "type": "STRING",
      "links": [
-      38
+      31
      ]
     }
    ],
-   "title": "日本語写植とルビ / Lettering",
+   "title": "日本語写植とルビ",
    "properties": {
     "Node name for S&R": "PH3MangaLettering"
    },
@@ -1907,8 +1409,8 @@
    "id": 26,
    "type": "PreviewAny",
    "pos": [
-    5340,
-    390
+    3010,
+    930
    ],
    "size": [
     420,
@@ -1922,7 +1424,7 @@
      "localized_name": "ソース",
      "name": "source",
      "type": "*",
-     "link": 38
+     "link": 31
     }
    ],
    "outputs": [
@@ -1933,7 +1435,7 @@
      "links": null
     }
    ],
-   "title": "写植の内容 / Lettering details",
+   "title": "写植の内容",
    "properties": {
     "Node name for S&R": "PreviewAny"
    },
@@ -1944,7 +1446,7 @@
    "id": 27,
    "type": "SaveImage",
    "pos": [
-    5820,
+    3560,
     0
    ],
    "size": [
@@ -1959,7 +1461,7 @@
      "localized_name": "画像",
      "name": "images",
      "type": "IMAGE",
-     "link": 39
+     "link": 32
     },
     {
      "localized_name": "ファイル名_プレフィックス",
@@ -1979,7 +1481,7 @@
      "links": null
     }
    ],
-   "title": "写植したページを保存 / Save lettered",
+   "title": "写植したページを保存",
    "properties": {},
    "widgets_values": [
     "PH3_Manga/lettered"
@@ -1995,7 +1497,7 @@
    5,
    0,
    4,
-   1,
+   2,
    "PH3_MANGA_PANEL"
   ],
   [
@@ -2003,7 +1505,7 @@
    6,
    0,
    4,
-   2,
+   3,
    "PH3_MANGA_PANEL"
   ],
   [
@@ -2011,7 +1513,7 @@
    7,
    0,
    4,
-   5,
+   6,
    "PH3_MANGA_PANEL"
   ],
   [
@@ -2019,7 +1521,7 @@
    2,
    0,
    4,
-   0,
+   1,
    "IMAGE"
   ],
   [
@@ -2027,14 +1529,14 @@
    3,
    0,
    4,
-   3,
+   4,
    "IMAGE"
   ],
   [
    6,
-   4,
+   9,
    3,
-   8,
+   4,
    0,
    "STRING"
   ],
@@ -2042,44 +1544,12 @@
    7,
    4,
    0,
-   9,
-   0,
-   "IMAGE"
-  ],
-  [
    8,
-   4,
-   4,
-   9,
-   1,
+   0,
    "STRING"
   ],
   [
    9,
-   4,
-   0,
-   10,
-   0,
-   "IMAGE"
-  ],
-  [
-   10,
-   9,
-   2,
-   10,
-   1,
-   "ARRAY"
-  ],
-  [
-   11,
-   10,
-   0,
-   11,
-   0,
-   "IMAGE"
-  ],
-  [
-   12,
    12,
    0,
    16,
@@ -2087,151 +1557,7 @@
    "MODEL"
   ],
   [
-   22,
-   16,
-   0,
-   18,
-   0,
-   "MODEL"
-  ],
-  [
-   23,
-   17,
-   0,
-   18,
-   1,
-   "CONDITIONING"
-  ],
-  [
-   24,
-   15,
-   0,
-   21,
-   0,
-   "NOISE"
-  ],
-  [
-   25,
-   18,
-   0,
-   21,
-   1,
-   "GUIDER"
-  ],
-  [
-   26,
-   19,
-   0,
-   21,
-   2,
-   "SAMPLER"
-  ],
-  [
-   27,
-   20,
-   0,
-   21,
-   3,
-   "SIGMAS"
-  ],
-  [
-   28,
-   17,
-   1,
-   21,
-   4,
-   "LATENT"
-  ],
-  [
-   29,
-   21,
-   0,
-   22,
-   0,
-   "LATENT"
-  ],
-  [
-   30,
-   14,
-   0,
-   22,
-   1,
-   "VAE"
-  ],
-  [
-   31,
-   22,
-   0,
-   23,
-   0,
-   "IMAGE"
-  ],
-  [
-   32,
-   22,
-   0,
-   24,
-   0,
-   "IMAGE"
-  ],
-  [
-   33,
    10,
-   1,
-   24,
-   1,
-   "ARRAY"
-  ],
-  [
-   34,
-   4,
-   1,
-   24,
-   2,
-   "INT"
-  ],
-  [
-   35,
-   4,
-   2,
-   24,
-   3,
-   "INT"
-  ],
-  [
-   36,
-   22,
-   0,
-   25,
-   0,
-   "IMAGE"
-  ],
-  [
-   37,
-   24,
-   2,
-   25,
-   1,
-   "ARRAY"
-  ],
-  [
-   38,
-   25,
-   1,
-   26,
-   0,
-   "STRING"
-  ],
-  [
-   39,
-   25,
-   0,
-   27,
-   0,
-   "IMAGE"
-  ],
-  [
-   13,
    13,
    0,
    17,
@@ -2239,7 +1565,7 @@
    "CLIP"
   ],
   [
-   14,
+   11,
    14,
    0,
    17,
@@ -2247,35 +1573,27 @@
    "VAE"
   ],
   [
-   18,
-   10,
+   12,
+   9,
    0,
    17,
    2,
    "IMAGE"
   ],
   [
-   19,
+   13,
    4,
-   5,
+   1,
    17,
    3,
    "IMAGE"
   ],
   [
-   20,
+   14,
    4,
-   6,
+   2,
    17,
    4,
-   "IMAGE"
-  ],
-  [
-   21,
-   4,
-   7,
-   17,
-   5,
    "IMAGE"
   ],
   [
@@ -2283,71 +1601,179 @@
    4,
    3,
    17,
-   10,
-   "STRING"
+   5,
+   "IMAGE"
   ],
   [
    16,
    4,
+   0,
+   17,
+   10,
+   "STRING"
+  ],
+  [
+   17,
+   9,
    1,
    17,
    11,
    "INT"
   ],
   [
-   17,
-   4,
+   18,
+   9,
    2,
    17,
    12,
    "INT"
+  ],
+  [
+   19,
+   16,
+   0,
+   18,
+   0,
+   "MODEL"
+  ],
+  [
+   20,
+   17,
+   0,
+   18,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   21,
+   15,
+   0,
+   21,
+   0,
+   "NOISE"
+  ],
+  [
+   22,
+   18,
+   0,
+   21,
+   1,
+   "GUIDER"
+  ],
+  [
+   23,
+   19,
+   0,
+   21,
+   2,
+   "SAMPLER"
+  ],
+  [
+   24,
+   20,
+   0,
+   21,
+   3,
+   "SIGMAS"
+  ],
+  [
+   25,
+   17,
+   1,
+   21,
+   4,
+   "LATENT"
+  ],
+  [
+   26,
+   21,
+   0,
+   22,
+   0,
+   "LATENT"
+  ],
+  [
+   27,
+   14,
+   0,
+   22,
+   1,
+   "VAE"
+  ],
+  [
+   28,
+   22,
+   0,
+   23,
+   0,
+   "IMAGE"
+  ],
+  [
+   29,
+   22,
+   0,
+   25,
+   0,
+   "IMAGE"
+  ],
+  [
+   30,
+   9,
+   4,
+   25,
+   1,
+   "ARRAY"
+  ],
+  [
+   31,
+   25,
+   1,
+   26,
+   0,
+   "STRING"
+  ],
+  [
+   32,
+   25,
+   0,
+   27,
+   0,
+   "IMAGE"
   ]
  ],
  "groups": [
   {
-   "id": "#3f789e",
-   "title": "① 入力：人物・コマの内容・コマ割り（ここを編集）/ Inputs",
+   "id": 1,
+   "title": "① 参照画像・場面・セリフを編集",
    "bounding": [
-    -30,
-    -90,
-    1500,
-    1910
-   ],
-   "color": "#3f789e",
-   "flags": {}
-  },
-  {
-   "id": "#a1309b",
-   "title": "② 吹き出しの位置（生成前にマウスで調整）/ Balloon layout",
-   "bounding": [
+    -20,
+    -80,
     1550,
-    -90,
-    1310,
-    1910
+    1720
    ],
    "color": "#3f789e",
    "flags": {}
   },
   {
-   "id": "#444444",
-   "title": "③ P-H3 で生成（ふだんは触らない）/ Generate with P-H3",
+   "id": 2,
+   "title": "② P-H3で作画",
    "bounding": [
-    2950,
-    -90,
-    1450,
-    1910
+    1570,
+    -80,
+    1360,
+    1720
    ],
    "color": "#3f789e",
    "flags": {}
   },
   {
-   "id": "#88a",
-   "title": "④ 写植と保存（生成後に文字の枠を調整できる）/ Lettering",
+   "id": 3,
+   "title": "③ 文字なし画像と写植画像を保存",
    "bounding": [
-    4490,
-    -90,
-    1830,
-    1910
+    2970,
+    -80,
+    1110,
+    1720
    ],
    "color": "#3f789e",
    "flags": {}

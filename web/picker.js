@@ -3,15 +3,16 @@
 import { app } from '../../scripts/app.js';
 import { api } from '../../scripts/api.js';
 
-const TYPE = 'PH3MangaPage', PANEL = 'PH3MangaPanel';
+const TYPE = 'PH3MangaPage', PANEL = 'PH3MangaPanel', EDITOR = 'PH3MangaBalloonEditor';
 const FAVORITES = 'ph3manga.favorites.v1';
-const isJa = () => String(app.ui?.settings?.getSettingValue?.('Comfy.Locale') ?? navigator.language ?? '').startsWith('ja');
-const tr = (ja, en) => isJa() ? ja : en;
+const tr = (ja, _en) => ja;
 const el = (tag, text, cls) => { const n = document.createElement(tag); if (text) n.textContent = text; if (cls) n.className = cls; return n; };
 const favorites = () => { try { return new Set(JSON.parse(localStorage.getItem(FAVORITES) || '[]')); } catch { return new Set(); } };
 const saveFavorites = v => { try { localStorage.setItem(FAVORITES, JSON.stringify([...v])); } catch { } };
 const clone = v => JSON.parse(JSON.stringify(v));
-const linkAt = (node, slot) => node.getInputLink?.(slot) ?? node.graph?.links?.[node.inputs[slot]?.link];
+const normalizeLink = link => Array.isArray(link) ? {id:link[0], origin_id:link[1], origin_slot:link[2], target_id:link[3], target_slot:link[4]} : link;
+const graphLink = (graph, id) => normalizeLink(graph?.links?.get?.(id) ?? graph?.links?.[id]);
+const linkAt = (node, slot) => normalizeLink(node.getInputLink?.(slot)) ?? graphLink(node.graph, node.inputs?.[slot]?.link);
 const slotOf = (node, name) => (node.inputs ?? []).findIndex(s => s.name === name);
 let catalogPromise;
 function catalog(force = false) {
@@ -36,6 +37,44 @@ function restore(node, saved) {
 
 // コマ数に合わせてコマの内容ノードを増減する。減らしたコマの入力は退避し、戻すと復元する。
 function applyLayout(node, entry) {
+    const editor = node.type === EDITOR ? node : null;
+    if (editor) {
+        const oldLayout = editor.properties?.ph3Layout;
+        // コマ数が減る場合も、セリフを捨てずに退避する。
+        const field = editor.widgets.find(w => w.name === '編集データ');
+        const items = JSON.parse(field.value || '[]');
+        editor.properties ??= {};
+        const retired = editor.properties.ph3RetiredBalloons ??= [];
+        const kept = items.filter(i => i.panel <= entry.count);
+        retired.push(...items.filter(i => i.panel > entry.count).map(i => ({...i, _panelBox: editor.properties.ph3PanelBoxes?.[i.panel - 1]})));
+        const returning = retired.filter(i => i.panel <= entry.count);
+        retired.splice(0, retired.length, ...retired.filter(i => i.panel > entry.count));
+        kept.push(...returning);
+        if (oldLayout && oldLayout !== entry.id) {
+            // 各コマ内の相対位置を保って、吹き出し・尾・文字領域を移す。
+            for (const item of kept) {
+                const from = item._panelBox ?? editor.properties.ph3PanelBoxes?.[item.panel - 1], to = entry.panel_boxes?.[item.panel - 1];
+                if (!from || !to) continue;
+                const x = v => Math.max(0, Math.min(1000, (to[0] + (v / 1000 - from[0]) / (from[2] - from[0]) * (to[2] - to[0])) * 1000));
+                const y = v => Math.max(0, Math.min(1000, (to[1] + (v / 1000 - from[1]) / (from[3] - from[1]) * (to[3] - to[1])) * 1000));
+                item.bbox = item.bbox.map((v,i) => i % 2 ? x(v) : y(v));
+                if (item.text_bbox) item.text_bbox = item.text_bbox.map((v,i) => i % 2 ? x(v) : y(v));
+                if (item.tail) item.tail = [x(item.tail[0]), y(item.tail[1])];
+                delete item._panelBox;
+            }
+        }
+        field.value = JSON.stringify(kept);
+        editor.properties.ph3Layout = entry.id;
+        editor.properties.ph3PanelBoxes = entry.panel_boxes;
+        editor.widgets.find(w => w.name === 'コマ割り').value = entry.name;
+        editor._ph3Refresh?.();
+        const target = (editor.graph?._nodes ?? editor.graph?.nodes ?? []).find(n => n.type === 'PH3MangaStory' && n.inputs?.some(input => {
+            const link = graphLink(editor.graph, input.link); return String(link?.origin_id) === String(editor.id);
+        }));
+        if (!target) { editor.graph?.setDirtyCanvas?.(true, true); return; }
+        node = target;
+    }
+    const panelType = editor ? 'PH3MangaScene' : PANEL;
     const graph = node.graph, count = entry.count;
     node.properties ??= {};
     const stash = node.properties.ph3RetiredPanels ??= {};
@@ -45,9 +84,9 @@ function applyLayout(node, entry) {
             const slot = slotOf(node, `コマ${i}`); if (slot < 0) continue;
             const link = linkAt(node, slot); if (!link) continue;
             const panel = graph.getNodeById(link.origin_id);
-            if (panel?.type === PANEL) stash[i] = snapshot(panel);
+            if (panel?.type === panelType) stash[i] = snapshot(panel);
             node.disconnectInput(slot);
-            if (panel?.type === PANEL && (panel.outputs ?? []).every(o => !o.links?.length)) graph.remove(panel);
+            if (panel?.type === panelType && (panel.outputs ?? []).every(o => !o.links?.length)) graph.remove(panel);
         }
         for (let i = 1; i <= count; i++) {
             const slot = slotOf(node, `コマ${i}`);
@@ -55,16 +94,16 @@ function applyLayout(node, entry) {
             const existing = linkAt(node, slot);
             let panel = existing && graph.getNodeById(existing.origin_id);
             if (!panel) {
-                panel = createNode(PANEL);
+                panel = createNode(panelType);
                 if (!panel) throw Error(tr('コマの内容ノードを作れません。', 'Could not create a panel content node.'));
                 graph.add(panel); restore(panel, stash[i]);
                 if (!stash[i]) { const last = graph.getNodeById(linkAt(node, slotOf(node, `コマ${i - 1}`))?.origin_id); panel.pos = last ? [last.pos[0], last.pos[1] + last.size[1] + 60] : [node.pos[0] - 520, node.pos[1]]; }
                 panel.connect(0, node, slot);
                 delete stash[i];
             }
-            if (panel.type === PANEL) panel.title = panelTitle(entry, i);
+            if (panel.type === panelType) panel.title = panelTitle(entry, i);
         }
-        node.widgets.find(w => w.name === 'コマ割り').value = entry.name;
+        if (!editor) node.widgets.find(w => w.name === 'コマ割り').value = entry.name;
         graph.setDirtyCanvas?.(true, true);
     } finally { graph.afterChange?.(); }
 }
@@ -77,6 +116,7 @@ function style() {
 }
 
 function preview(node, entry) {
+    if (node.type === EDITOR) { node._ph3Refresh?.(); return; }
     const box = node._ph3Preview; if (!box) return;
     box.replaceChildren();
     if (!entry) { box.append(el('p', tr('画像からコマ割りを選んでください。', 'Choose a layout from the images.'))); return; }
@@ -85,7 +125,10 @@ function preview(node, entry) {
     node.setDirtyCanvas?.(true, true);
 }
 
-async function select(node, entry) { applyLayout(node, entry); preview(node, entry); app.canvas?.setDirty(true, true); }
+async function select(node, entry, request = ++node._ph3LayoutRequest) {
+    if (request !== node._ph3LayoutRequest) return;
+    applyLayout(node, entry); preview(node, entry); app.canvas?.setDirty(true, true);
+}
 
 async function openPicker(node) {
     style();
@@ -128,28 +171,38 @@ async function openPicker(node) {
 
 function install(node) {
     if (node._ph3PickerInstalled) return; node._ph3PickerInstalled = true; style();
+    node._ph3LayoutRequest = 0;
     node.addWidget('button', tr('画像からコマ割りを選ぶ', 'Choose a layout from images'), null, () => openPicker(node), { serialize: false });
     const box = el('div', null, 'ph3p-preview'); node._ph3Preview = box;
     for (const ev of ['pointerdown', 'mousedown', 'dblclick', 'keydown', 'click']) box.addEventListener(ev, e => e.stopPropagation());
-    node.addDOMWidget(tr('コマ割りの見本', 'Layout preview'), 'custom', box, { serialize: false, hideOnZoom: false, getMinHeight: () => 225, getMaxHeight: () => 260 });
+    if (node.type !== EDITOR) node.addDOMWidget(tr('コマ割りの見本', 'Layout preview'), 'custom', box, { serialize: false, hideOnZoom: false, getMinHeight: () => 225, getMaxHeight: () => 260 });
     node.setSize([Math.max(node.size[0], 390), Math.max(node.size[1], 420)]);
     const widget = node.widgets.find(w => w.name === 'コマ割り');
     if (widget) {
         const previous = widget.callback;
         widget.callback = function (value, ...args) {
             previous?.call(this, value, ...args);
-            catalog().then(entries => { const e = findEntry(entries, value); if (e) return select(node, e); }).catch(err => console.warn(err));
+            widget.value = value;
+            const request = ++node._ph3LayoutRequest;
+            catalog().then(entries => {
+                if (request !== node._ph3LayoutRequest || widget.value !== value) return;
+                const e = findEntry(entries, value); if (e) return select(node, e, request);
+            }).catch(err => console.warn(err));
         };
-        catalog().then(entries => preview(node, findEntry(entries, widget.value))).catch(() => preview(node, null));
+        catalog().then(entries => {
+            if (node._ph3LayoutRequest) return;
+            const entry = findEntry(entries, widget.value); preview(node, entry);
+            if (node.type === EDITOR && entry) { node.properties ??= {}; node.properties.ph3Layout ??= entry.id; node.properties.ph3PanelBoxes ??= entry.panel_boxes; }
+        }).catch(() => { if (!node._ph3LayoutRequest) preview(node, null); });
     }
 }
 
 app.registerExtension({
     name: 'PH3Manga.LayoutPicker',
     beforeRegisterNodeDef(nodeType, nodeData) {
-        if (nodeData.name !== TYPE) return;
+        if (![TYPE, EDITOR].includes(nodeData.name)) return;
         const old = nodeType.prototype.onNodeCreated;
         nodeType.prototype.onNodeCreated = function (...args) { const r = old?.apply(this, args); install(this); return r; };
     },
-    loadedGraphNode(node) { if (node.type === TYPE) install(node); },
+    loadedGraphNode(node) { if ([TYPE, EDITOR].includes(node.type)) install(node); },
 });

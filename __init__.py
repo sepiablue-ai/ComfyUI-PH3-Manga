@@ -1,8 +1,12 @@
 """ComfyUI-PH3-Manga: layout guides and Japanese lettering for P-H3."""
 from .nodes import PH3MangaBalloonGuide, PH3MangaLayout, PH3MangaLettering
 from .page import PH3MangaPage, PH3MangaPanel
+from .editor import PH3MangaBalloonEditor, PH3MangaScene, PH3MangaStory
 
 NODE_CLASS_MAPPINGS = {
+    "PH3MangaBalloonEditor": PH3MangaBalloonEditor,
+    "PH3MangaScene": PH3MangaScene,
+    "PH3MangaStory": PH3MangaStory,
     "PH3MangaPage": PH3MangaPage,
     "PH3MangaPanel": PH3MangaPanel,
     "PH3MangaLayout": PH3MangaLayout,
@@ -10,6 +14,9 @@ NODE_CLASS_MAPPINGS = {
     "PH3MangaLettering": PH3MangaLettering,
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
+    "PH3MangaBalloonEditor": "吹き出し・セリフ・尻尾の編集",
+    "PH3MangaScene": "コマの場面と登場人物",
+    "PH3MangaStory": "漫画の場面と参照画像",
     "PH3MangaPage": "P-H3 Manga · Page / 漫画ページ（コマ割り・人物・コマ）",
     "PH3MangaPanel": "P-H3 Manga · Panel content / コマの内容",
     "PH3MangaLayout": "P-H3 Manga · Panel Layout / コマ割り",

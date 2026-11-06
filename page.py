@@ -162,17 +162,40 @@ def left_to_right_order(row):
     return [i for tier in tiers for i in sorted(tier, key=lambda i: boxes[i][0])]
 
 
-def compile_page(row, present, panels, ltr_order=True):
+def geometry_contract(row):
+    boxes = [p["bbox"] for p in row["panels"]]
+    if len(boxes) == 3 and abs(boxes[0][1]-boxes[1][1]) < .02 and abs(boxes[0][3]-boxes[1][3]) < .02 and boxes[2][1] > boxes[0][1]+.2:
+        x = round((min(boxes[0][2],boxes[1][2])+max(boxes[0][0],boxes[1][0]))*500)
+        y = round((max(boxes[0][3],boxes[1][3])+boxes[2][1])*500)
+        # 通常03は中央の余白を含めて x=500, y=500。
+        x = round(x/10)*10; y = round(y/10)*10
+        return (f"MANDATORY PAGE GEOMETRY: Exactly TWO horizontal tiers: the TOP tier contains TWO tall panels SIDE BY SIDE separated by a vertical border at x={x}, and the BOTTOM tier contains ONE full-width panel. The horizontal divider is at y={y}. Coordinates are on a page scale 0-1000. DO NOT draw three stacked full-width horizontal strips. Copy the panel borders from <Picture 1> exactly.")
+    rectangles = []
+    for i, b in enumerate(boxes, 1):
+        x0,y0,x1,y1 = (round(v*1000) for v in b)
+        rectangles.append(f"Panel region {i}: left={x0}, top={y0}, right={x1}, bottom={y1}.")
+    return "MANDATORY PAGE GEOMETRY: Copy the panel borders from <Picture 1> exactly. Rectangles use page coordinates 0-1000. Adjacent rectangles with the same top are SIDE BY SIDE. Never rearrange the panels into equal horizontal strips. " + " ".join(rectangles)
+
+
+def compile_page(row, present, panels, ltr_order=True, edited_balloons=None):
     labels = picture_labels(present)
     contents, balloons = [], []
     for i, (spec, panel) in enumerate(zip(row["panels"], panels), 1):
-        placed = place_balloons(spec["bbox"], panel["lines"])
+        placed = (place_balloons(spec["bbox"], panel["lines"]) if edited_balloons is None
+                  else [b for b in edited_balloons if b["panel"] == i])
         balloons += placed
         who = [labels[s] for s in panel["actors"]]
         cast = (f" Characters: {', '.join(who)}." if who else " No people are visible.")
         if placed:
             order = "; ".join("narration (tailless)" if l["speaker"] == NARRATION else f"spoken by {labels[l['speaker']]}" for l in panel["lines"])
-            talk = f" Keep its {len(placed)} empty balloon{'s' if len(placed) > 1 else ''}, from right to left: {order}."
+            talk = f" Keep its {len(placed)} empty balloon{'s' if len(placed) > 1 else ''}."
+            if edited_balloons is None:
+                talk += f" From right to left: {order}."
+            else:
+                for b in placed:
+                    y0, x0, y1, x1 = b["bbox"]
+                    speaker = "off-panel narration (tailless)" if b["speaker"] == NARRATION else labels[b["speaker"]]
+                    talk += f" The balloon centered at page coordinates ({(x0+x1)/2:.1f}, {(y0+y1)/2:.1f}) on a 0-1000 scale belongs to {speaker}."
             if any(l["speaker"] != NARRATION for l in panel["lines"]):
                 talk += " Each speaker is drawn below their own balloon, which points to them with its tail."
         else:
@@ -184,7 +207,7 @@ def compile_page(row, present, panels, ltr_order=True):
     body = [f"Panel {i} ({spec['position']}): {contents[j]}" for i, (spec, j) in enumerate(zip(row["panels"], order), 1)]
     pictures = "\n".join(f"<Picture {n}> is the reference image of character {s[-1]}." for n, s in enumerate(present, 2))
     retention = "\n".join(f"<Picture {n}>: attribute_transfer - character {s[-1]}'s face, hairstyle and clothing." for n, s in enumerate(present, 2))
-    prompt = TEMPLATE.format(panels=len(panels), balloons=len(balloons), pictures=pictures, retention=retention, body="\n".join(body))
+    prompt = geometry_contract(row) + "\n" + TEMPLATE.format(panels=len(panels), balloons=len(balloons), pictures=pictures, retention=retention, body="\n".join(body))
     return prompt, balloons
 
 

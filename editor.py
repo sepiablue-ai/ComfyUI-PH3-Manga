@@ -1,0 +1,125 @@
+"""一つの編集データから入力ガイド・話者の指示・写植領域を作る。"""
+import json
+
+import numpy as np
+import torch
+from PIL import Image
+
+from .nodes import CATEGORY, DATA, PH3MangaBalloonGuide, normalized_box
+from .page import ACTORS, NARRATION, SLOTS, compile_page, find_layout, layout_names
+
+
+def editor_data(layout, value):
+    row = find_layout(layout)
+    items = json.loads(value)
+    if not isinstance(items, list):
+        raise ValueError("吹き出しの編集データは配列にしてください。")
+    seen = set()
+    for item in items:
+        normalized_box(item)
+        if not isinstance(item.get("id"), str) or not item["id"] or item["id"] in seen:
+            raise ValueError("吹き出しの識別番号が空、または重複しています。")
+        seen.add(item["id"])
+        if type(item.get("panel")) is not int or not 1 <= item["panel"] <= len(row["panels"]):
+            raise ValueError("吹き出しのコマ番号がコマ割りと一致しません。")
+        if item.get("speaker") not in [*SLOTS, NARRATION]:
+            raise ValueError("吹き出しの話者を選んでください。")
+        if not isinstance(item.get("text"), str):
+            raise ValueError("セリフは文字列にしてください。")
+        if item.get("text_bbox") is not None:
+            normalized_box({"bbox": item["text_bbox"]})
+    return row, items
+
+
+class PH3MangaScene:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": {
+            "場面": ("STRING", {"multiline": True, "default": "", "tooltip": "場面を英語で。参照する人物は「人物1」などと書きます。セリフと話者は吹き出し編集画面で指定します。"}),
+            "登場人物": (list(ACTORS),),
+        }}
+
+    RETURN_TYPES = ("PH3_MANGA_PANEL",)
+    RETURN_NAMES = ("コマ",)
+    FUNCTION = "build"
+    CATEGORY = CATEGORY
+
+    def build(self, 場面, 登場人物):
+        if not 場面.strip():
+            raise ValueError("コマの場面を入力してください。")
+        return ({"scene": 場面.strip(), "actors": ACTORS[登場人物], "lines": []},)
+
+
+class PH3MangaBalloonEditor:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": {
+            "コマ割り": (layout_names(),),
+            "編集データ": ("STRING", {"default": "[]", "multiline": True}),
+            "文字領域の比率": ("FLOAT", {"default": 0.70, "min": 0.3, "max": 0.9, "step": 0.01}),
+            "線の太さ": ("INT", {"default": 2, "min": 1, "max": 8}),
+        }}
+
+    RETURN_TYPES = ("IMAGE", "INT", "INT", "STRING", "ARRAY")
+    RETURN_NAMES = ("空吹き出しガイド", "width", "height", "構成と話者", "セリフと文字領域")
+    FUNCTION = "build"
+    CATEGORY = CATEGORY
+    DESCRIPTION = "生成前のセリフ・話者・吹き出し・尻尾を一か所で編集します。生成済みページの文字だけ直す場合は、写植専用ワークフローを使用します。"
+
+    def build(self, コマ割り, 編集データ, 文字領域の比率, 線の太さ):
+        row, items = editor_data(コマ割り, 編集データ)
+        with Image.open(DATA / "layouts" / f"{row['id']}.webp") as source:
+            page = torch.from_numpy(np.asarray(source.convert("RGB"), dtype=np.float32) / 255)[None]
+        elements = [{"bbox": i["bbox"], "text": i["text"], "type": "text",
+                     "desc": json.dumps({"tail": None if i["speaker"] == NARRATION else i.get("tail")})} for i in items]
+        guide, texts = PH3MangaBalloonGuide().run(page, elements, 文字領域の比率, 線の太さ)
+        for item, text in zip(items, texts):
+            if item.get("text_bbox") is not None:
+                text["bbox"] = list(item["text_bbox"])
+        # 本文・文字領域は生成の指示に含めない。
+        plan = {"layout": row["id"], "balloons": [
+            {k: i.get(k) for k in ("id", "panel", "speaker", "bbox", "tail")} for i in items]}
+        return guide, 1664, 2496, json.dumps(plan, ensure_ascii=False), texts
+
+
+class PH3MangaStory:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": {
+            "構成と話者": ("STRING", {"forceInput": True}), "人物1": ("IMAGE",),
+            "コマ1": ("PH3_MANGA_PANEL",), "コマ2": ("PH3_MANGA_PANEL",),
+        }, "optional": {
+            "人物2": ("IMAGE",), "人物3": ("IMAGE",),
+            **{f"コマ{i}": ("PH3_MANGA_PANEL",) for i in (3, 4, 5, 6)},
+            "左から埋める癖を補正": ("BOOLEAN", {"default": True}),
+        }}
+
+    RETURN_TYPES = ("STRING", "IMAGE", "IMAGE", "IMAGE")
+    RETURN_NAMES = ("P-H3の指示文", "参照1", "参照2", "参照3")
+    FUNCTION = "build"
+    CATEGORY = CATEGORY
+
+    def build(self, **kw):
+        plan = json.loads(kw["構成と話者"])
+        row = find_layout(plan["layout"])
+        count = len(row["panels"])
+        if {i for i in range(1, 7) if kw.get(f"コマ{i}") is not None} != set(range(1, count + 1)):
+            raise ValueError(f"このコマ割りは{count}コマです。コマ1〜{count}だけに場面ノードをつないでください。")
+        images = {s: kw.get(s) for s in SLOTS}
+        if images["人物3"] is not None and images["人物2"] is None:
+            raise ValueError("人物3を使う場合は人物2の参照画像もつないでください。")
+        present = [s for s in SLOTS if images[s] is not None]
+        panels = []
+        for n in range(1, count + 1):
+            p = kw[f"コマ{n}"]
+            if any(s not in present for s in p["actors"]):
+                raise ValueError(f"{n}コマ目の登場人物の参照画像が足りません。")
+            # 同じコマ内は編集画面の一覧の順（追加順）で対応付ける。
+            balloons = [b for b in plan["balloons"] if b["panel"] == n]
+            for b in balloons:
+                if b["speaker"] != NARRATION and b["speaker"] not in p["actors"]:
+                    raise ValueError(f"{n}コマ目の話者「{b['speaker']}」を、そのコマの登場人物に入れてください。")
+            panels.append({**p, "lines": [{"speaker": b["speaker"], "text": ""} for b in balloons]})
+        prompt, _ = compile_page(row, present, panels, kw.get("左から埋める癖を補正", True), plan["balloons"])
+        return prompt, images["人物1"], images["人物2"], images["人物3"]
+

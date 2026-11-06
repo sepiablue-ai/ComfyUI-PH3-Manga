@@ -27,6 +27,7 @@ def catalog_items():
         items.append({"id": row["id"], "name": row["name"], "name_en": row.get("name_en", row["name"]), "count": len(row["panels"]),
                       "kind": kind, "category": ja, "category_en": en,
                       "positions": [position_ja(p["position"]) for p in row["panels"]],
+                      "panel_boxes": [p["bbox"] for p in row["panels"]],
                       "positions_en": [p["position"].split(", occupying")[0] for p in row["panels"]], "preview": f"/ph3_manga/preview/{row['id']}"})
     order = {"normal": 0, "straight": 1, "diagonal": 2, "special": 3}
     return sorted(items, key=lambda i: (order.get(i["kind"], 4), i["count"], i["id"]))
@@ -45,3 +46,11 @@ def register_routes(routes):
         if not re.fullmatch(r"[A-Za-z0-9_]{1,100}", ident) or ident not in layouts():
             raise web.HTTPNotFound()
         return web.FileResponse(DATA / "layouts" / f"{ident}.webp", headers={"Content-Type": "image/webp"})
+
+    @routes.get("/ph3_manga/layout/{ident}")
+    async def layout(request):
+        row = layouts().get(request.match_info["ident"])
+        if row is None:
+            raise web.HTTPNotFound()
+        return web.json_response(row)
+

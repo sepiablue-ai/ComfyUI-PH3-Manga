@@ -7,7 +7,7 @@
     {
       "id": 1,
       "type": "LoadImage",
-      "title": "漫画ページをアップロード / Upload a manga page",
+      "title": "文字なし漫画を読み込む（セリフ修正専用）",
       "pos": [
         0,
         0
@@ -58,7 +58,7 @@
     {
       "id": 2,
       "type": "GetImageSize",
-      "title": "ページ寸法 / Page dimensions",
+      "title": "ページ寸法",
       "pos": [
         0,
         900
@@ -107,7 +107,7 @@
     {
       "id": 3,
       "type": "PrimitiveStringMultiline",
-      "title": "初期の文字領域とセリフ / Initial text regions and dialogue",
+      "title": "初期の文字領域とセリフ",
       "pos": [
         450,
         0
@@ -151,7 +151,7 @@
     {
       "id": 4,
       "type": "CreateBoundingBoxes",
-      "title": "文字領域とセリフを編集 / Edit text regions and dialogue",
+      "title": "文字領域とセリフを編集",
       "pos": [
         950,
         0
@@ -235,7 +235,7 @@
     {
       "id": 5,
       "type": "PH3MangaLettering",
-      "title": "日本語写植とルビ / Japanese lettering and ruby",
+      "title": "日本語写植とルビ",
       "pos": [
         1700,
         0
@@ -326,7 +326,7 @@
     {
       "id": 6,
       "type": "SaveImage",
-      "title": "写植ページを保存 / Save lettered page",
+      "title": "セリフ修正後のページを保存",
       "pos": [
         2200,
         0
@@ -373,7 +373,7 @@
     {
       "id": 7,
       "type": "PreviewAny",
-      "title": "写植の内容 / Lettering details",
+      "title": "写植の内容",
       "pos": [
         1700,
         500
@@ -408,7 +408,7 @@
     {
       "id": 99,
       "type": "MarkdownNote",
-      "title": "使い方 / Instructions",
+      "title": "使い方（セリフ修正専用）",
       "pos": [
         -700,
         0
@@ -424,8 +424,11 @@
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "# 写植のみ / Letter an existing page\n\n画像をアップロードし、枠を各吹き出しの内側へ移動してセリフを入力してください。P-H3モデルは不要です。\n\nUpload a page, move the text boxes inside its balloons, and enter dialogue. No P-H3 weights are needed.\n\n文字はフォント描画です。 / Text is rendered with fonts."
-      ]
+        "# セリフ修正専用ワークフロー（P-H3なし）\n\n01で保存した文字なしPNG、または手持ちの文字なし漫画を「文字なし漫画を読み込む」へ指定します。\n「文字領域とセリフを編集」で、枠を吹き出しの内側へ合わせ、セリフを入力してください。初期の文字領域とセリフは3コマの見本です。\n\n画面上部の通常の「実行」を押すと、読み込んだ漫画にフォントで写植し、結果を保存します。このワークフローにはP-H3のモデルやサンプラーがなく、絵の生成は行いません。\n\n文字のある写植済み画像ではなく、文字なしPNGを使ってください。文字を消したり、吹き出しや絵を描き直す処理はありません。"
+      ],
+      "widgets_values_named": {
+        "text": "# セリフ修正専用ワークフロー（P-H3なし）\n\n01で保存した文字なしPNG、または手持ちの文字なし漫画を「文字なし漫画を読み込む」へ指定します。\n「文字領域とセリフを編集」で、枠を吹き出しの内側へ合わせ、セリフを入力してください。初期の文字領域とセリフは3コマの見本です。\n\n画面上部の通常の「実行」を押すと、読み込んだ漫画にフォントで写植し、結果を保存します。このワークフローにはP-H3のモデルやサンプラーがなく、絵の生成は行いません。\n\n文字のある写植済み画像ではなく、文字なしPNGを使ってください。文字を消したり、吹き出しや絵を描き直す処理はありません。"
+      }
     }
   ],
   "links": [
