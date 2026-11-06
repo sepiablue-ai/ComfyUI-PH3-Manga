@@ -44,7 +44,7 @@ class PH3MangaPanel:
     def INPUT_TYPES(cls):
         return {"required": {
             "場面": ("STRING", {"multiline": True, "default": "",
-                              "tooltip": "このコマの場面を英語で。人物は「人物1」「人物2」「人物3」と書くと、参照画像の番号に置き換わります。吹き出しのことは書かなくてかまいません。"}),
+                              "tooltip": "このコマの場面を英語で。人物は「人物1」または「Character 1」（Person 1・character1 も可）と書くと、参照画像の番号に置き換わります。吹き出しのことは書かなくてかまいません。"}),
             "登場人物": (list(ACTORS),),
             "話者1": (SPEAKERS,), "セリフ1": ("STRING", {"multiline": True, "default": ""}),
             "話者2": (SPEAKERS,), "セリフ2": ("STRING", {"multiline": True, "default": ""}),
@@ -86,9 +86,11 @@ def picture_labels(present):
 
 
 def scene_text(scene, labels):
+    """場面の人物名を参照画像の番号に置き換える。「人物1」「人物１」「Character 1」「character1」「Person 1」のどれでも書ける。"""
     for slot, label in labels.items():
         n = slot[-1]
-        scene = re.sub(rf"{slot}|(?<![A-Za-z])Character {n}(?![0-9])", label, scene)
+        wide = chr(ord(n) + 0xFEE0)  # 全角数字
+        scene = re.sub(rf"人物[{n}{wide}](?![0-9０-９])|(?<![A-Za-z])(?:character|person)[ _-]?{n}(?![0-9])", label, scene, flags=re.IGNORECASE)
     return scene
 
 

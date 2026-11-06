@@ -1,5 +1,6 @@
 """一つの編集データから入力ガイド・話者の指示・写植領域を作る。"""
 import json
+import re
 
 import numpy as np
 import torch
@@ -9,6 +10,30 @@ from .nodes import CATEGORY, DATA, PH3MangaBalloonGuide, normalized_box
 from .page import ACTORS, NARRATION, SLOTS, compile_page, find_layout, layout_names
 
 PAGE_W, PAGE_H = 1664, 2496  # 生成・写植するページの寸法
+
+# P-H3のテキストエンコーダー（Qwen3-VL 4B）で日本語の場面を英訳する。
+# P-H3用の分割処理は会話形式のテンプレートを付けないため、ここで付ける。
+TRANSLATE_PROMPT = ("<|im_start|>user\nTranslate the following Japanese description of one manga panel into natural English "
+                    "for an image generation prompt. Translate every detail faithfully; do not add or omit anything. "
+                    "Keep the words 人物1, 人物2 and 人物3 exactly as they are. Output only the English translation.\n\n"
+                    "{text}<|im_end|>\n<|im_start|>assistant\n")
+JAPANESE = re.compile(r"[\u3040-\u30ff\u3400-\u9fff\uff66-\uff9f]")  # かな・漢字・半角カナ
+
+
+def needs_translation(text):
+    return bool(JAPANESE.search(re.sub(r"人物[1-3１-３]", "", text)))
+
+
+def translate_scene(clip, text):
+    """日本語を含む場面だけを英訳する（サンプリングなしで、同じ入力なら同じ訳）。"""
+    if clip is None or not needs_translation(text):
+        return text
+    ids = clip.generate(clip.tokenize(TRANSLATE_PROMPT.format(text=text)), do_sample=False, max_length=512,
+                        temperature=1.0, top_k=50, top_p=1.0, min_p=0.0, repetition_penalty=1.0, seed=None)
+    out = clip.decode(ids).split("<|im_end|>")[0].strip()
+    if not out or needs_translation(out):
+        raise ValueError(f"場面の英訳に失敗しました。英語で書き直すか、文を短くしてください。\n場面: {text}\n訳: {out}")
+    return out
 
 
 def editor_data(layout, value):
@@ -74,7 +99,7 @@ class PH3MangaScene:
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {
-            "場面": ("STRING", {"multiline": True, "default": "", "tooltip": "場面を英語で。参照する人物は「人物1」などと書きます。セリフと話者は吹き出し編集画面で指定します。"}),
+            "場面": ("STRING", {"multiline": True, "default": "", "tooltip": "場面を英語か日本語で（日本語は「漫画の場面と参照画像」ノードにテキストエンコーダーをつなぐと英訳されます）。参照する人物は「人物1」または「Character 1」（Person 1・character1 も可）と書きます。セリフと話者は吹き出し編集画面で指定します。"}),
             "登場人物": (list(ACTORS),),
         }}
 
@@ -127,6 +152,7 @@ class PH3MangaStory:
             "人物2": ("IMAGE",), "人物3": ("IMAGE",),
             **{f"コマ{i}": ("PH3_MANGA_PANEL",) for i in (3, 4, 5, 6)},
             "左から埋める癖を補正": ("BOOLEAN", {"default": True}),
+            "テキストエンコーダー": ("CLIP", {"tooltip": "P-H3のテキストエンコーダーをつなぐと、日本語で書いた場面を英訳してからP-H3に渡します。訳は「P-H3の指示文」で確認できます。"}),
         }}
 
     RETURN_TYPES = ("STRING", "IMAGE", "IMAGE", "IMAGE")
@@ -154,6 +180,7 @@ class PH3MangaStory:
             for b in balloons:
                 if b["speaker"] != NARRATION and b["speaker"] not in p["actors"]:
                     raise ValueError(f"{n}コマ目の話者「{b['speaker']}」を、そのコマの登場人物に入れてください。")
+            p = {**p, "scene": translate_scene(kw.get("テキストエンコーダー"), p["scene"])}
             panels.append({**p, "lines": [{"speaker": b["speaker"], "text": ""} for b in balloons]})
         prompt, _ = compile_page(row, present, panels, kw.get("左から埋める癖を補正", True), plan["balloons"])
         return prompt, images["人物1"], images["人物2"], images["人物3"]

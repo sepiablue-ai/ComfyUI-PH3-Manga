@@ -15,6 +15,8 @@ sys.modules[SPEC.name] = PACKAGE
 SPEC.loader.exec_module(PACKAGE)
 from ph3_editor_tests.editor import PAGE_H, PAGE_W, PH3MangaBalloonEditor, PH3MangaScene, PH3MangaStory, lettering_preview, text_elements
 from ph3_editor_tests.nodes import PH3MangaLettering
+from ph3_editor_tests.page import picture_labels, scene_text
+from ph3_editor_tests.editor import needs_translation, translate_scene
 
 
 class EditorTests(unittest.TestCase):
@@ -98,6 +100,45 @@ class LetteringPreviewTests(unittest.TestCase):
             lettering_preview("3コマ・通常03・2／1段組", "[]", 0.7, "auto", "auto", 0.018, "not json")
         with self.assertRaises(ValueError):
             lettering_preview("3コマ・通常03・2／1段組", "[]", 2.0, "auto", "auto", 0.018, "{}")
+
+
+class SceneTextTests(unittest.TestCase):
+    def test_character_names_in_japanese_or_english(self):
+        labels = picture_labels(["人物1", "人物2"])
+        text = scene_text("人物1 waves. 人物２ smiles. Character 1 sits, character2 stands, Person 1 and person-2 talk.", labels)
+        self.assertEqual(text, "the character from <Picture 2> waves. the character from <Picture 3> smiles. "
+                               "the character from <Picture 2> sits, the character from <Picture 3> stands, "
+                               "the character from <Picture 2> and the character from <Picture 3> talk.")
+        # 単語の一部や別の番号は置き換えない。
+        self.assertEqual(scene_text("Character 12 and MainCharacter 1", labels), "Character 12 and MainCharacter 1")
+
+
+class TranslationTests(unittest.TestCase):
+    class FakeClip:
+        def __init__(self, answer):
+            self.answer, self.prompts = answer, []
+        def tokenize(self, text):
+            self.prompts.append(text); return text
+        def generate(self, tokens, **kw):
+            self.kw = kw; return [1]
+        def decode(self, ids):
+            return self.answer + "<|im_end|>"
+
+    def test_only_japanese_scenes_are_translated_with_chat_template(self):
+        self.assertFalse(needs_translation("人物1 waves at 人物２."))
+        self.assertTrue(needs_translation("人物1が手を振る。"))
+        clip = self.FakeClip("Character 1 waves.")
+        self.assertEqual(translate_scene(clip, "人物1 waves."), "人物1 waves.")
+        self.assertEqual(clip.prompts, [])
+        self.assertEqual(translate_scene(clip, "人物1が手を振る。"), "Character 1 waves.")
+        self.assertTrue(clip.prompts[0].startswith("<|im_start|>user\n") and clip.prompts[0].endswith("<|im_start|>assistant\n"))
+        self.assertIn("人物1が手を振る。", clip.prompts[0])
+        self.assertFalse(clip.kw["do_sample"])
+        self.assertEqual(translate_scene(None, "人物1が手を振る。"), "人物1が手を振る。")
+
+    def test_untranslated_output_is_an_error(self):
+        with self.assertRaises(ValueError):
+            translate_scene(self.FakeClip("人物1が手を振る。"), "人物1が手を振る。")
 
 
 class WorkflowTests(unittest.TestCase):
