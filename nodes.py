@@ -104,13 +104,13 @@ class PH3MangaBalloonGuide:
                 draw.polygon([points[0], xy(tx, ty), points[1]], fill=255)
             texts.append({**element, "bbox": [cy - ry * inner_ratio, cx - rx * inner_ratio, cy + ry * inner_ratio, cx + rx * inner_ratio]})
         outer = mask.filter(ImageFilter.MaxFilter(line_width * s * 2 + 1))
-        result = []
-        for frame in image:
-            page = Image.fromarray((frame.cpu().numpy() * 255).clip(0, 255).astype(np.uint8)).resize((w*s, h*s))
-            page.paste((0, 0, 0), (0, 0), outer)
-            page.paste((255, 255, 255), (0, 0), mask)
-            result.append(torch.from_numpy(np.asarray(page.resize((w, h), Image.Resampling.LANCZOS), dtype=np.float32) / 255))
-        return torch.stack(result), texts
+        # Only the balloon masks are supersampled; the page itself is never resampled, so every pixel
+        # outside the balloon outlines stays bit-identical to the input layout.
+        def coverage(m):
+            a = np.asarray(m.resize((w, h), Image.Resampling.BOX), dtype=np.float32) / 255
+            return torch.from_numpy(a)[None, :, :, None].to(image.device, image.dtype)
+        ink, fill = coverage(outer), coverage(mask)
+        return image * (1 - ink) * (1 - fill) + fill, texts
 
 
 class PH3MangaLettering:

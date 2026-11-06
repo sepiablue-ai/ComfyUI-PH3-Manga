@@ -15,7 +15,7 @@ PACKAGE = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = PACKAGE
 SPEC.loader.exec_module(PACKAGE)
 from ph3_manga_tests.fonts import resolve_font
-from ph3_manga_tests.lettering import layout_columns
+from ph3_manga_tests.lettering import _cells, layout_columns, ruby_spans
 from ph3_manga_tests.nodes import DATA, PH3MangaBalloonGuide, PH3MangaLayout, PH3MangaLettering, layouts
 
 
@@ -44,6 +44,20 @@ class GuideTests(unittest.TestCase):
         self.assertAlmostEqual(texts[0]["bbox"][0], 260)
         self.assertEqual(texts[0]["text"], "雨")
         self.assertTrue(torch.any(guide[0, 77:84, 156:164] < 0.5))
+
+    def test_pixels_outside_balloons_are_unchanged(self):
+        image = torch.rand((1, 300, 200, 3), generator=torch.Generator().manual_seed(1))
+        element = {"bbox": [100, 100, 400, 500], "desc": '{"tail":[300,600]}'}
+        guide, _ = PH3MangaBalloonGuide().run(image, [element], 0.7, 2)
+        changed = torch.any(guide != image, dim=-1)[0]
+        ys, xs = torch.nonzero(changed, as_tuple=True)
+        # Ellipse spans x 20..100, y 30..120 and the tail reaches (60,180); outline adds 2 px.
+        self.assertGreaterEqual(int(xs.min()), 20 - 3)
+        self.assertLessEqual(int(xs.max()), 100 + 3)
+        self.assertGreaterEqual(int(ys.min()), 30 - 3)
+        self.assertLessEqual(int(ys.max()), 180 + 3)
+        self.assertTrue(torch.equal(guide[0, 200:], image[0, 200:]))
+        self.assertTrue(torch.allclose(guide[0, 75, 60], torch.ones(3)))
 
     def test_invalid_geometry_and_tail(self):
         image = torch.ones((1, 100, 100, 3))
@@ -84,6 +98,13 @@ class LetteringTests(unittest.TestCase):
         mask[21:235, 21:235] = False
         self.assertTrue(np.array_equal(baseline[mask], rendered[mask]))
         self.assertTrue(np.any(baseline != rendered))
+
+    def test_ruby_rows_count_tatechuyoko_as_one_cell(self):
+        cells = _cells("え！？雨")
+        self.assertEqual(cells, ["え", "！？", "雨"])
+        self.assertEqual(ruby_spans(cells, "雨"), [(2, 1)])
+        self.assertEqual(ruby_spans(cells, "え！？"), [(0, 2)])
+        self.assertEqual(ruby_spans(cells, "！"), [])  # starts inside a cell boundary but ends mid-cell
 
     def test_empty_input_and_invalid_ruby(self):
         image = torch.ones((1, 32, 32, 3))

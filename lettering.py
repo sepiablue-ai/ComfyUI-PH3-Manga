@@ -36,6 +36,24 @@ def _columns(text):
     return cols
 
 
+def ruby_spans(col, word):
+    """列 col（マスの並び）の中で word が占める (先頭のマス番号, マス数) を返す。
+    縦中横は2字で1マスなので、文字の位置ではなくマスの位置で数える。マスの途中で始まる・終わる一致は除く。"""
+    line, starts = "".join(col), {}
+    pos = 0
+    for row, cell in enumerate(col):
+        starts[pos] = row
+        pos += len(cell)
+    starts[pos] = len(col)
+    spans, start = [], 0
+    while (start := line.find(word, start)) >= 0:
+        end = start + len(word)
+        if start in starts and end in starts:
+            spans.append((starts[start], starts[end] - starts[start]))
+        start = end
+    return spans
+
+
 def _is_kana(ch):
     return all("\u3040" <= c <= "\u30ff" or c in "、。！？!?…‥ー〜～「」『』（）" for c in ch)
 
@@ -132,16 +150,13 @@ def draw_text_in_box(page, text, box, fs, fonts, ruby=None):
     if ruby:
         rf = _font(fonts[0], max(8, round(f_s * 0.36)))
         for i, col in enumerate(cols):
-            line = ''.join(col)
             for word, reading in ruby.items():
-                start = 0
-                while (start := line.find(word, start)) >= 0:
-                    rh = min(f_s * 0.4, len(word) * f_s / len(reading))
-                    yy = top + start * f_s + (len(word) * f_s - len(reading) * rh) / 2
+                for row, n in ruby_spans(col, word):
+                    rh = min(f_s * 0.4, n * f_s / len(reading))
+                    yy = top + row * f_s + (n * f_s - len(reading) * rh) / 2
                     xx = right - (i + 0.5) * colw * S + f_s * 0.64
                     for j, ch in enumerate(reading):
                         td.text((xx, yy + (j + 0.5) * rh), ch, font=rf, fill=(0,0,0,255), anchor='mm')
-                    start += len(word)
     layer = layer.resize((W, H), PImage.LANCZOS)
     page.paste(layer.convert("RGB"), (int(box[0] - 2), int(box[1] - 2)), layer.getchannel("A"))
     return round(fs, 1), ["".join(c) for c in cols]
