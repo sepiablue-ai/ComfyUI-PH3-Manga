@@ -8,6 +8,8 @@ from PIL import Image
 from .nodes import CATEGORY, DATA, PH3MangaBalloonGuide, normalized_box
 from .page import ACTORS, NARRATION, SLOTS, compile_page, find_layout, layout_names
 
+PAGE_W, PAGE_H = 1664, 2496  # 生成・写植するページの寸法
+
 
 def editor_data(layout, value):
     row = find_layout(layout)
@@ -29,6 +31,43 @@ def editor_data(layout, value):
         if item.get("text_bbox") is not None:
             normalized_box({"bbox": item["text_bbox"]})
     return row, items
+
+
+def balloon_elements(items):
+    return [{"bbox": i["bbox"], "text": i["text"], "type": "text",
+             "desc": json.dumps({"tail": None if i["speaker"] == NARRATION else i.get("tail")})} for i in items]
+
+
+def text_elements(items, ratio):
+    """写植に渡す文字領域。指定がなければ吹き出しの内側（PH3MangaBalloonGuide と同じ式）。"""
+    texts = []
+    for element in balloon_elements(items):
+        y0, x0, y1, x1 = element["bbox"]
+        cx, cy, rx, ry = (x0 + x1) / 2, (y0 + y1) / 2, (x1 - x0) / 2, (y1 - y0) / 2
+        texts.append({**element, "bbox": [cy - ry * ratio, cx - rx * ratio, cy + ry * ratio, cx + rx * ratio]})
+    for item, text in zip(items, texts):
+        if item.get("text_bbox") is not None:
+            text["bbox"] = list(item["text_bbox"])
+    return texts
+
+
+def lettering_preview(layout, value, ratio, kana_font, kanji_font, font_size, ruby):
+    """編集画面の見本用に、写植ノードと同じ処理で文字だけを透明PNGへ描く。"""
+    import io
+    from .nodes import letter_page, lettering_style, parse_ruby, text_items
+    if not isinstance(ratio, (int, float)) or not 0.3 <= ratio <= 0.9:
+        raise ValueError("文字領域の比率は0.3〜0.9にしてください。")
+    _, items = editor_data(layout, value)
+    readings = parse_ruby(ruby)
+    page = Image.new("RGBA", (PAGE_W, PAGE_H), (0, 0, 0, 0))
+    targets = text_items(text_elements(items, ratio))
+    info = []
+    if targets:
+        fonts, fs = lettering_style(PAGE_H, kana_font, kanji_font, font_size)
+        info = letter_page(page, targets, fonts, fs, readings)
+    buffer = io.BytesIO()
+    page.save(buffer, format="PNG")
+    return buffer.getvalue(), info
 
 
 class PH3MangaScene:
@@ -70,16 +109,12 @@ class PH3MangaBalloonEditor:
         row, items = editor_data(コマ割り, 編集データ)
         with Image.open(DATA / "layouts" / f"{row['id']}.webp") as source:
             page = torch.from_numpy(np.asarray(source.convert("RGB"), dtype=np.float32) / 255)[None]
-        elements = [{"bbox": i["bbox"], "text": i["text"], "type": "text",
-                     "desc": json.dumps({"tail": None if i["speaker"] == NARRATION else i.get("tail")})} for i in items]
-        guide, texts = PH3MangaBalloonGuide().run(page, elements, 文字領域の比率, 線の太さ)
-        for item, text in zip(items, texts):
-            if item.get("text_bbox") is not None:
-                text["bbox"] = list(item["text_bbox"])
+        guide, _ = PH3MangaBalloonGuide().run(page, balloon_elements(items), 文字領域の比率, 線の太さ)
+        texts = text_elements(items, 文字領域の比率)
         # 本文・文字領域は生成の指示に含めない。
         plan = {"layout": row["id"], "balloons": [
             {k: i.get(k) for k in ("id", "panel", "speaker", "bbox", "tail")} for i in items]}
-        return guide, 1664, 2496, json.dumps(plan, ensure_ascii=False), texts
+        return guide, PAGE_W, PAGE_H, json.dumps(plan, ensure_ascii=False), texts
 
 
 class PH3MangaStory:

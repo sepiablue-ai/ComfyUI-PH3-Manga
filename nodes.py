@@ -129,29 +129,48 @@ class PH3MangaLettering:
 
     def run(self, image, kana_font, kanji_font, font_size, elements=None, ruby="{}"):
         h, w = image_shape(image)
-        try:
-            readings = json.loads(ruby)
-        except (ValueError, TypeError) as exc:
-            raise ValueError('ruby must be a JSON object such as {"雨":"あめ"}.') from exc
-        if not isinstance(readings, dict) or any(not isinstance(k, str) or not k or not isinstance(v, str) or not v for k, v in readings.items()):
-            raise ValueError("Ruby entries must map non-empty words to non-empty readings.")
-        items = [e for e in (elements or []) if isinstance(e, dict) and e.get("type", "text") == "text" and isinstance(e.get("text"), str) and e["text"].strip()]
+        readings = parse_ruby(ruby)
+        items = text_items(elements)
         if not items:
             return image, "[]"
-        if not math.isfinite(font_size) or not 0.005 <= font_size <= 0.05:
-            raise ValueError("font_size must be between 0.005 and 0.05.")
-        fonts = (resolve_font(kana_font, "kana"), resolve_font(kanji_font, "kanji"))
-        fs = max(8, round(h * font_size))
+        fonts, fs = lettering_style(h, kana_font, kanji_font, font_size)
         result, info = [], []
         for frame in image:
             page = Image.fromarray((frame.cpu().numpy() * 255).clip(0, 255).astype(np.uint8))
-            info = []
-            for element in items:
-                y0, x0, y1, x1 = normalized_box(element)
-                box = x0 * w / 1000, y0 * h / 1000, x1 * w / 1000, y1 * h / 1000
-                if min(box[2] - box[0], box[3] - box[1]) < 4:
-                    raise ValueError("A text box is too small to render; enlarge it in Create Bounding Boxes.")
-                used, columns = draw_text_in_box(page, element["text"], box, fs, fonts, readings)
-                info.append({"text": element["text"], "box_px": [round(v) for v in box], "font_px": used, "columns": columns})
+            info = letter_page(page, items, fonts, fs, readings)
             result.append(torch.from_numpy(np.asarray(page, dtype=np.float32) / 255))
         return torch.stack(result), json.dumps(info, ensure_ascii=False, indent=1)
+
+
+def parse_ruby(ruby):
+    try:
+        readings = json.loads(ruby)
+    except (ValueError, TypeError) as exc:
+        raise ValueError('ruby must be a JSON object such as {"雨":"あめ"}.') from exc
+    if not isinstance(readings, dict) or any(not isinstance(k, str) or not k or not isinstance(v, str) or not v for k, v in readings.items()):
+        raise ValueError("Ruby entries must map non-empty words to non-empty readings.")
+    return readings
+
+
+def text_items(elements):
+    return [e for e in (elements or []) if isinstance(e, dict) and e.get("type", "text") == "text" and isinstance(e.get("text"), str) and e["text"].strip()]
+
+
+def lettering_style(h, kana_font, kanji_font, font_size):
+    if not isinstance(font_size, (int, float)) or not math.isfinite(font_size) or not 0.005 <= font_size <= 0.05:
+        raise ValueError("font_size must be between 0.005 and 0.05.")
+    return (resolve_font(kana_font, "kana"), resolve_font(kanji_font, "kanji")), max(8, round(h * font_size))
+
+
+def letter_page(page, items, fonts, fs, readings):
+    """page（PIL画像）に写植する。ノードの出力と編集画面の見本は、どちらもこの関数で描く。"""
+    w, h = page.size
+    info = []
+    for element in items:
+        y0, x0, y1, x1 = normalized_box(element)
+        box = x0 * w / 1000, y0 * h / 1000, x1 * w / 1000, y1 * h / 1000
+        if min(box[2] - box[0], box[3] - box[1]) < 4:
+            raise ValueError("A text box is too small to render; enlarge it in Create Bounding Boxes.")
+        used, columns = draw_text_in_box(page, element["text"], box, fs, fonts, readings)
+        info.append({"text": element["text"], "box_px": [round(v) for v in box], "font_px": used, "columns": columns})
+    return info

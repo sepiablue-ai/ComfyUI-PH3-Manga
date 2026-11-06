@@ -13,7 +13,8 @@ SPEC = importlib.util.spec_from_file_location("ph3_editor_tests", ROOT / "__init
 PACKAGE = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = PACKAGE
 SPEC.loader.exec_module(PACKAGE)
-from ph3_editor_tests.editor import PH3MangaBalloonEditor, PH3MangaScene, PH3MangaStory
+from ph3_editor_tests.editor import PAGE_H, PAGE_W, PH3MangaBalloonEditor, PH3MangaScene, PH3MangaStory, lettering_preview, text_elements
+from ph3_editor_tests.nodes import PH3MangaLettering
 
 
 class EditorTests(unittest.TestCase):
@@ -67,6 +68,36 @@ class EditorTests(unittest.TestCase):
                 self.build([{**self.items[0], field: value}])
         with self.assertRaises(ValueError):
             self.build(self.items * 2)
+
+
+class LetteringPreviewTests(unittest.TestCase):
+    """編集画面の見本は、写植ノードと同じ組み方（列・文字サイズ・位置）になる。"""
+    def test_preview_matches_lettering_node(self):
+        import io
+        import numpy as np
+        from PIL import Image
+        layout = "3コマ・通常03・2／1段組"
+        items = [
+            {"id": "a", "panel": 1, "bbox": [71.1, 843.4, 279.2, 918.5], "speaker": "人物1", "text": "雨、やまないね。", "tail": [811.5, 233.0]},
+            {"id": "b", "panel": 2, "bbox": [260.2, 74.5, 357.1, 167.7], "speaker": "画面外・ナレーション（尾なし）", "text": "うん。\n助かった。", "tail": None,
+             "text_bbox": [274.7, 88.4, 342.6, 153.7]},
+        ]
+        value, ruby = json.dumps(items, ensure_ascii=False), json.dumps({"雨": "あめ"}, ensure_ascii=False)
+        *_, texts = PH3MangaBalloonEditor().build(layout, value, 0.7, 2)
+        self.assertEqual([t["bbox"] for t in texts], [t["bbox"] for t in text_elements(items, 0.7)])
+        page, node_info = PH3MangaLettering().run(torch.ones((1, PAGE_H, PAGE_W, 3)), "auto", "auto", 0.018, texts, ruby)
+        png, preview_info = lettering_preview(layout, value, 0.7, "auto", "auto", 0.018, ruby)
+        self.assertEqual(preview_info, json.loads(node_info))
+        alpha = np.asarray(Image.open(io.BytesIO(png)).getchannel("A"), dtype=np.float32) / 255
+        ink = 1 - page[0].mean(-1).numpy()
+        self.assertGreater(alpha.sum(), 1000)
+        self.assertLess(np.abs(alpha - ink).max(), 0.02)
+
+    def test_preview_rejects_bad_settings(self):
+        with self.assertRaises(ValueError):
+            lettering_preview("3コマ・通常03・2／1段組", "[]", 0.7, "auto", "auto", 0.018, "not json")
+        with self.assertRaises(ValueError):
+            lettering_preview("3コマ・通常03・2／1段組", "[]", 2.0, "auto", "auto", 0.018, "{}")
 
 
 class WorkflowTests(unittest.TestCase):

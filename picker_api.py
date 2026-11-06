@@ -54,3 +54,20 @@ def register_routes(routes):
             raise web.HTTPNotFound()
         return web.json_response(row)
 
+
+    @routes.post("/ph3_manga/lettering_preview")
+    async def lettering_preview(request):
+        """編集画面の見本。写植ノードと同じ処理で文字だけを描いた透明PNGを返す。"""
+        import asyncio
+        import json
+        from .editor import lettering_preview as render
+        try:
+            body = await request.json()
+            args = (body["layout"], json.dumps(body["items"], ensure_ascii=False), body["ratio"],
+                    body.get("kana_font", "auto"), body.get("kanji_font", "auto"), body.get("font_size", 0.016), body.get("ruby", "{}"))
+            if not all(isinstance(v, str) for v in (args[0], args[3], args[4], args[6])):
+                raise ValueError("文字列で指定してください。")
+            png, _ = await asyncio.get_running_loop().run_in_executor(None, render, *args)
+        except (KeyError, TypeError, ValueError, FileNotFoundError, OSError) as exc:
+            return web.json_response({"error": str(exc)}, status=400)
+        return web.Response(body=png, content_type="image/png", headers={"Cache-Control": "no-store"})

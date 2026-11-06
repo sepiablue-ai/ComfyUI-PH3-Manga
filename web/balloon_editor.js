@@ -21,24 +21,17 @@ function getCatalog() {
     }).then(value => value.layouts).catch(error => { catalogPromise = null; throw error; });
 }
 
-// 画面内の配置見本だけを描く。生成ガイド・モデル出力には文字を合成しない。
-function drawDialogue(ctx, text, box) {
-    if (!text) return;
-    const [y0,x0,y1,x1]=box, width=(x1-x0)*1.024, height=(y1-y0)*1.536;
-    let size,columns;
-    for(size=28;size>=6;size--) {
-        const rows=Math.max(1,Math.floor(height/size));columns=[];
-        for(const paragraph of text.replaceAll('\r','').split('\n')) {
-            const cells=[...paragraph];if(!cells.length)columns.push([]);
-            for(let n=0;n<cells.length;n+=rows)columns.push(cells.slice(n,n+rows));
-        }
-        if(columns.length*size*1.18<=width)break;
-    }
-    ctx.save();ctx.beginPath();ctx.rect(x0*1.024,y0*1.536,width,height);ctx.clip();
-    ctx.fillStyle='#172033';ctx.font=`${size}px "Yu Mincho",serif`;ctx.textAlign='center';ctx.textBaseline='top';
-    const right=(x0+x1)*.512+(columns.length-1)*size*.59;
-    columns.forEach((column,c)=>column.forEach((cell,r)=>ctx.fillText(cell,right-c*size*1.18,y0*1.536+r*size)));
-    ctx.restore();
+const LETTERING = 'PH3MangaLettering', LETTERING_DEFAULTS = {kana_font:'auto', kanji_font:'auto', font_size:0.016, ruby:'{}'};
+// 見本の文字は、編集ノードの出力をつないだ写植ノードの設定で描く（つないでいなければ写植ノードの初期値）。
+function letteringSettings(node) {
+    const graph = node.graph, links = graph?.links;
+    const linkOf = id => { const l = links?.get?.(id) ?? links?.[id]; return Array.isArray(l) ? {origin_id:l[1]} : l; };
+    const target = (graph?._nodes ?? graph?.nodes ?? []).find(n => n.type === LETTERING && n.inputs?.some(input =>
+        input.link != null && String(linkOf(input.link)?.origin_id) === String(node.id)));
+    if (!target) return {settings:{...LETTERING_DEFAULTS}, connected:false};
+    const settings = {};
+    for (const [name, fallback] of Object.entries(LETTERING_DEFAULTS)) settings[name] = widget(target, name)?.value ?? fallback;
+    return {settings, connected:true};
 }
 
 function styles() {
@@ -105,12 +98,35 @@ async function openEditor(node) {
             const box = mode.selectedIndex ? b : item.bbox;
             ctx.strokeRect(box[1]*1.024, box[0]*1.536, (box[3]-box[1])*1.024, (box[2]-box[0])*1.536); ctx.setLineDash([]);
             ctx.font = '18px system-ui'; ctx.fillStyle = '#1d4ed8'; ctx.fillText(`${item.panel}コマ・${items.indexOf(item)+1}`, x0*1.024, Math.max(18,y0*1.536-7));
-            drawDialogue(ctx, item.text, b);
             if (chosen) {
                 ctx.fillStyle = '#2563eb'; ctx.fillRect(box[3]*1.024-7,box[2]*1.536-7,14,14);
                 if (!mode.selectedIndex && item.tail && item.speaker !== NARRATION) { ctx.beginPath(); ctx.arc(...xy(...item.tail),10,0,Math.PI*2); ctx.fill(); }
             }
         }
+        if (lettered) ctx.drawImage(lettered, 0, 0, 1024, 1536);
+        requestLettering();
+    }
+    // セリフは写植ノードと同じPython処理で描いた透明PNGを重ねる（画面の見本だけ。生成ガイド・モデル出力には使わない）。
+    const {settings: lettering, connected} = letteringSettings(node);
+    let lettered = null, letteringKey = '', letteringBusy = false, letteringMessage = '';
+    // ほかの警告（コマ割り画像の読み込み失敗など）は上書きしない。
+    function letteringStatus(text) { if (!status.textContent || status.textContent === letteringMessage) status.textContent = text; letteringMessage = text; }
+    async function requestLettering() {
+        const body = JSON.stringify({layout: layout.id, items, ratio, ...lettering});
+        if (body === letteringKey || letteringBusy) return;
+        letteringKey = body; letteringBusy = true;
+        try {
+            const response = await api.fetchApi('/ph3_manga/lettering_preview', {method:'POST', headers:{'Content-Type':'application/json'}, body});
+            if (!response.ok) {
+                const error = await response.json().catch(() => ({}));
+                lettered = null; letteringStatus(`セリフの見本を作れません：${error.error ?? response.status}`);
+            } else {
+                const image = await createImageBitmap(await response.blob());
+                if (body === letteringKey) { lettered = image; letteringStatus(connected ? '' : '写植ノードが未接続のため、セリフの見本は写植ノードの初期設定で表示しています。'); }
+            }
+        } catch (error) { lettered = null; letteringStatus(`セリフの見本を作れません：${error.message}`); }
+        finally { letteringBusy = false; }
+        draw();
     }
     function renderList() {
         list.replaceChildren();
