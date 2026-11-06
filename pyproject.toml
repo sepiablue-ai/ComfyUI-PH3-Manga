@@ -1,0 +1,11 @@
+[project]
+name = "comfyui-ph3-manga"
+version = "0.1.0"
+description = "Manga panel layouts, editable balloon guides, and Japanese lettering for P-H3 Image in ComfyUI."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = ["budoux>=0.6.2"]
+
+[tool.comfy]
+DisplayName = "P-H3 Manga"

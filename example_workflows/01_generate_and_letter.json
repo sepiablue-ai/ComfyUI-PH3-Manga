@@ -1,0 +1,1838 @@
+{
+  "id": "5f06e776-a48c-45c3-8f01-b431ced2090c",
+  "revision": 0,
+  "last_node_id": 99,
+  "last_link_id": 35,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "PH3MangaLayout",
+      "title": "コマ割り / Panel layout",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "layout",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "layout"
+          }
+        },
+        {
+          "name": "megapixels",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "megapixels"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "page",
+          "type": "IMAGE",
+          "links": [
+            1,
+            3
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            11,
+            27
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            12,
+            28
+          ]
+        },
+        {
+          "name": "panel_count",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "layout_info",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PH3MangaLayout"
+      },
+      "widgets_values": [
+        "normal_3_01",
+        4.153344
+      ],
+      "widgets_values_named": {
+        "layout": "normal_3_01",
+        "megapixels": 4.153344
+      }
+    },
+    {
+      "id": 2,
+      "type": "PrimitiveStringMultiline",
+      "title": "吹き出しとセリフの初期設定 / Initial balloons and dialogue",
+      "pos": [
+        0,
+        450
+      ],
+      "size": [
+        420,
+        420
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "[{\"x\": 748, \"y\": 108, \"width\": 133, \"height\": 207, \"metadata\": {\"type\": \"text\", \"text\": \"雨、やまないね。\", \"desc\": \"{\\\"tail\\\": [720, 190]}\", \"palette\": []}}, {\"x\": 128, \"y\": 138, \"width\": 161, \"height\": 253, \"metadata\": {\"type\": \"text\", \"text\": \"傘なら\\nもう一本あるよ。\", \"desc\": \"{\\\"tail\\\": [290, 216]}\", \"palette\": []}}, {\"x\": 696, \"y\": 591, \"width\": 148, \"height\": 315, \"metadata\": {\"type\": \"text\", \"text\": \"駅まで\\n歩くんでしょ？\", \"desc\": \"{\\\"tail\\\": null}\", \"palette\": []}}, {\"x\": 210, \"y\": 591, \"width\": 195, \"height\": 346, \"metadata\": {\"type\": \"text\", \"text\": \"うん。\\n助かった。\", \"desc\": \"{\\\"tail\\\": null}\", \"palette\": []}}, {\"x\": 753, \"y\": 1060, \"width\": 159, \"height\": 361, \"metadata\": {\"type\": \"text\", \"text\": \"一緒に\\n帰ろう。\", \"desc\": \"{\\\"tail\\\": [690, 800]}\", \"palette\": []}}, {\"x\": 410, \"y\": 1060, \"width\": 195, \"height\": 338, \"metadata\": {\"type\": \"text\", \"text\": \"ありがとう！\", \"desc\": \"{\\\"tail\\\":[360,840]}\", \"palette\": []}}]"
+      ],
+      "widgets_values_named": {
+        "value": "[{\"x\": 748, \"y\": 108, \"width\": 133, \"height\": 207, \"metadata\": {\"type\": \"text\", \"text\": \"雨、やまないね。\", \"desc\": \"{\\\"tail\\\": [720, 190]}\", \"palette\": []}}, {\"x\": 128, \"y\": 138, \"width\": 161, \"height\": 253, \"metadata\": {\"type\": \"text\", \"text\": \"傘なら\\nもう一本あるよ。\", \"desc\": \"{\\\"tail\\\": [290, 216]}\", \"palette\": []}}, {\"x\": 696, \"y\": 591, \"width\": 148, \"height\": 315, \"metadata\": {\"type\": \"text\", \"text\": \"駅まで\\n歩くんでしょ？\", \"desc\": \"{\\\"tail\\\": null}\", \"palette\": []}}, {\"x\": 210, \"y\": 591, \"width\": 195, \"height\": 346, \"metadata\": {\"type\": \"text\", \"text\": \"うん。\\n助かった。\", \"desc\": \"{\\\"tail\\\": null}\", \"palette\": []}}, {\"x\": 753, \"y\": 1060, \"width\": 159, \"height\": 361, \"metadata\": {\"type\": \"text\", \"text\": \"一緒に\\n帰ろう。\", \"desc\": \"{\\\"tail\\\": [690, 800]}\", \"palette\": []}}, {\"x\": 410, \"y\": 1060, \"width\": 195, \"height\": 338, \"metadata\": {\"type\": \"text\", \"text\": \"ありがとう！\", \"desc\": \"{\\\"tail\\\":[360,840]}\", \"palette\": []}}]"
+      }
+    },
+    {
+      "id": 3,
+      "type": "CreateBoundingBoxes",
+      "title": "生成前の吹き出し編集 / Edit balloon guide",
+      "pos": [
+        500,
+        0
+      ],
+      "size": [
+        700,
+        1150
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "editor_state",
+          "type": "BOUNDING_BOXES",
+          "link": null,
+          "widget": {
+            "name": "editor_state"
+          }
+        },
+        {
+          "name": "background",
+          "type": "IMAGE",
+          "link": 1
+        },
+        {
+          "name": "bboxes",
+          "type": "BOUNDING_BOX,ARRAY,STRING",
+          "link": 2
+        },
+        {
+          "name": "last_incoming",
+          "type": "BOUNDING_BOXES",
+          "link": null,
+          "widget": {
+            "name": "last_incoming"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "preview",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "bboxes",
+          "type": "BOUNDING_BOX",
+          "links": []
+        },
+        {
+          "name": "elements",
+          "type": "ARRAY",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateBoundingBoxes"
+      },
+      "widgets_values": [
+        1024,
+        1536,
+        [],
+        []
+      ],
+      "widgets_values_named": {
+        "width": 1024,
+        "height": 1536,
+        "editor_state": [],
+        "last_incoming": []
+      }
+    },
+    {
+      "id": 4,
+      "type": "PH3MangaBalloonGuide",
+      "title": "空吹き出しガイド / Empty balloon guide",
+      "pos": [
+        1250,
+        0
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 3
+        },
+        {
+          "name": "elements",
+          "type": "ARRAY",
+          "link": 4
+        },
+        {
+          "name": "inner_ratio",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "inner_ratio"
+          }
+        },
+        {
+          "name": "line_width",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "line_width"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "guide",
+          "type": "IMAGE",
+          "links": [
+            14,
+            35
+          ]
+        },
+        {
+          "name": "text_elements",
+          "type": "ARRAY",
+          "links": [
+            30
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PH3MangaBalloonGuide"
+      },
+      "widgets_values": [
+        0.7,
+        2
+      ],
+      "widgets_values_named": {
+        "inner_ratio": 0.7,
+        "line_width": 2
+      }
+    },
+    {
+      "id": 5,
+      "type": "LoadImage",
+      "title": "キャラAの画像をアップロード / Upload character A",
+      "pos": [
+        0,
+        1100
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "image"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            15
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "character_a.png"
+      ],
+      "widgets_values_named": {
+        "image": "character_a.png"
+      }
+    },
+    {
+      "id": 6,
+      "type": "LoadImage",
+      "title": "キャラBの画像をアップロード / Upload character B",
+      "pos": [
+        500,
+        1250
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "image"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            16
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "character_b.png"
+      ],
+      "widgets_values_named": {
+        "image": "character_b.png"
+      }
+    },
+    {
+      "id": 10,
+      "type": "PrimitiveStringMultiline",
+      "title": "1コマ目のシーン説明 / Panel 1 scene",
+      "pos": [
+        0,
+        1650
+      ],
+      "size": [
+        420,
+        420
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Top panel: Character A from <Picture 2> is shown chest-up, centered slightly right, standing at the school entrance after classes and holding a closed umbrella. They look toward their friend offscreen with a thoughtful but kind expression. Two empty speech balloons sit on either side of the head. A quiet gray screentone background."
+      ],
+      "widgets_values_named": {
+        "value": "Top panel: Character A from <Picture 2> is shown chest-up, centered slightly right, standing at the school entrance after classes and holding a closed umbrella. They look toward their friend offscreen with a thoughtful but kind expression. Two empty speech balloons sit on either side of the head. A quiet gray screentone background."
+      }
+    },
+    {
+      "id": 11,
+      "type": "PrimitiveStringMultiline",
+      "title": "2コマ目のシーン説明 / Panel 2 scene",
+      "pos": [
+        500,
+        1650
+      ],
+      "size": [
+        420,
+        420
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Middle panel: A wide cutaway of a school window and the rainy schoolyard beyond it. The glass has raindrops. No people are visible. Keep the two tailless empty balloons, one on the right and one on the left. Use clean black ink and subtle gray screentones."
+      ],
+      "widgets_values_named": {
+        "value": "Middle panel: A wide cutaway of a school window and the rainy schoolyard beyond it. The glass has raindrops. No people are visible. Keep the two tailless empty balloons, one on the right and one on the left. Use clean black ink and subtle gray screentones."
+      }
+    },
+    {
+      "id": 12,
+      "type": "PrimitiveStringMultiline",
+      "title": "3コマ目のシーン説明 / Panel 3 scene",
+      "pos": [
+        1000,
+        1650
+      ],
+      "size": [
+        420,
+        420
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Bottom panel: Character A from <Picture 2> stands on the left facing right, and character B from <Picture 3> stands on the right facing left, at the covered school entrance. A offers B a spare closed umbrella. They smile with relief. Show both characters from head to knees. Keep the center balloon between them with its tail pointing left toward A, and the right balloon with its tail pointing toward B. Preserve the reference faces, hairstyles and clothing."
+      ],
+      "widgets_values_named": {
+        "value": "Bottom panel: Character A from <Picture 2> stands on the left facing right, and character B from <Picture 3> stands on the right facing left, at the covered school entrance. A offers B a spare closed umbrella. They smile with relief. Show both characters from head to knees. Keep the center balloon between them with its tail pointing left toward A, and the right balloon with its tail pointing toward B. Preserve the reference faces, hairstyles and clothing."
+      }
+    },
+    {
+      "id": 13,
+      "type": "StringFormat",
+      "title": "P-H3の指示文 / P-H3 prompt",
+      "pos": [
+        1500,
+        1650
+      ],
+      "size": [
+        420,
+        420
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "f_string",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "f_string"
+          }
+        },
+        {
+          "name": "values.a",
+          "type": "*",
+          "link": 5
+        },
+        {
+          "name": "values.b",
+          "type": "*",
+          "link": 6
+        },
+        {
+          "name": "values.c",
+          "type": "*",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringFormat"
+      },
+      "widgets_values": [
+        "subject_definitions:\n<Picture 1> is the source manga layout with exactly three horizontal panels and six empty white speech balloons.\n<Picture 2> is character A's reference image.\n<Picture 3> is character B's reference image.\nsummary:\n[keyframe completion] Fill the three panels with a finished monochrome Japanese manga story. Retain the panel frames and all six empty balloons.\nretention_analysis:\n<Picture 1>: partially_preserved - keep the panel borders, white margins and all six blank balloons with their positions, sizes and tails.\n<Picture 2>: attribute_transfer - character A's face, hairstyle and clothing.\n<Picture 3>: attribute_transfer - character B's face, hairstyle and clothing.\ndetailed_description:\nStrictly black, white and gray ink manga with screentones. Read panels from top to bottom.\n{a}\n{b}\n{c}\nDraw around and behind the existing empty white balloons. Keep exactly two balloons in each panel. Do not add lettering, captions, page numbers or extra balloons. Nothing crosses the panel frames. A static single page.\noverall_soundscape:\nN/A\nnon_diegetic_music:\nN/A"
+      ],
+      "widgets_values_named": {
+        "f_string": "subject_definitions:\n<Picture 1> is the source manga layout with exactly three horizontal panels and six empty white speech balloons.\n<Picture 2> is character A's reference image.\n<Picture 3> is character B's reference image.\nsummary:\n[keyframe completion] Fill the three panels with a finished monochrome Japanese manga story. Retain the panel frames and all six empty balloons.\nretention_analysis:\n<Picture 1>: partially_preserved - keep the panel borders, white margins and all six blank balloons with their positions, sizes and tails.\n<Picture 2>: attribute_transfer - character A's face, hairstyle and clothing.\n<Picture 3>: attribute_transfer - character B's face, hairstyle and clothing.\ndetailed_description:\nStrictly black, white and gray ink manga with screentones. Read panels from top to bottom.\n{a}\n{b}\n{c}\nDraw around and behind the existing empty white balloons. Keep exactly two balloons in each panel. Do not add lettering, captions, page numbers or extra balloons. Nothing crosses the panel frames. A static single page.\noverall_soundscape:\nN/A\nnon_diegetic_music:\nN/A"
+      }
+    },
+    {
+      "id": 20,
+      "type": "UNETLoader",
+      "title": "P-H3本体 / Diffusion model",
+      "pos": [
+        2000,
+        0
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "unet_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "unet_name"
+          }
+        },
+        {
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "weight_dtype"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "p-h3-image_int8_convrot.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "p-h3-image_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 21,
+      "type": "MiniMaxH3SigmaShift",
+      "title": "シフト / Sigma shift",
+      "pos": [
+        2500,
+        0
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 8
+        },
+        {
+          "name": "shift_video",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "shift_video"
+          }
+        },
+        {
+          "name": "shift_audio",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "shift_audio"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3SigmaShift"
+      },
+      "widgets_values": [
+        1.0,
+        1.0
+      ],
+      "widgets_values_named": {
+        "shift_video": 1.0,
+        "shift_audio": 1.0
+      }
+    },
+    {
+      "id": 22,
+      "type": "CLIPLoader",
+      "title": "テキストエンコーダー / Text encoder",
+      "pos": [
+        2000,
+        350
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "clip_name"
+          }
+        },
+        {
+          "name": "type",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "type"
+          }
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "device"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "p-h3-image_text_encoder_int8_convrot.safetensors",
+        "minimax",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "p-h3-image_text_encoder_int8_convrot.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    {
+      "id": 23,
+      "type": "VAELoader",
+      "title": "VAE",
+      "pos": [
+        2000,
+        700
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "vae_name"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            13,
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "p-h3-image_vae_int8_convrot.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "p-h3-image_vae_int8_convrot.safetensors"
+      }
+    },
+    {
+      "id": 24,
+      "type": "PH3ImageConditioning",
+      "title": "画像参照と条件付け / References and conditioning",
+      "pos": [
+        2500,
+        500
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 9
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 10
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 11
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 12
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 13
+        },
+        {
+          "name": "images.image_1",
+          "type": "IMAGE",
+          "link": 14
+        },
+        {
+          "name": "images.image_2",
+          "type": "IMAGE",
+          "link": 15
+        },
+        {
+          "name": "images.image_3",
+          "type": "IMAGE",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            18
+          ]
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PH3ImageConditioning"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 25,
+      "type": "BasicGuider",
+      "title": "条件付け / Guider",
+      "pos": [
+        3000,
+        0
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 17
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 26,
+      "type": "KSamplerSelect",
+      "title": "サンプラー / Sampler",
+      "pos": [
+        3000,
+        350
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "sampler_name"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "euler"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "euler"
+      }
+    },
+    {
+      "id": 27,
+      "type": "ManualSigmas",
+      "title": "8ステップ / Eight steps",
+      "pos": [
+        3000,
+        700
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "sigmas"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ManualSigmas"
+      },
+      "widgets_values": [
+        "1.0, 0.984753, 0.967905, 0.951688, 0.925372, 0.881923, 0.810083, 0.528718, 0.0"
+      ],
+      "widgets_values_named": {
+        "sigmas": "1.0, 0.984753, 0.967905, 0.951688, 0.925372, 0.881923, 0.810083, 0.528718, 0.0"
+      }
+    },
+    {
+      "id": 28,
+      "type": "RandomNoise",
+      "title": "シード / Seed",
+      "pos": [
+        3000,
+        1050
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "noise_seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        42,
+        "fixed"
+      ],
+      "widgets_values_named": {
+        "noise_seed": 42,
+        "control_after_generate": "fixed"
+      }
+    },
+    {
+      "id": 29,
+      "type": "SamplerCustomAdvanced",
+      "title": "漫画を生成 / Generate page",
+      "pos": [
+        3500,
+        0
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 19
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 20
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 21
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 22
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            24
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 30,
+      "type": "VAEDecode",
+      "title": "文字なしの漫画 / Unlettered page",
+      "pos": [
+        4000,
+        0
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 24
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            26,
+            29,
+            31
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 31,
+      "type": "SaveImage",
+      "title": "モデル実出力を保存 / Save model output",
+      "pos": [
+        4500,
+        0
+      ],
+      "size": [
+        650,
+        1050
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 26
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "PH3_Manga/raw"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "PH3_Manga/raw"
+      }
+    },
+    {
+      "id": 40,
+      "type": "CreateBoundingBoxes",
+      "title": "生成後の文字領域を編集 / Adjust text regions",
+      "pos": [
+        4500,
+        1200
+      ],
+      "size": [
+        700,
+        1150
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 27
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 28
+        },
+        {
+          "name": "editor_state",
+          "type": "BOUNDING_BOXES",
+          "link": null,
+          "widget": {
+            "name": "editor_state"
+          }
+        },
+        {
+          "name": "background",
+          "type": "IMAGE",
+          "link": 29
+        },
+        {
+          "name": "bboxes",
+          "type": "BOUNDING_BOX,ARRAY,STRING",
+          "link": 30
+        },
+        {
+          "name": "last_incoming",
+          "type": "BOUNDING_BOXES",
+          "link": null,
+          "widget": {
+            "name": "last_incoming"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "preview",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "bboxes",
+          "type": "BOUNDING_BOX",
+          "links": []
+        },
+        {
+          "name": "elements",
+          "type": "ARRAY",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateBoundingBoxes"
+      },
+      "widgets_values": [
+        [],
+        []
+      ],
+      "widgets_values_named": {
+        "editor_state": [],
+        "last_incoming": []
+      }
+    },
+    {
+      "id": 41,
+      "type": "PH3MangaLettering",
+      "title": "日本語写植とルビ / Japanese lettering and ruby",
+      "pos": [
+        5250,
+        1200
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 31
+        },
+        {
+          "name": "kana_font",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "kana_font"
+          }
+        },
+        {
+          "name": "kanji_font",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "kanji_font"
+          }
+        },
+        {
+          "name": "font_size",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "font_size"
+          }
+        },
+        {
+          "name": "elements",
+          "type": "ARRAY",
+          "link": 32
+        },
+        {
+          "name": "ruby",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "ruby"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            33
+          ]
+        },
+        {
+          "name": "info",
+          "type": "STRING",
+          "links": [
+            34
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PH3MangaLettering"
+      },
+      "widgets_values": [
+        "auto",
+        "auto",
+        0.018,
+        "{\"雨\": \"あめ\", \"傘\": \"かさ\", \"駅\": \"えき\", \"一緒\": \"いっしょ\", \"帰\": \"かえ\"}"
+      ],
+      "widgets_values_named": {
+        "kana_font": "auto",
+        "kanji_font": "auto",
+        "font_size": 0.018,
+        "ruby": "{\"雨\": \"あめ\", \"傘\": \"かさ\", \"駅\": \"えき\", \"一緒\": \"いっしょ\", \"帰\": \"かえ\"}"
+      }
+    },
+    {
+      "id": 42,
+      "type": "SaveImage",
+      "title": "写植ページを保存 / Save lettered page",
+      "pos": [
+        5750,
+        1200
+      ],
+      "size": [
+        650,
+        1050
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 33
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "PH3_Manga/lettered"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "PH3_Manga/lettered"
+      }
+    },
+    {
+      "id": 43,
+      "type": "PreviewAny",
+      "title": "写植の内容 / Lettering details",
+      "pos": [
+        5250,
+        1650
+      ],
+      "size": [
+        420,
+        280
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 44,
+      "type": "SaveImage",
+      "title": "入力ガイドを保存 / Save input guide",
+      "pos": [
+        1250,
+        350
+      ],
+      "size": [
+        650,
+        1050
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 35
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "PH3_Manga/guide"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "PH3_Manga/guide"
+      }
+    },
+    {
+      "id": 99,
+      "type": "MarkdownNote",
+      "title": "使い方 / Instructions",
+      "pos": [
+        -700,
+        0
+      ],
+      "size": [
+        620,
+        700
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# 生成と写植 / Generate and letter\n1. キャラA・Bの画像をアップロードします。 / Upload your own A/B reference images.\n2. ローダーでP-H3本体・テキストエンコーダー・VAEを選びます。 / Select your model, text encoder and VAE files.\n3. 各コマのシーン説明と吹き出しを編集します。 / Edit the scene descriptions and balloon boxes.\n4. 日本語フォントを用意し、必要ならファイル名を指定します。 / Supply a Japanese font; set its filename if needed.\n\nサンプルは3コマです。コマ数を変える場合、シーン説明と吹き出しも変更してください。 / This example has three panels. Update the descriptions and balloons when changing the panel count.\n\n枠のdesc欄: {\"tail\":[x,y]}。ページ全体の0〜1000座標。{}で尾なし。 / Balloon desc: {\"tail\":[x,y]} in page-wide 0–1000 coordinates; {} for no tail.\n\n写植はフォント描画です。モデルが文字を生成する処理ではありません。 / Lettering is font rendering, separate from model generation.\n\nPowered by MiniMax H3"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      3,
+      3,
+      "IMAGE"
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      4,
+      "BOUNDING_BOX,ARRAY,STRING"
+    ],
+    [
+      3,
+      1,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      3,
+      2,
+      4,
+      1,
+      "ARRAY"
+    ],
+    [
+      5,
+      10,
+      0,
+      13,
+      1,
+      "*"
+    ],
+    [
+      6,
+      11,
+      0,
+      13,
+      2,
+      "*"
+    ],
+    [
+      7,
+      12,
+      0,
+      13,
+      3,
+      "*"
+    ],
+    [
+      8,
+      20,
+      0,
+      21,
+      0,
+      "MODEL"
+    ],
+    [
+      9,
+      22,
+      0,
+      24,
+      0,
+      "CLIP"
+    ],
+    [
+      10,
+      13,
+      0,
+      24,
+      1,
+      "STRING"
+    ],
+    [
+      11,
+      1,
+      1,
+      24,
+      2,
+      "INT"
+    ],
+    [
+      12,
+      1,
+      2,
+      24,
+      3,
+      "INT"
+    ],
+    [
+      13,
+      23,
+      0,
+      24,
+      4,
+      "VAE"
+    ],
+    [
+      14,
+      4,
+      0,
+      24,
+      5,
+      "IMAGE"
+    ],
+    [
+      15,
+      5,
+      0,
+      24,
+      6,
+      "IMAGE"
+    ],
+    [
+      16,
+      6,
+      0,
+      24,
+      7,
+      "IMAGE"
+    ],
+    [
+      17,
+      21,
+      0,
+      25,
+      0,
+      "MODEL"
+    ],
+    [
+      18,
+      24,
+      0,
+      25,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      19,
+      28,
+      0,
+      29,
+      0,
+      "NOISE"
+    ],
+    [
+      20,
+      25,
+      0,
+      29,
+      1,
+      "GUIDER"
+    ],
+    [
+      21,
+      26,
+      0,
+      29,
+      2,
+      "SAMPLER"
+    ],
+    [
+      22,
+      27,
+      0,
+      29,
+      3,
+      "SIGMAS"
+    ],
+    [
+      23,
+      24,
+      1,
+      29,
+      4,
+      "LATENT"
+    ],
+    [
+      24,
+      29,
+      0,
+      30,
+      0,
+      "LATENT"
+    ],
+    [
+      25,
+      23,
+      0,
+      30,
+      1,
+      "VAE"
+    ],
+    [
+      26,
+      30,
+      0,
+      31,
+      0,
+      "IMAGE"
+    ],
+    [
+      27,
+      1,
+      1,
+      40,
+      0,
+      "INT"
+    ],
+    [
+      28,
+      1,
+      2,
+      40,
+      1,
+      "INT"
+    ],
+    [
+      29,
+      30,
+      0,
+      40,
+      3,
+      "IMAGE"
+    ],
+    [
+      30,
+      4,
+      1,
+      40,
+      4,
+      "BOUNDING_BOX,ARRAY,STRING"
+    ],
+    [
+      31,
+      30,
+      0,
+      41,
+      0,
+      "IMAGE"
+    ],
+    [
+      32,
+      40,
+      2,
+      41,
+      4,
+      "ARRAY"
+    ],
+    [
+      33,
+      41,
+      0,
+      42,
+      0,
+      "IMAGE"
+    ],
+    [
+      34,
+      41,
+      1,
+      43,
+      0,
+      "*"
+    ],
+    [
+      35,
+      4,
+      0,
+      44,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.24,
+      "offset": [
+        750,
+        50
+      ]
+    }
+  },
+  "version": 0.4
+}

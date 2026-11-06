@@ -1,0 +1,8459 @@
+{
+  "layouts": [
+    {
+      "id": "catalog_2_diagonal_01",
+      "name": "2コマ・斜め01・ジグザグの段境界",
+      "name_en": "2 panels · Diagonal 01 · zigzag tier borders",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.523
+          ],
+          "position": "wide band 1 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.477,
+            0.96,
+            0.96
+          ],
+          "position": "wide band 2 from the top"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_diagonal_03",
+      "name": "2コマ・斜め03・左右ジグザグ分割",
+      "name_en": "2 panels · Diagonal 03 · zigzag left-right split",
+      "panels": [
+        {
+          "bbox": [
+            0.477,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "vertical strip 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.523,
+            0.96
+          ],
+          "position": "vertical strip 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_diagonal_05",
+      "name": "2コマ・斜め05・斜め縦辺の変形グリッド",
+      "name_en": "2 panels · Diagonal 05 · grid with slanted vertical borders",
+      "panels": [
+        {
+          "bbox": [
+            0.049,
+            0.09,
+            0.9085,
+            0.485
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.0915,
+            0.515,
+            0.951,
+            0.91
+          ],
+          "position": "tier 2, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_diagonal_06",
+      "name": "2コマ・斜め06・斜め横辺の変形グリッド",
+      "name_en": "2 panels · Diagonal 06 · grid with slanted horizontal borders",
+      "panels": [
+        {
+          "bbox": [
+            0.09,
+            0.049,
+            0.91,
+            0.526
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.09,
+            0.474,
+            0.91,
+            0.951
+          ],
+          "position": "tier 2, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_diagonal_07",
+      "name": "2コマ・斜め07・縦横を傾けたグリッド",
+      "name_en": "2 panels · Diagonal 07 · grid tilted both ways",
+      "panels": [
+        {
+          "bbox": [
+            0.0572,
+            0.0572,
+            0.9088,
+            0.5178
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.0912,
+            0.4822,
+            0.9428,
+            0.9428
+          ],
+          "position": "tier 2, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_special_01",
+      "name": "2コマ・特殊01・大コマと重ね小コマ",
+      "name_en": "2 panels · Special 01 · large panel with overlaid small panels",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large full-page background panel"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.4006,
+            0.93,
+            0.8994
+          ],
+          "position": "tier 1, full-width inset"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_special_02",
+      "name": "2コマ・特殊02・大きな楕円と小コマ",
+      "name_en": "2 panels · Special 02 · large oval with small panels",
+      "panels": [
+        {
+          "bbox": [
+            0.05,
+            0.05,
+            0.95,
+            0.53
+          ],
+          "position": "large upper oval panel"
+        },
+        {
+          "bbox": [
+            0.05,
+            0.59,
+            0.95,
+            0.95
+          ],
+          "position": "tier 1, full-width below the oval"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_special_03",
+      "name": "2コマ・特殊03・大ひし形と右の楕円",
+      "name_en": "2 panels · Special 03 · large diamond with an oval on the right",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.62,
+            0.96
+          ],
+          "position": "large diamond on the left"
+        },
+        {
+          "bbox": [
+            0.68,
+            0.34,
+            0.96,
+            0.66
+          ],
+          "position": "single oval on the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_special_04",
+      "name": "2コマ・特殊04・大コマと楕円の重ね小コマ",
+      "name_en": "2 panels · Special 04 · large panel with overlaid oval panels",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large full-page background panel"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.4006,
+            0.93,
+            0.8994
+          ],
+          "position": "tier 1, full-width inset"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_special_05",
+      "name": "2コマ・特殊05・階段状の浮かぶコマ",
+      "name_en": "2 panels · Special 05 · floating staircase panels",
+      "panels": [
+        {
+          "bbox": [
+            0.06,
+            0.04,
+            0.66,
+            0.3804
+          ],
+          "position": "floating card 1 descending the page"
+        },
+        {
+          "bbox": [
+            0.34,
+            0.5,
+            0.94,
+            0.8404
+          ],
+          "position": "floating card 2 descending the page"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_special_06",
+      "name": "2コマ・特殊06・大縦長と浮かぶ右小コマ",
+      "name_en": "2 panels · Special 06 · tall panel with a floating small panel on the right",
+      "panels": [
+        {
+          "bbox": [
+            0.66,
+            0.25,
+            0.96,
+            0.75
+          ],
+          "position": "1 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.08,
+            0.6,
+            0.92
+          ],
+          "position": "large tall main panel on the left"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_straight_01",
+      "name": "2コマ・直線01・上下2段",
+      "name_en": "2 panels · Straight 01 · two tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.4875
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.5125,
+            0.96,
+            0.96
+          ],
+          "position": "tier 2, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_straight_02",
+      "name": "2コマ・直線02・左右2列",
+      "name_en": "2 panels · Straight 02 · two columns",
+      "panels": [
+        {
+          "bbox": [
+            0.5125,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.4875,
+            0.96
+          ],
+          "position": "tier 1, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_straight_03",
+      "name": "2コマ・直線03・上を大きく",
+      "name_en": "2 panels · Straight 03 · larger top",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.590769
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.615769,
+            0.96,
+            0.96
+          ],
+          "position": "tier 2, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_straight_04",
+      "name": "2コマ・直線04・下を大きく",
+      "name_en": "2 panels · Straight 04 · larger bottom",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.384231
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.409231,
+            0.96,
+            0.96
+          ],
+          "position": "tier 2, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_straight_05",
+      "name": "2コマ・直線05・右を大きく",
+      "name_en": "2 panels · Straight 05 · larger right",
+      "panels": [
+        {
+          "bbox": [
+            0.3925,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "right panel"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.3675,
+            0.96
+          ],
+          "position": "left panel"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_straight_06",
+      "name": "2コマ・直線06・左を大きく",
+      "name_en": "2 panels · Straight 06 · larger left",
+      "panels": [
+        {
+          "bbox": [
+            0.6325,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "right panel"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.6075,
+            0.96
+          ],
+          "position": "left panel"
+        }
+      ]
+    },
+    {
+      "id": "catalog_2_straight_07",
+      "name": "2コマ・直線07・広い余白の上下",
+      "name_en": "2 panels · Straight 07 · two tiers with wide margins",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.493095
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.548095,
+            0.96,
+            0.96
+          ],
+          "position": "tier 2, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_diagonal_01",
+      "name": "3コマ・斜め01・ジグザグの段境界",
+      "name_en": "3 panels · Diagonal 01 · zigzag tier borders",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.369667
+          ],
+          "position": "wide band 1 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.323667,
+            0.96,
+            0.676333
+          ],
+          "position": "wide band 2 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.630333,
+            0.96,
+            0.96
+          ],
+          "position": "wide band 3 from the top"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_diagonal_03",
+      "name": "3コマ・斜め03・上2／下1の斜め分割",
+      "name_en": "3 panels · Diagonal 03 · diagonal split, 2 top / 1 bottom",
+      "panels": [
+        {
+          "bbox": [
+            0.42,
+            0.04,
+            0.96,
+            0.54
+          ],
+          "position": "upper right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.56,
+            0.62
+          ],
+          "position": "upper left"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.49,
+            0.96,
+            0.96
+          ],
+          "position": "wide lower panel"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_diagonal_04",
+      "name": "3コマ・斜め04・左右同方向斜め分割",
+      "name_en": "3 panels · Diagonal 04 · parallel diagonal left-right split",
+      "panels": [
+        {
+          "bbox": [
+            0.630333,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "vertical strip 1 from the right"
+        },
+        {
+          "bbox": [
+            0.323667,
+            0.04,
+            0.676333,
+            0.96
+          ],
+          "position": "vertical strip 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.369667,
+            0.96
+          ],
+          "position": "vertical strip 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_diagonal_05",
+      "name": "3コマ・斜め05・斜め縦辺の変形グリッド",
+      "name_en": "3 panels · Diagonal 05 · grid with slanted vertical borders",
+      "panels": [
+        {
+          "bbox": [
+            0.049,
+            0.09,
+            0.9085,
+            0.485
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.5165,
+            0.515,
+            0.951,
+            0.91
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.0915,
+            0.515,
+            0.526,
+            0.91
+          ],
+          "position": "tier 2, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_diagonal_06",
+      "name": "3コマ・斜め06・斜め横辺の変形グリッド",
+      "name_en": "3 panels · Diagonal 06 · grid with slanted horizontal borders",
+      "panels": [
+        {
+          "bbox": [
+            0.09,
+            0.049,
+            0.91,
+            0.526
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.515,
+            0.5165,
+            0.91,
+            0.951
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.09,
+            0.474,
+            0.485,
+            0.9085
+          ],
+          "position": "tier 2, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_diagonal_07",
+      "name": "3コマ・斜め07・縦横を傾けたグリッド",
+      "name_en": "3 panels · Diagonal 07 · grid tilted both ways",
+      "panels": [
+        {
+          "bbox": [
+            0.0572,
+            0.0572,
+            0.9088,
+            0.5178
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.5162,
+            0.4822,
+            0.9428,
+            0.9088
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.0912,
+            0.5162,
+            0.5178,
+            0.9428
+          ],
+          "position": "tier 2, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_special_01",
+      "name": "3コマ・特殊01・大コマと重ね小コマ",
+      "name_en": "3 panels · Special 01 · large panel with overlaid small panels",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large full-page background panel"
+        },
+        {
+          "bbox": [
+            0.52,
+            0.4006,
+            0.93,
+            0.8994
+          ],
+          "position": "tier 1, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.4006,
+            0.48,
+            0.8994
+          ],
+          "position": "tier 1, 2 from the right inset"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_special_02",
+      "name": "3コマ・特殊02・大きな楕円と小コマ",
+      "name_en": "3 panels · Special 02 · large oval with small panels",
+      "panels": [
+        {
+          "bbox": [
+            0.05,
+            0.05,
+            0.95,
+            0.53
+          ],
+          "position": "large upper oval panel"
+        },
+        {
+          "bbox": [
+            0.515,
+            0.59,
+            0.95,
+            0.95
+          ],
+          "position": "tier 1, 1 from the right below the oval"
+        },
+        {
+          "bbox": [
+            0.05,
+            0.59,
+            0.485,
+            0.95
+          ],
+          "position": "tier 1, 2 from the right below the oval"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_special_03",
+      "name": "3コマ・特殊03・大ひし形と右の小コマ列",
+      "name_en": "3 panels · Special 03 · large diamond with small panels on the right",
+      "panels": [
+        {
+          "bbox": [
+            0.69,
+            0.04,
+            0.96,
+            0.4875
+          ],
+          "position": "small right-column panel 1"
+        },
+        {
+          "bbox": [
+            0.69,
+            0.5125,
+            0.96,
+            0.96
+          ],
+          "position": "small right-column panel 2"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.62,
+            0.96
+          ],
+          "position": "large left diamond panel"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_special_04",
+      "name": "3コマ・特殊04・大コマと楕円の重ね小コマ",
+      "name_en": "3 panels · Special 04 · large panel with overlaid oval panels",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large full-page background panel"
+        },
+        {
+          "bbox": [
+            0.52,
+            0.4006,
+            0.93,
+            0.8994
+          ],
+          "position": "tier 1, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.4006,
+            0.48,
+            0.8994
+          ],
+          "position": "tier 1, 2 from the right inset"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_special_05",
+      "name": "3コマ・特殊05・階段状の浮かぶコマ",
+      "name_en": "3 panels · Special 05 · floating staircase panels",
+      "panels": [
+        {
+          "bbox": [
+            0.06,
+            0.04,
+            0.66,
+            0.266933
+          ],
+          "position": "floating card 1 descending the page"
+        },
+        {
+          "bbox": [
+            0.34,
+            0.346667,
+            0.94,
+            0.5736
+          ],
+          "position": "floating card 2 descending the page"
+        },
+        {
+          "bbox": [
+            0.06,
+            0.653333,
+            0.66,
+            0.880267
+          ],
+          "position": "floating card 3 descending the page"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_special_06",
+      "name": "3コマ・特殊06・大縦長と浮かぶ右小コマ",
+      "name_en": "3 panels · Special 06 · tall panel with a floating small panel on the right",
+      "panels": [
+        {
+          "bbox": [
+            0.66,
+            0.04,
+            0.96,
+            0.4875
+          ],
+          "position": "1 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.5125,
+            0.96,
+            0.96
+          ],
+          "position": "2 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.08,
+            0.6,
+            0.92
+          ],
+          "position": "large tall main panel on the left"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_straight_01",
+      "name": "3コマ・直線01・1／1／1配置",
+      "name_en": "3 panels · Straight 01 · 1/1/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_straight_02",
+      "name": "3コマ・直線02・1／2配置",
+      "name_en": "3 panels · Straight 02 · 1/2 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.4875
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.5125,
+            0.96,
+            0.96
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.5125,
+            0.4875,
+            0.96
+          ],
+          "position": "tier 2, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_straight_03",
+      "name": "3コマ・直線03・2／1配置",
+      "name_en": "3 panels · Straight 03 · 2/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.5125,
+            0.04,
+            0.96,
+            0.4875
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.4875,
+            0.4875
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.5125,
+            0.96,
+            0.96
+          ],
+          "position": "tier 2, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_straight_04",
+      "name": "3コマ・直線04・3配置",
+      "name_en": "3 panels · Straight 04 · 3 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.67,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.355,
+            0.04,
+            0.645,
+            0.96
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.33,
+            0.96
+          ],
+          "position": "tier 1, 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_straight_05",
+      "name": "3コマ・直線05・大縦長と小コマ列・左",
+      "name_en": "3 panels · Straight 05 · tall panel with a column of small panels, left",
+      "panels": [
+        {
+          "bbox": [
+            0.66,
+            0.04,
+            0.96,
+            0.4875
+          ],
+          "position": "1 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.5125,
+            0.96,
+            0.96
+          ],
+          "position": "2 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.6,
+            0.96
+          ],
+          "position": "large tall main panel on the left"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_straight_06",
+      "name": "3コマ・直線06・大縦長と小コマ列・右",
+      "name_en": "3 panels · Straight 06 · tall panel with a column of small panels, right",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.34,
+            0.4875
+          ],
+          "position": "1 small panel in the left column"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.5125,
+            0.34,
+            0.96
+          ],
+          "position": "2 small panel in the left column"
+        },
+        {
+          "bbox": [
+            0.4,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large tall main panel on the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_3_straight_07",
+      "name": "3コマ・直線07・1／1／1配置",
+      "name_en": "3 panels · Straight 07 · 1/1/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.452105
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.477105,
+            0.96,
+            0.706053
+          ],
+          "position": "tier 2, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.731053,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_diagonal_01",
+      "name": "4コマ・斜め01・ジグザグの段境界",
+      "name_en": "4 panels · Diagonal 01 · zigzag tier borders",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.293
+          ],
+          "position": "wide band 1 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.247,
+            0.96,
+            0.523
+          ],
+          "position": "wide band 2 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.477,
+            0.96,
+            0.753
+          ],
+          "position": "wide band 3 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.707,
+            0.96,
+            0.96
+          ],
+          "position": "wide band 4 from the top"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_diagonal_02",
+      "name": "4コマ・斜め02・同方向の斜め段境界",
+      "name_en": "4 panels · Diagonal 02 · parallel diagonal tier borders",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.293
+          ],
+          "position": "wide band 1 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.247,
+            0.96,
+            0.523
+          ],
+          "position": "wide band 2 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.477,
+            0.96,
+            0.753
+          ],
+          "position": "wide band 3 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.707,
+            0.96,
+            0.96
+          ],
+          "position": "wide band 4 from the top"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_diagonal_03",
+      "name": "4コマ・斜め03・左右ジグザグ分割",
+      "name_en": "4 panels · Diagonal 03 · zigzag left-right split",
+      "panels": [
+        {
+          "bbox": [
+            0.707,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "vertical strip 1 from the right"
+        },
+        {
+          "bbox": [
+            0.477,
+            0.04,
+            0.753,
+            0.96
+          ],
+          "position": "vertical strip 2 from the right"
+        },
+        {
+          "bbox": [
+            0.247,
+            0.04,
+            0.523,
+            0.96
+          ],
+          "position": "vertical strip 3 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.293,
+            0.96
+          ],
+          "position": "vertical strip 4 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_diagonal_04",
+      "name": "4コマ・斜め04・左右同方向斜め分割",
+      "name_en": "4 panels · Diagonal 04 · parallel diagonal left-right split",
+      "panels": [
+        {
+          "bbox": [
+            0.707,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "vertical strip 1 from the right"
+        },
+        {
+          "bbox": [
+            0.477,
+            0.04,
+            0.753,
+            0.96
+          ],
+          "position": "vertical strip 2 from the right"
+        },
+        {
+          "bbox": [
+            0.247,
+            0.04,
+            0.523,
+            0.96
+          ],
+          "position": "vertical strip 3 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.293,
+            0.96
+          ],
+          "position": "vertical strip 4 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_diagonal_05",
+      "name": "4コマ・斜め05・斜め縦辺の変形グリッド",
+      "name_en": "4 panels · Diagonal 05 · grid with slanted vertical borders",
+      "panels": [
+        {
+          "bbox": [
+            0.474,
+            0.09,
+            0.9085,
+            0.485
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.049,
+            0.09,
+            0.4835,
+            0.485
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5165,
+            0.515,
+            0.951,
+            0.91
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.0915,
+            0.515,
+            0.526,
+            0.91
+          ],
+          "position": "tier 2, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_diagonal_06",
+      "name": "4コマ・斜め06・斜め横辺の変形グリッド",
+      "name_en": "4 panels · Diagonal 06 · grid with slanted horizontal borders",
+      "panels": [
+        {
+          "bbox": [
+            0.515,
+            0.0915,
+            0.91,
+            0.526
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.09,
+            0.049,
+            0.485,
+            0.4835
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.515,
+            0.5165,
+            0.91,
+            0.951
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.09,
+            0.474,
+            0.485,
+            0.9085
+          ],
+          "position": "tier 2, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_diagonal_07",
+      "name": "4コマ・斜め07・縦横を傾けたグリッド",
+      "name_en": "4 panels · Diagonal 07 · grid tilted both ways",
+      "panels": [
+        {
+          "bbox": [
+            0.4822,
+            0.0572,
+            0.9088,
+            0.4838
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.0572,
+            0.0912,
+            0.4838,
+            0.5178
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5162,
+            0.4822,
+            0.9428,
+            0.9088
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.0912,
+            0.5162,
+            0.5178,
+            0.9428
+          ],
+          "position": "tier 2, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_special_01",
+      "name": "4コマ・特殊01・大コマと重ね小コマ",
+      "name_en": "4 panels · Special 01 · large panel with overlaid small panels",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large full-page background panel"
+        },
+        {
+          "bbox": [
+            0.52,
+            0.4006,
+            0.93,
+            0.6384
+          ],
+          "position": "tier 1, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.4006,
+            0.48,
+            0.6384
+          ],
+          "position": "tier 1, 2 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.6616,
+            0.93,
+            0.8994
+          ],
+          "position": "tier 2, full-width inset"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_special_02",
+      "name": "4コマ・特殊02・大きな楕円と小コマ",
+      "name_en": "4 panels · Special 02 · large oval with small panels",
+      "panels": [
+        {
+          "bbox": [
+            0.05,
+            0.05,
+            0.95,
+            0.53
+          ],
+          "position": "large upper oval panel"
+        },
+        {
+          "bbox": [
+            0.67,
+            0.59,
+            0.95,
+            0.95
+          ],
+          "position": "tier 1, 1 from the right below the oval"
+        },
+        {
+          "bbox": [
+            0.36,
+            0.59,
+            0.64,
+            0.95
+          ],
+          "position": "tier 1, 2 from the right below the oval"
+        },
+        {
+          "bbox": [
+            0.05,
+            0.59,
+            0.33,
+            0.95
+          ],
+          "position": "tier 1, 3 from the right below the oval"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_special_03",
+      "name": "4コマ・特殊03・大ひし形と右の小コマ列",
+      "name_en": "4 panels · Special 03 · large diamond with small panels on the right",
+      "panels": [
+        {
+          "bbox": [
+            0.69,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "small right-column panel 1"
+        },
+        {
+          "bbox": [
+            0.69,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "small right-column panel 2"
+        },
+        {
+          "bbox": [
+            0.69,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "small right-column panel 3"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.62,
+            0.96
+          ],
+          "position": "large left diamond panel"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_special_04",
+      "name": "4コマ・特殊04・大コマと楕円の重ね小コマ",
+      "name_en": "4 panels · Special 04 · large panel with overlaid oval panels",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large full-page background panel"
+        },
+        {
+          "bbox": [
+            0.52,
+            0.4006,
+            0.93,
+            0.6384
+          ],
+          "position": "tier 1, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.4006,
+            0.48,
+            0.6384
+          ],
+          "position": "tier 1, 2 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.6616,
+            0.93,
+            0.8994
+          ],
+          "position": "tier 2, full-width inset"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_special_05",
+      "name": "4コマ・特殊05・階段状の浮かぶコマ",
+      "name_en": "4 panels · Special 05 · floating staircase panels",
+      "panels": [
+        {
+          "bbox": [
+            0.06,
+            0.04,
+            0.66,
+            0.2102
+          ],
+          "position": "floating card 1 descending the page"
+        },
+        {
+          "bbox": [
+            0.34,
+            0.27,
+            0.94,
+            0.4402
+          ],
+          "position": "floating card 2 descending the page"
+        },
+        {
+          "bbox": [
+            0.06,
+            0.5,
+            0.66,
+            0.6702
+          ],
+          "position": "floating card 3 descending the page"
+        },
+        {
+          "bbox": [
+            0.34,
+            0.73,
+            0.94,
+            0.9002
+          ],
+          "position": "floating card 4 descending the page"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_special_06",
+      "name": "4コマ・特殊06・大縦長と浮かぶ右小コマ",
+      "name_en": "4 panels · Special 06 · tall panel with a floating small panel on the right",
+      "panels": [
+        {
+          "bbox": [
+            0.66,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "1 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "2 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "3 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.08,
+            0.6,
+            0.92
+          ],
+          "position": "large tall main panel on the left"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_straight_01",
+      "name": "4コマ・直線01・1／1／1／1配置",
+      "name_en": "4 panels · Straight 01 · 1/1/1/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.25125
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.27625,
+            0.96,
+            0.4875
+          ],
+          "position": "tier 2, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.5125,
+            0.96,
+            0.72375
+          ],
+          "position": "tier 3, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.74875,
+            0.96,
+            0.96
+          ],
+          "position": "tier 4, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_straight_02",
+      "name": "4コマ・直線02・2／2配置",
+      "name_en": "4 panels · Straight 02 · 2/2 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.5125,
+            0.04,
+            0.96,
+            0.4875
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.4875,
+            0.4875
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.5125,
+            0.96,
+            0.96
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.5125,
+            0.4875,
+            0.96
+          ],
+          "position": "tier 2, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_straight_03",
+      "name": "4コマ・直線03・1／2／1配置",
+      "name_en": "4 panels · Straight 03 · 1/2/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.4875,
+            0.645
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_straight_04",
+      "name": "4コマ・直線04・2／1／1配置",
+      "name_en": "4 panels · Straight 04 · 2/1/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.5125,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.4875,
+            0.33
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_straight_05",
+      "name": "4コマ・直線05・1／1／2配置",
+      "name_en": "4 panels · Straight 05 · 1/1/2 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, full-width"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.4875,
+            0.96
+          ],
+          "position": "tier 3, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_straight_06",
+      "name": "4コマ・直線06・大縦長と小コマ列・左",
+      "name_en": "4 panels · Straight 06 · tall panel with a column of small panels, left",
+      "panels": [
+        {
+          "bbox": [
+            0.66,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "1 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "2 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "3 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.6,
+            0.96
+          ],
+          "position": "large tall main panel on the left"
+        }
+      ]
+    },
+    {
+      "id": "catalog_4_straight_07",
+      "name": "4コマ・直線07・大縦長と小コマ列・右",
+      "name_en": "4 panels · Straight 07 · tall panel with a column of small panels, right",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.34,
+            0.33
+          ],
+          "position": "1 small panel in the left column"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.34,
+            0.645
+          ],
+          "position": "2 small panel in the left column"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.34,
+            0.96
+          ],
+          "position": "3 small panel in the left column"
+        },
+        {
+          "bbox": [
+            0.4,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large tall main panel on the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_diagonal_01",
+      "name": "5コマ・斜め01・ジグザグの段境界",
+      "name_en": "5 panels · Diagonal 01 · zigzag tier borders",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.247
+          ],
+          "position": "wide band 1 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.201,
+            0.96,
+            0.431
+          ],
+          "position": "wide band 2 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.385,
+            0.96,
+            0.615
+          ],
+          "position": "wide band 3 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.569,
+            0.96,
+            0.799
+          ],
+          "position": "wide band 4 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.753,
+            0.96,
+            0.96
+          ],
+          "position": "wide band 5 from the top"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_diagonal_02",
+      "name": "5コマ・斜め02・同方向の斜め段境界",
+      "name_en": "5 panels · Diagonal 02 · parallel diagonal tier borders",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.247
+          ],
+          "position": "wide band 1 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.201,
+            0.96,
+            0.431
+          ],
+          "position": "wide band 2 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.385,
+            0.96,
+            0.615
+          ],
+          "position": "wide band 3 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.569,
+            0.96,
+            0.799
+          ],
+          "position": "wide band 4 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.753,
+            0.96,
+            0.96
+          ],
+          "position": "wide band 5 from the top"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_diagonal_03",
+      "name": "5コマ・斜め03・左右ジグザグ分割",
+      "name_en": "5 panels · Diagonal 03 · zigzag left-right split",
+      "panels": [
+        {
+          "bbox": [
+            0.753,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "vertical strip 1 from the right"
+        },
+        {
+          "bbox": [
+            0.569,
+            0.04,
+            0.799,
+            0.96
+          ],
+          "position": "vertical strip 2 from the right"
+        },
+        {
+          "bbox": [
+            0.385,
+            0.04,
+            0.615,
+            0.96
+          ],
+          "position": "vertical strip 3 from the right"
+        },
+        {
+          "bbox": [
+            0.201,
+            0.04,
+            0.431,
+            0.96
+          ],
+          "position": "vertical strip 4 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.247,
+            0.96
+          ],
+          "position": "vertical strip 5 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_diagonal_04",
+      "name": "5コマ・斜め04・左右同方向斜め分割",
+      "name_en": "5 panels · Diagonal 04 · parallel diagonal left-right split",
+      "panels": [
+        {
+          "bbox": [
+            0.753,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "vertical strip 1 from the right"
+        },
+        {
+          "bbox": [
+            0.569,
+            0.04,
+            0.799,
+            0.96
+          ],
+          "position": "vertical strip 2 from the right"
+        },
+        {
+          "bbox": [
+            0.385,
+            0.04,
+            0.615,
+            0.96
+          ],
+          "position": "vertical strip 3 from the right"
+        },
+        {
+          "bbox": [
+            0.201,
+            0.04,
+            0.431,
+            0.96
+          ],
+          "position": "vertical strip 4 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.247,
+            0.96
+          ],
+          "position": "vertical strip 5 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_diagonal_05",
+      "name": "5コマ・斜め05・斜め縦辺の変形グリッド",
+      "name_en": "5 panels · Diagonal 05 · grid with slanted vertical borders",
+      "panels": [
+        {
+          "bbox": [
+            0.049,
+            0.09,
+            0.894333,
+            0.343333
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.502333,
+            0.373333,
+            0.922667,
+            0.626667
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.077333,
+            0.373333,
+            0.497667,
+            0.626667
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.530667,
+            0.656667,
+            0.951,
+            0.91
+          ],
+          "position": "tier 3, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.105667,
+            0.656667,
+            0.526,
+            0.91
+          ],
+          "position": "tier 3, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_diagonal_06",
+      "name": "5コマ・斜め06・斜め横辺の変形グリッド",
+      "name_en": "5 panels · Diagonal 06 · grid with slanted horizontal borders",
+      "panels": [
+        {
+          "bbox": [
+            0.09,
+            0.049,
+            0.91,
+            0.384333
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.515,
+            0.374833,
+            0.91,
+            0.667667
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.09,
+            0.332333,
+            0.485,
+            0.625167
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.515,
+            0.658167,
+            0.91,
+            0.951
+          ],
+          "position": "tier 3, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.09,
+            0.615667,
+            0.485,
+            0.9085
+          ],
+          "position": "tier 3, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_diagonal_07",
+      "name": "5コマ・斜め07・縦横を傾けたグリッド",
+      "name_en": "5 panels · Diagonal 07 · grid tilted both ways",
+      "panels": [
+        {
+          "bbox": [
+            0.0572,
+            0.0572,
+            0.897467,
+            0.376133
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.504867,
+            0.340533,
+            0.920133,
+            0.625467
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.079867,
+            0.374533,
+            0.495133,
+            0.659467
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.527533,
+            0.623867,
+            0.9428,
+            0.9088
+          ],
+          "position": "tier 3, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.102533,
+            0.657867,
+            0.5178,
+            0.9428
+          ],
+          "position": "tier 3, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_special_01",
+      "name": "5コマ・特殊01・大コマと重ね小コマ",
+      "name_en": "5 panels · Special 01 · large panel with overlaid small panels",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large full-page background panel"
+        },
+        {
+          "bbox": [
+            0.52,
+            0.4006,
+            0.93,
+            0.6384
+          ],
+          "position": "tier 1, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.4006,
+            0.48,
+            0.6384
+          ],
+          "position": "tier 1, 2 from the right inset"
+        },
+        {
+          "bbox": [
+            0.52,
+            0.6616,
+            0.93,
+            0.8994
+          ],
+          "position": "tier 2, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.6616,
+            0.48,
+            0.8994
+          ],
+          "position": "tier 2, 2 from the right inset"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_special_02",
+      "name": "5コマ・特殊02・大きな楕円と小コマ",
+      "name_en": "5 panels · Special 02 · large oval with small panels",
+      "panels": [
+        {
+          "bbox": [
+            0.05,
+            0.05,
+            0.95,
+            0.53
+          ],
+          "position": "large upper oval panel"
+        },
+        {
+          "bbox": [
+            0.67,
+            0.59,
+            0.95,
+            0.764
+          ],
+          "position": "tier 1, 1 from the right below the oval"
+        },
+        {
+          "bbox": [
+            0.36,
+            0.59,
+            0.64,
+            0.764
+          ],
+          "position": "tier 1, 2 from the right below the oval"
+        },
+        {
+          "bbox": [
+            0.05,
+            0.59,
+            0.33,
+            0.764
+          ],
+          "position": "tier 1, 3 from the right below the oval"
+        },
+        {
+          "bbox": [
+            0.05,
+            0.776,
+            0.95,
+            0.95
+          ],
+          "position": "tier 2, full-width below the oval"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_special_03",
+      "name": "5コマ・特殊03・大ひし形と右の小コマ列",
+      "name_en": "5 panels · Special 03 · large diamond with small panels on the right",
+      "panels": [
+        {
+          "bbox": [
+            0.69,
+            0.04,
+            0.96,
+            0.25125
+          ],
+          "position": "small right-column panel 1"
+        },
+        {
+          "bbox": [
+            0.69,
+            0.27625,
+            0.96,
+            0.4875
+          ],
+          "position": "small right-column panel 2"
+        },
+        {
+          "bbox": [
+            0.69,
+            0.5125,
+            0.96,
+            0.72375
+          ],
+          "position": "small right-column panel 3"
+        },
+        {
+          "bbox": [
+            0.69,
+            0.74875,
+            0.96,
+            0.96
+          ],
+          "position": "small right-column panel 4"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.62,
+            0.96
+          ],
+          "position": "large left diamond panel"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_special_04",
+      "name": "5コマ・特殊04・大コマと楕円の重ね小コマ",
+      "name_en": "5 panels · Special 04 · large panel with overlaid oval panels",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large full-page background panel"
+        },
+        {
+          "bbox": [
+            0.52,
+            0.4006,
+            0.93,
+            0.6384
+          ],
+          "position": "tier 1, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.4006,
+            0.48,
+            0.6384
+          ],
+          "position": "tier 1, 2 from the right inset"
+        },
+        {
+          "bbox": [
+            0.52,
+            0.6616,
+            0.93,
+            0.8994
+          ],
+          "position": "tier 2, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.6616,
+            0.48,
+            0.8994
+          ],
+          "position": "tier 2, 2 from the right inset"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_special_05",
+      "name": "5コマ・特殊05・階段状の浮かぶコマ",
+      "name_en": "5 panels · Special 05 · floating staircase panels",
+      "panels": [
+        {
+          "bbox": [
+            0.06,
+            0.04,
+            0.66,
+            0.17616
+          ],
+          "position": "floating card 1 descending the page"
+        },
+        {
+          "bbox": [
+            0.34,
+            0.224,
+            0.94,
+            0.36016
+          ],
+          "position": "floating card 2 descending the page"
+        },
+        {
+          "bbox": [
+            0.06,
+            0.408,
+            0.66,
+            0.54416
+          ],
+          "position": "floating card 3 descending the page"
+        },
+        {
+          "bbox": [
+            0.34,
+            0.592,
+            0.94,
+            0.72816
+          ],
+          "position": "floating card 4 descending the page"
+        },
+        {
+          "bbox": [
+            0.06,
+            0.776,
+            0.66,
+            0.91216
+          ],
+          "position": "floating card 5 descending the page"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_special_06",
+      "name": "5コマ・特殊06・大縦長と浮かぶ右小コマ",
+      "name_en": "5 panels · Special 06 · tall panel with a floating small panel on the right",
+      "panels": [
+        {
+          "bbox": [
+            0.66,
+            0.04,
+            0.96,
+            0.25125
+          ],
+          "position": "1 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.27625,
+            0.96,
+            0.4875
+          ],
+          "position": "2 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.5125,
+            0.96,
+            0.72375
+          ],
+          "position": "3 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.74875,
+            0.96,
+            0.96
+          ],
+          "position": "4 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.08,
+            0.6,
+            0.92
+          ],
+          "position": "large tall main panel on the left"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_straight_01",
+      "name": "5コマ・直線01・1／1／1／1／1配置",
+      "name_en": "5 panels · Straight 01 · 1/1/1/1/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.204
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.229,
+            0.96,
+            0.393
+          ],
+          "position": "tier 2, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.418,
+            0.96,
+            0.582
+          ],
+          "position": "tier 3, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.607,
+            0.96,
+            0.771
+          ],
+          "position": "tier 4, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.796,
+            0.96,
+            0.96
+          ],
+          "position": "tier 5, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_straight_02",
+      "name": "5コマ・直線02・1／2／2配置",
+      "name_en": "5 panels · Straight 02 · 1/2/2 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.4875,
+            0.645
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.4875,
+            0.96
+          ],
+          "position": "tier 3, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_straight_03",
+      "name": "5コマ・直線03・2／1／2配置",
+      "name_en": "5 panels · Straight 03 · 2/1/2 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.5125,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.4875,
+            0.33
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, full-width"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.4875,
+            0.96
+          ],
+          "position": "tier 3, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_straight_04",
+      "name": "5コマ・直線04・2／2／1配置",
+      "name_en": "5 panels · Straight 04 · 2/2/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.5125,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.4875,
+            0.33
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.4875,
+            0.645
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_straight_05",
+      "name": "5コマ・直線05・1／3／1配置",
+      "name_en": "5 panels · Straight 05 · 1/3/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.67,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.355,
+            0.355,
+            0.645,
+            0.645
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.33,
+            0.645
+          ],
+          "position": "tier 2, 3 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_straight_06",
+      "name": "5コマ・直線06・2／3配置",
+      "name_en": "5 panels · Straight 06 · 2/3 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.5125,
+            0.04,
+            0.96,
+            0.4875
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.4875,
+            0.4875
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.67,
+            0.5125,
+            0.96,
+            0.96
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.355,
+            0.5125,
+            0.645,
+            0.96
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.5125,
+            0.33,
+            0.96
+          ],
+          "position": "tier 2, 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_5_straight_07",
+      "name": "5コマ・直線07・3／2配置",
+      "name_en": "5 panels · Straight 07 · 3/2 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.67,
+            0.04,
+            0.96,
+            0.4875
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.355,
+            0.04,
+            0.645,
+            0.4875
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.33,
+            0.4875
+          ],
+          "position": "tier 1, 3 from the right"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.5125,
+            0.96,
+            0.96
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.5125,
+            0.4875,
+            0.96
+          ],
+          "position": "tier 2, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_diagonal_01",
+      "name": "6コマ・斜め01・ジグザグの段境界",
+      "name_en": "6 panels · Diagonal 01 · zigzag tier borders",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.216333
+          ],
+          "position": "wide band 1 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.170333,
+            0.96,
+            0.369667
+          ],
+          "position": "wide band 2 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.323667,
+            0.96,
+            0.523
+          ],
+          "position": "wide band 3 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.477,
+            0.96,
+            0.676333
+          ],
+          "position": "wide band 4 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.630333,
+            0.96,
+            0.829667
+          ],
+          "position": "wide band 5 from the top"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.783667,
+            0.96,
+            0.96
+          ],
+          "position": "wide band 6 from the top"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_diagonal_03",
+      "name": "6コマ・斜め03・左右ジグザグ分割",
+      "name_en": "6 panels · Diagonal 03 · zigzag left-right split",
+      "panels": [
+        {
+          "bbox": [
+            0.783667,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "vertical strip 1 from the right"
+        },
+        {
+          "bbox": [
+            0.630333,
+            0.04,
+            0.829667,
+            0.96
+          ],
+          "position": "vertical strip 2 from the right"
+        },
+        {
+          "bbox": [
+            0.477,
+            0.04,
+            0.676333,
+            0.96
+          ],
+          "position": "vertical strip 3 from the right"
+        },
+        {
+          "bbox": [
+            0.323667,
+            0.04,
+            0.523,
+            0.96
+          ],
+          "position": "vertical strip 4 from the right"
+        },
+        {
+          "bbox": [
+            0.170333,
+            0.04,
+            0.369667,
+            0.96
+          ],
+          "position": "vertical strip 5 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.216333,
+            0.96
+          ],
+          "position": "vertical strip 6 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_diagonal_04",
+      "name": "6コマ・斜め04・左右同方向斜め分割",
+      "name_en": "6 panels · Diagonal 04 · parallel diagonal left-right split",
+      "panels": [
+        {
+          "bbox": [
+            0.783667,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "vertical strip 1 from the right"
+        },
+        {
+          "bbox": [
+            0.630333,
+            0.04,
+            0.829667,
+            0.96
+          ],
+          "position": "vertical strip 2 from the right"
+        },
+        {
+          "bbox": [
+            0.477,
+            0.04,
+            0.676333,
+            0.96
+          ],
+          "position": "vertical strip 3 from the right"
+        },
+        {
+          "bbox": [
+            0.323667,
+            0.04,
+            0.523,
+            0.96
+          ],
+          "position": "vertical strip 4 from the right"
+        },
+        {
+          "bbox": [
+            0.170333,
+            0.04,
+            0.369667,
+            0.96
+          ],
+          "position": "vertical strip 5 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.216333,
+            0.96
+          ],
+          "position": "vertical strip 6 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_diagonal_05",
+      "name": "6コマ・斜め05・斜め縦辺の変形グリッド",
+      "name_en": "6 panels · Diagonal 05 · grid with slanted vertical borders",
+      "panels": [
+        {
+          "bbox": [
+            0.474,
+            0.09,
+            0.894333,
+            0.343333
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.049,
+            0.09,
+            0.469333,
+            0.343333
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.502333,
+            0.373333,
+            0.922667,
+            0.626667
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.077333,
+            0.373333,
+            0.497667,
+            0.626667
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.530667,
+            0.656667,
+            0.951,
+            0.91
+          ],
+          "position": "tier 3, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.105667,
+            0.656667,
+            0.526,
+            0.91
+          ],
+          "position": "tier 3, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_diagonal_06",
+      "name": "6コマ・斜め06・斜め横辺の変形グリッド",
+      "name_en": "6 panels · Diagonal 06 · grid with slanted horizontal borders",
+      "panels": [
+        {
+          "bbox": [
+            0.515,
+            0.0915,
+            0.91,
+            0.384333
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.09,
+            0.049,
+            0.485,
+            0.341833
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.515,
+            0.374833,
+            0.91,
+            0.667667
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.09,
+            0.332333,
+            0.485,
+            0.625167
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.515,
+            0.658167,
+            0.91,
+            0.951
+          ],
+          "position": "tier 3, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.09,
+            0.615667,
+            0.485,
+            0.9085
+          ],
+          "position": "tier 3, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_diagonal_07",
+      "name": "6コマ・斜め07・縦横を傾けたグリッド",
+      "name_en": "6 panels · Diagonal 07 · grid tilted both ways",
+      "panels": [
+        {
+          "bbox": [
+            0.4822,
+            0.0572,
+            0.897467,
+            0.342133
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.0572,
+            0.0912,
+            0.472467,
+            0.376133
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.504867,
+            0.340533,
+            0.920133,
+            0.625467
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.079867,
+            0.374533,
+            0.495133,
+            0.659467
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.527533,
+            0.623867,
+            0.9428,
+            0.9088
+          ],
+          "position": "tier 3, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.102533,
+            0.657867,
+            0.5178,
+            0.9428
+          ],
+          "position": "tier 3, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_special_01",
+      "name": "6コマ・特殊01・大コマと重ね小コマ",
+      "name_en": "6 panels · Special 01 · large panel with overlaid small panels",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large full-page background panel"
+        },
+        {
+          "bbox": [
+            0.67,
+            0.4006,
+            0.93,
+            0.6384
+          ],
+          "position": "tier 1, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.37,
+            0.4006,
+            0.63,
+            0.6384
+          ],
+          "position": "tier 1, 2 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.4006,
+            0.33,
+            0.6384
+          ],
+          "position": "tier 1, 3 from the right inset"
+        },
+        {
+          "bbox": [
+            0.52,
+            0.6616,
+            0.93,
+            0.8994
+          ],
+          "position": "tier 2, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.6616,
+            0.48,
+            0.8994
+          ],
+          "position": "tier 2, 2 from the right inset"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_special_02",
+      "name": "6コマ・特殊02・大きな楕円と小コマ",
+      "name_en": "6 panels · Special 02 · large oval with small panels",
+      "panels": [
+        {
+          "bbox": [
+            0.05,
+            0.05,
+            0.95,
+            0.53
+          ],
+          "position": "large upper oval panel"
+        },
+        {
+          "bbox": [
+            0.67,
+            0.59,
+            0.95,
+            0.764
+          ],
+          "position": "tier 1, 1 from the right below the oval"
+        },
+        {
+          "bbox": [
+            0.36,
+            0.59,
+            0.64,
+            0.764
+          ],
+          "position": "tier 1, 2 from the right below the oval"
+        },
+        {
+          "bbox": [
+            0.05,
+            0.59,
+            0.33,
+            0.764
+          ],
+          "position": "tier 1, 3 from the right below the oval"
+        },
+        {
+          "bbox": [
+            0.515,
+            0.776,
+            0.95,
+            0.95
+          ],
+          "position": "tier 2, 1 from the right below the oval"
+        },
+        {
+          "bbox": [
+            0.05,
+            0.776,
+            0.485,
+            0.95
+          ],
+          "position": "tier 2, 2 from the right below the oval"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_special_03",
+      "name": "6コマ・特殊03・大ひし形と右の小コマ列",
+      "name_en": "6 panels · Special 03 · large diamond with small panels on the right",
+      "panels": [
+        {
+          "bbox": [
+            0.69,
+            0.04,
+            0.96,
+            0.204
+          ],
+          "position": "small right-column panel 1"
+        },
+        {
+          "bbox": [
+            0.69,
+            0.229,
+            0.96,
+            0.393
+          ],
+          "position": "small right-column panel 2"
+        },
+        {
+          "bbox": [
+            0.69,
+            0.418,
+            0.96,
+            0.582
+          ],
+          "position": "small right-column panel 3"
+        },
+        {
+          "bbox": [
+            0.69,
+            0.607,
+            0.96,
+            0.771
+          ],
+          "position": "small right-column panel 4"
+        },
+        {
+          "bbox": [
+            0.69,
+            0.796,
+            0.96,
+            0.96
+          ],
+          "position": "small right-column panel 5"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.62,
+            0.96
+          ],
+          "position": "large left diamond panel"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_special_04",
+      "name": "6コマ・特殊04・大コマと楕円の重ね小コマ",
+      "name_en": "6 panels · Special 04 · large panel with overlaid oval panels",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.96
+          ],
+          "position": "large full-page background panel"
+        },
+        {
+          "bbox": [
+            0.67,
+            0.4006,
+            0.93,
+            0.6384
+          ],
+          "position": "tier 1, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.37,
+            0.4006,
+            0.63,
+            0.6384
+          ],
+          "position": "tier 1, 2 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.4006,
+            0.33,
+            0.6384
+          ],
+          "position": "tier 1, 3 from the right inset"
+        },
+        {
+          "bbox": [
+            0.52,
+            0.6616,
+            0.93,
+            0.8994
+          ],
+          "position": "tier 2, 1 from the right inset"
+        },
+        {
+          "bbox": [
+            0.07,
+            0.6616,
+            0.48,
+            0.8994
+          ],
+          "position": "tier 2, 2 from the right inset"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_special_05",
+      "name": "6コマ・特殊05・階段状の浮かぶコマ",
+      "name_en": "6 panels · Special 05 · floating staircase panels",
+      "panels": [
+        {
+          "bbox": [
+            0.06,
+            0.04,
+            0.66,
+            0.153467
+          ],
+          "position": "floating card 1 descending the page"
+        },
+        {
+          "bbox": [
+            0.34,
+            0.193333,
+            0.94,
+            0.3068
+          ],
+          "position": "floating card 2 descending the page"
+        },
+        {
+          "bbox": [
+            0.06,
+            0.346667,
+            0.66,
+            0.460133
+          ],
+          "position": "floating card 3 descending the page"
+        },
+        {
+          "bbox": [
+            0.34,
+            0.5,
+            0.94,
+            0.613467
+          ],
+          "position": "floating card 4 descending the page"
+        },
+        {
+          "bbox": [
+            0.06,
+            0.653333,
+            0.66,
+            0.7668
+          ],
+          "position": "floating card 5 descending the page"
+        },
+        {
+          "bbox": [
+            0.34,
+            0.806667,
+            0.94,
+            0.920133
+          ],
+          "position": "floating card 6 descending the page"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_special_06",
+      "name": "6コマ・特殊06・大縦長と浮かぶ右小コマ",
+      "name_en": "6 panels · Special 06 · tall panel with a floating small panel on the right",
+      "panels": [
+        {
+          "bbox": [
+            0.66,
+            0.04,
+            0.96,
+            0.204
+          ],
+          "position": "1 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.229,
+            0.96,
+            0.393
+          ],
+          "position": "2 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.418,
+            0.96,
+            0.582
+          ],
+          "position": "3 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.607,
+            0.96,
+            0.771
+          ],
+          "position": "4 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.66,
+            0.796,
+            0.96,
+            0.96
+          ],
+          "position": "5 small panel in the right column"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.08,
+            0.6,
+            0.92
+          ],
+          "position": "large tall main panel on the left"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_straight_01",
+      "name": "6コマ・直線01・1／1／1／1／1／1配置",
+      "name_en": "6 panels · Straight 01 · 1/1/1/1/1/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.1725
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.1975,
+            0.96,
+            0.33
+          ],
+          "position": "tier 2, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.96,
+            0.4875
+          ],
+          "position": "tier 3, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.5125,
+            0.96,
+            0.645
+          ],
+          "position": "tier 4, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.96,
+            0.8025
+          ],
+          "position": "tier 5, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.8275,
+            0.96,
+            0.96
+          ],
+          "position": "tier 6, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_straight_02",
+      "name": "6コマ・直線02・2／2／2配置",
+      "name_en": "6 panels · Straight 02 · 2/2/2 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.5125,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.4875,
+            0.33
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.4875,
+            0.645
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.4875,
+            0.96
+          ],
+          "position": "tier 3, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_straight_03",
+      "name": "6コマ・直線03・3／3配置",
+      "name_en": "6 panels · Straight 03 · 3/3 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.67,
+            0.04,
+            0.96,
+            0.4875
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.355,
+            0.04,
+            0.645,
+            0.4875
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.33,
+            0.4875
+          ],
+          "position": "tier 1, 3 from the right"
+        },
+        {
+          "bbox": [
+            0.67,
+            0.5125,
+            0.96,
+            0.96
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.355,
+            0.5125,
+            0.645,
+            0.96
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.5125,
+            0.33,
+            0.96
+          ],
+          "position": "tier 2, 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_straight_04",
+      "name": "6コマ・直線04・1／2／3配置",
+      "name_en": "6 panels · Straight 04 · 1/2/3 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.4875,
+            0.645
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.67,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.355,
+            0.67,
+            0.645,
+            0.96
+          ],
+          "position": "tier 3, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.33,
+            0.96
+          ],
+          "position": "tier 3, 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_straight_05",
+      "name": "6コマ・直線05・3／2／1配置",
+      "name_en": "6 panels · Straight 05 · 3/2/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.67,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.355,
+            0.04,
+            0.645,
+            0.33
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.33,
+            0.33
+          ],
+          "position": "tier 1, 3 from the right"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.4875,
+            0.645
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_straight_06",
+      "name": "6コマ・直線06・1／4／1配置",
+      "name_en": "6 panels · Straight 06 · 1/4/1 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.96,
+            0.33
+          ],
+          "position": "tier 1, full-width"
+        },
+        {
+          "bbox": [
+            0.74875,
+            0.355,
+            0.96,
+            0.645
+          ],
+          "position": "tier 2, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.355,
+            0.72375,
+            0.645
+          ],
+          "position": "tier 2, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.27625,
+            0.355,
+            0.4875,
+            0.645
+          ],
+          "position": "tier 2, 3 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.355,
+            0.25125,
+            0.645
+          ],
+          "position": "tier 2, 4 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.67,
+            0.96,
+            0.96
+          ],
+          "position": "tier 3, full-width"
+        }
+      ]
+    },
+    {
+      "id": "catalog_6_straight_07",
+      "name": "6コマ・直線07・2／1／1／2配置",
+      "name_en": "6 panels · Straight 07 · 2/1/1/2 arrangement",
+      "panels": [
+        {
+          "bbox": [
+            0.5125,
+            0.04,
+            0.96,
+            0.25125
+          ],
+          "position": "tier 1, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.04,
+            0.4875,
+            0.25125
+          ],
+          "position": "tier 1, 2 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.27625,
+            0.96,
+            0.4875
+          ],
+          "position": "tier 2, full-width"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.5125,
+            0.96,
+            0.72375
+          ],
+          "position": "tier 3, full-width"
+        },
+        {
+          "bbox": [
+            0.5125,
+            0.74875,
+            0.96,
+            0.96
+          ],
+          "position": "tier 4, 1 from the right"
+        },
+        {
+          "bbox": [
+            0.04,
+            0.74875,
+            0.4875,
+            0.96
+          ],
+          "position": "tier 4, 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_01",
+      "name": "2コマ・通常01・上下2段・上24％",
+      "name_en": "2 panels · Standard 01 · two tiers, top 24%",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.25692
+          ],
+          "position": "upper panel"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.28392,
+            0.955,
+            0.955
+          ],
+          "position": "lower panel"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_02",
+      "name": "2コマ・通常02・上下2段・上30％",
+      "name_en": "2 panels · Standard 02 · two tiers, top 30%",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.305485
+          ],
+          "position": "upper panel, occupying x=4.5% to 95.5% and y=4.5% to 30.5% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.332485,
+            0.955,
+            0.955
+          ],
+          "position": "lower panel, occupying x=4.5% to 95.5% and y=33.2% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_03",
+      "name": "2コマ・通常03・上下2段・上35％",
+      "name_en": "2 panels · Standard 03 · two tiers, top 35%",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.35405
+          ],
+          "position": "upper panel, occupying x=4.5% to 95.5% and y=4.5% to 35.4% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.38105,
+            0.955,
+            0.955
+          ],
+          "position": "lower panel, occupying x=4.5% to 95.5% and y=38.1% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_04",
+      "name": "2コマ・通常04・上下2段・上40％",
+      "name_en": "2 panels · Standard 04 · two tiers, top 40%",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.402615
+          ],
+          "position": "upper panel, occupying x=4.5% to 95.5% and y=4.5% to 40.3% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.429615,
+            0.955,
+            0.955
+          ],
+          "position": "lower panel, occupying x=4.5% to 95.5% and y=43.0% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_05",
+      "name": "2コマ・通常05・上下2段・上46％",
+      "name_en": "2 panels · Standard 05 · two tiers, top 46%",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.45118
+          ],
+          "position": "upper panel, occupying x=4.5% to 95.5% and y=4.5% to 45.1% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.47818,
+            0.955,
+            0.955
+          ],
+          "position": "lower panel, occupying x=4.5% to 95.5% and y=47.8% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_06",
+      "name": "2コマ・通常06・上下2段・上52％",
+      "name_en": "2 panels · Standard 06 · two tiers, top 52%",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.499745
+          ],
+          "position": "upper panel"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.526745,
+            0.955,
+            0.955
+          ],
+          "position": "lower panel"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_07",
+      "name": "2コマ・通常07・上下2段・上57％",
+      "name_en": "2 panels · Standard 07 · two tiers, top 57%",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.54831
+          ],
+          "position": "upper panel, occupying x=4.5% to 95.5% and y=4.5% to 54.8% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.57531,
+            0.955,
+            0.955
+          ],
+          "position": "lower panel, occupying x=4.5% to 95.5% and y=57.5% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_08",
+      "name": "2コマ・通常08・上下2段・上62％",
+      "name_en": "2 panels · Standard 08 · two tiers, top 62%",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.596875
+          ],
+          "position": "upper panel, occupying x=4.5% to 95.5% and y=4.5% to 59.7% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.623875,
+            0.955,
+            0.955
+          ],
+          "position": "lower panel, occupying x=4.5% to 95.5% and y=62.4% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_09",
+      "name": "2コマ・通常09・上下2段・上68％",
+      "name_en": "2 panels · Standard 09 · two tiers, top 68%",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.64544
+          ],
+          "position": "upper panel, occupying x=4.5% to 95.5% and y=4.5% to 64.5% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.67244,
+            0.955,
+            0.955
+          ],
+          "position": "lower panel, occupying x=4.5% to 95.5% and y=67.2% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_10",
+      "name": "2コマ・通常10・上下2段・上74％",
+      "name_en": "2 panels · Standard 10 · two tiers, top 74%",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.694005
+          ],
+          "position": "upper panel, occupying x=4.5% to 95.5% and y=4.5% to 69.4% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.721005,
+            0.955,
+            0.955
+          ],
+          "position": "lower panel, occupying x=4.5% to 95.5% and y=72.1% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_11",
+      "name": "2コマ・通常11・左右2列・右24％",
+      "name_en": "2 panels · Standard 11 · two columns, right 24%",
+      "panels": [
+        {
+          "bbox": [
+            0.74308,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "right panel"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.71608,
+            0.955
+          ],
+          "position": "left panel"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_12",
+      "name": "2コマ・通常12・左右2列・右30％",
+      "name_en": "2 panels · Standard 12 · two columns, right 30%",
+      "panels": [
+        {
+          "bbox": [
+            0.694515,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "right panel, occupying x=69.5% to 95.5% and y=4.5% to 95.5% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.667515,
+            0.955
+          ],
+          "position": "left panel, occupying x=4.5% to 66.8% and y=4.5% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_13",
+      "name": "2コマ・通常13・左右2列・右35％",
+      "name_en": "2 panels · Standard 13 · two columns, right 35%",
+      "panels": [
+        {
+          "bbox": [
+            0.64595,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "right panel, occupying x=64.6% to 95.5% and y=4.5% to 95.5% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.61895,
+            0.955
+          ],
+          "position": "left panel, occupying x=4.5% to 61.9% and y=4.5% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_14",
+      "name": "2コマ・通常14・左右2列・右40％",
+      "name_en": "2 panels · Standard 14 · two columns, right 40%",
+      "panels": [
+        {
+          "bbox": [
+            0.597385,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "right panel"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.570385,
+            0.955
+          ],
+          "position": "left panel"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_15",
+      "name": "2コマ・通常15・左右2列・右46％",
+      "name_en": "2 panels · Standard 15 · two columns, right 46%",
+      "panels": [
+        {
+          "bbox": [
+            0.54882,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "right panel"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.52182,
+            0.955
+          ],
+          "position": "left panel"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_16",
+      "name": "2コマ・通常16・左右2列・右52％",
+      "name_en": "2 panels · Standard 16 · two columns, right 52%",
+      "panels": [
+        {
+          "bbox": [
+            0.500255,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "right panel"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.473255,
+            0.955
+          ],
+          "position": "left panel"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_17",
+      "name": "2コマ・通常17・左右2列・右57％",
+      "name_en": "2 panels · Standard 17 · two columns, right 57%",
+      "panels": [
+        {
+          "bbox": [
+            0.45169,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "right panel"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.42469,
+            0.955
+          ],
+          "position": "left panel"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_18",
+      "name": "2コマ・通常18・左右2列・右62％",
+      "name_en": "2 panels · Standard 18 · two columns, right 62%",
+      "panels": [
+        {
+          "bbox": [
+            0.403125,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "right panel"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.376125,
+            0.955
+          ],
+          "position": "left panel"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_19",
+      "name": "2コマ・通常19・左右2列・右68％",
+      "name_en": "2 panels · Standard 19 · two columns, right 68%",
+      "panels": [
+        {
+          "bbox": [
+            0.35456,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "right panel, occupying x=35.5% to 95.5% and y=4.5% to 95.5% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.32756,
+            0.955
+          ],
+          "position": "left panel, occupying x=4.5% to 32.8% and y=4.5% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_2_20",
+      "name": "2コマ・通常20・左右2列・右74％",
+      "name_en": "2 panels · Standard 20 · two columns, right 74%",
+      "panels": [
+        {
+          "bbox": [
+            0.305995,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "right panel, occupying x=30.6% to 95.5% and y=4.5% to 95.5% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.278995,
+            0.955
+          ],
+          "position": "left panel, occupying x=4.5% to 27.9% and y=4.5% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_01",
+      "name": "3コマ・通常01・1／1／1段組",
+      "name_en": "3 panels · Standard 01 · 1/1/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_02",
+      "name": "3コマ・通常02・1／2段組",
+      "name_en": "3 panels · Standard 02 · 1/2 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.5135,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.4865,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_03",
+      "name": "3コマ・通常03・2／1段組",
+      "name_en": "3 panels · Standard 03 · 2/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.5135,
+            0.045,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.4865,
+            0.4865
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_04",
+      "name": "3コマ・通常04・3段組",
+      "name_en": "3 panels · Standard 04 · 3 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.669667,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.357333,
+            0.045,
+            0.642667,
+            0.955
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.330333,
+            0.955
+          ],
+          "position": "tier 1, panel 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_05",
+      "name": "3コマ・通常05・1／1／1段組・強調コマあり",
+      "name_en": "3 panels · Standard 05 · 1/1/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.425444
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.452444,
+            0.955,
+            0.690222
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.717222,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_06",
+      "name": "3コマ・通常06・1／2段組・強調コマあり",
+      "name_en": "3 panels · Standard 06 · 1/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.588385
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.615385,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.615385,
+            0.588385,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_07",
+      "name": "3コマ・通常07・2／1段組・強調コマあり",
+      "name_en": "3 panels · Standard 07 · 2/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.411615,
+            0.045,
+            0.955,
+            0.588385
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.384615,
+            0.588385
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.615385,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_08",
+      "name": "3コマ・通常08・3段組・強調コマあり",
+      "name_en": "3 panels · Standard 08 · 3 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.574556,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "tier 1, panel 1 from the right, occupying x=57.5% to 95.5% and y=4.5% to 95.5% of the page"
+        },
+        {
+          "bbox": [
+            0.309778,
+            0.045,
+            0.547556,
+            0.955
+          ],
+          "position": "tier 1, panel 2 from the right, occupying x=31.0% to 54.8% and y=4.5% to 95.5% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.282778,
+            0.955
+          ],
+          "position": "tier 1, panel 3 from the right, occupying x=4.5% to 28.3% and y=4.5% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_09",
+      "name": "3コマ・通常09・1／1／1段組・強調コマあり",
+      "name_en": "3 panels · Standard 09 · 1/1/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.267338
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.294338,
+            0.955,
+            0.705662
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.732662,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_10",
+      "name": "3コマ・通常10・1／2段組・強調コマあり",
+      "name_en": "3 panels · Standard 10 · 1/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.354825
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.381825,
+            0.381825,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.381825,
+            0.354825,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_11",
+      "name": "3コマ・通常11・2／1段組・強調コマあり",
+      "name_en": "3 panels · Standard 11 · 2/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.645175,
+            0.045,
+            0.955,
+            0.354825
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.618175,
+            0.354825
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.381825,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_12",
+      "name": "3コマ・通常12・3段組・強調コマあり",
+      "name_en": "3 panels · Standard 12 · 3 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.732662,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "tier 1, panel 1 from the right, occupying x=73.3% to 95.5% and y=4.5% to 95.5% of the page"
+        },
+        {
+          "bbox": [
+            0.294338,
+            0.045,
+            0.705662,
+            0.955
+          ],
+          "position": "tier 1, panel 2 from the right, occupying x=29.4% to 70.6% and y=4.5% to 95.5% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.267338,
+            0.955
+          ],
+          "position": "tier 1, panel 3 from the right, occupying x=4.5% to 26.7% and y=4.5% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_13",
+      "name": "3コマ・通常13・1／1／1段組・強調コマあり",
+      "name_en": "3 panels · Standard 13 · 1/1/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.25378
+          ],
+          "position": "tier 1, panel 1 from the right, occupying x=4.5% to 95.5% and y=4.5% to 25.4% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.28078,
+            0.955,
+            0.489561
+          ],
+          "position": "tier 2, panel 1 from the right, occupying x=4.5% to 95.5% and y=28.1% to 49.0% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.516561,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right, occupying x=4.5% to 95.5% and y=51.7% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_14",
+      "name": "3コマ・通常14・1／2段組・強調コマあり",
+      "name_en": "3 panels · Standard 14 · 1/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.643161
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.670161,
+            0.670161,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.670161,
+            0.643161,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_15",
+      "name": "3コマ・通常15・2／1段組・強調コマあり",
+      "name_en": "3 panels · Standard 15 · 2/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.356839,
+            0.045,
+            0.955,
+            0.643161
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.329839,
+            0.643161
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.670161,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_16",
+      "name": "3コマ・通常16・3段組・強調コマあり",
+      "name_en": "3 panels · Standard 16 · 3 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.74622,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "tier 1, panel 1 from the right, occupying x=74.6% to 95.5% and y=4.5% to 95.5% of the page"
+        },
+        {
+          "bbox": [
+            0.510439,
+            0.045,
+            0.71922,
+            0.955
+          ],
+          "position": "tier 1, panel 2 from the right, occupying x=51.0% to 71.9% and y=4.5% to 95.5% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.483439,
+            0.955
+          ],
+          "position": "tier 1, panel 3 from the right, occupying x=4.5% to 48.3% and y=4.5% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_17",
+      "name": "3コマ・通常17・1／1／1段組・強調コマあり",
+      "name_en": "3 panels · Standard 17 · 1/1/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.507437
+          ],
+          "position": "tier 1, panel 1 from the right, occupying x=4.5% to 95.5% and y=4.5% to 50.7% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.534437,
+            0.955,
+            0.731218
+          ],
+          "position": "tier 2, panel 1 from the right, occupying x=4.5% to 95.5% and y=53.4% to 73.1% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.758218,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right, occupying x=4.5% to 95.5% and y=75.8% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_18",
+      "name": "3コマ・通常18・1／2段組・強調コマあり",
+      "name_en": "3 panels · Standard 18 · 1/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.308582
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.335582,
+            0.335582,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.335582,
+            0.308582,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_19",
+      "name": "3コマ・通常19・2／1段組・強調コマあり",
+      "name_en": "3 panels · Standard 19 · 2/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.691418,
+            0.045,
+            0.955,
+            0.308582
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.664418,
+            0.308582
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.335582,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_3_20",
+      "name": "3コマ・通常20・3段組・強調コマあり",
+      "name_en": "3 panels · Standard 20 · 3 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.492563,
+            0.045,
+            0.955,
+            0.955
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.268782,
+            0.045,
+            0.465563,
+            0.955
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.241782,
+            0.955
+          ],
+          "position": "tier 1, panel 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_01",
+      "name": "4コマ・通常01・1／1／1／1段組",
+      "name_en": "4 panels · Standard 01 · 1/1/1/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.25225
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.27925,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.955,
+            0.72075
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.74775,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_02",
+      "name": "4コマ・通常02・2／2段組",
+      "name_en": "4 panels · Standard 02 · 2/2 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.5135,
+            0.045,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.4865,
+            0.4865
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.5135,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.4865,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_03",
+      "name": "4コマ・通常03・1／2／1段組",
+      "name_en": "4 panels · Standard 03 · 1/2/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.357333,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.4865,
+            0.642667
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_04",
+      "name": "4コマ・通常04・2／1／1段組",
+      "name_en": "4 panels · Standard 04 · 2/1/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.5135,
+            0.045,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.4865,
+            0.330333
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_05",
+      "name": "4コマ・通常05・1／1／2段組",
+      "name_en": "4 panels · Standard 05 · 1/1/2 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.669667,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.4865,
+            0.955
+          ],
+          "position": "tier 3, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_06",
+      "name": "4コマ・通常06・1／3段組",
+      "name_en": "4 panels · Standard 06 · 1/3 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.669667,
+            0.5135,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.357333,
+            0.5135,
+            0.642667,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.330333,
+            0.955
+          ],
+          "position": "tier 2, panel 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_07",
+      "name": "4コマ・通常07・3／1段組",
+      "name_en": "4 panels · Standard 07 · 3/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.669667,
+            0.045,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.357333,
+            0.045,
+            0.642667,
+            0.4865
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.330333,
+            0.4865
+          ],
+          "position": "tier 1, panel 3 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_08",
+      "name": "4コマ・通常08・1／1／1／1段組・強調コマあり",
+      "name_en": "4 panels · Standard 08 · 1/1/1/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.333348
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.360348,
+            0.955,
+            0.540565
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.567565,
+            0.955,
+            0.747783
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.774783,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_09",
+      "name": "4コマ・通常09・2／2段組・強調コマあり",
+      "name_en": "4 panels · Standard 09 · 2/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.411615,
+            0.045,
+            0.955,
+            0.588385
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.384615,
+            0.588385
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.615385,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.615385,
+            0.588385,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_10",
+      "name": "4コマ・通常10・1／2／1段組・強調コマあり",
+      "name_en": "4 panels · Standard 10 · 1/2/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.425444
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.452444,
+            0.955,
+            0.690222
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.452444,
+            0.588385,
+            0.690222
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.717222,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_11",
+      "name": "4コマ・通常11・2／1／1段組・強調コマあり",
+      "name_en": "4 panels · Standard 11 · 2/1/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.411615,
+            0.045,
+            0.955,
+            0.425444
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.384615,
+            0.425444
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.452444,
+            0.955,
+            0.690222
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.717222,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_12",
+      "name": "4コマ・通常12・1／1／2段組・強調コマあり",
+      "name_en": "4 panels · Standard 12 · 1/1/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.425444
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.452444,
+            0.955,
+            0.690222
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.411615,
+            0.717222,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.717222,
+            0.384615,
+            0.955
+          ],
+          "position": "tier 3, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_13",
+      "name": "4コマ・通常13・1／3段組・強調コマあり",
+      "name_en": "4 panels · Standard 13 · 1/3 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.588385
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.717222,
+            0.615385,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.309778,
+            0.615385,
+            0.690222,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.615385,
+            0.282778,
+            0.955
+          ],
+          "position": "tier 2, panel 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_14",
+      "name": "4コマ・通常14・3／1段組・強調コマあり",
+      "name_en": "4 panels · Standard 14 · 3/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.574556,
+            0.045,
+            0.955,
+            0.588385
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.309778,
+            0.045,
+            0.547556,
+            0.588385
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.282778,
+            0.588385
+          ],
+          "position": "tier 1, panel 3 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.615385,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_15",
+      "name": "4コマ・通常15・1／1／1／1段組・強調コマあり",
+      "name_en": "4 panels · Standard 15 · 1/1/1/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.215928
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.242928,
+            0.955,
+            0.559144
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.586144,
+            0.955,
+            0.757072
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.784072,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_16",
+      "name": "4コマ・通常16・2／2段組・強調コマあり",
+      "name_en": "4 panels · Standard 16 · 2/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.645175,
+            0.045,
+            0.955,
+            0.354825
+          ],
+          "position": "tier 1, panel 1 from the right, occupying x=64.5% to 95.5% and y=4.5% to 35.5% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.618175,
+            0.354825
+          ],
+          "position": "tier 1, panel 2 from the right, occupying x=4.5% to 61.8% and y=4.5% to 35.5% of the page"
+        },
+        {
+          "bbox": [
+            0.381825,
+            0.381825,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right, occupying x=38.2% to 95.5% and y=38.2% to 95.5% of the page"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.381825,
+            0.354825,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right, occupying x=4.5% to 35.5% and y=38.2% to 95.5% of the page"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_17",
+      "name": "4コマ・通常17・1／2／1段組・強調コマあり",
+      "name_en": "4 panels · Standard 17 · 1/2/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.267338
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.381825,
+            0.294338,
+            0.955,
+            0.705662
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.294338,
+            0.354825,
+            0.705662
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.732662,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_18",
+      "name": "4コマ・通常18・2／1／1段組・強調コマあり",
+      "name_en": "4 panels · Standard 18 · 2/1/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.645175,
+            0.045,
+            0.955,
+            0.267338
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.618175,
+            0.267338
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.294338,
+            0.955,
+            0.705662
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.732662,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_19",
+      "name": "4コマ・通常19・1／1／2段組・強調コマあり",
+      "name_en": "4 panels · Standard 19 · 1/1/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.267338
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.294338,
+            0.955,
+            0.705662
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.645175,
+            0.732662,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.732662,
+            0.618175,
+            0.955
+          ],
+          "position": "tier 3, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_4_20",
+      "name": "4コマ・通常20・1／3段組・強調コマあり",
+      "name_en": "4 panels · Standard 20 · 1/3 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.354825
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.732662,
+            0.381825,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.483325,
+            0.381825,
+            0.705662,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.381825,
+            0.456325,
+            0.955
+          ],
+          "position": "tier 2, panel 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_01",
+      "name": "5コマ・通常01・1／2／2段組",
+      "name_en": "5 panels · Standard 01 · 1/2/2 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.357333,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.4865,
+            0.642667
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.669667,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.4865,
+            0.955
+          ],
+          "position": "tier 3, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_02",
+      "name": "5コマ・通常02・2／1／2段組",
+      "name_en": "5 panels · Standard 02 · 2/1/2 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.5135,
+            0.045,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.4865,
+            0.330333
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.669667,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.4865,
+            0.955
+          ],
+          "position": "tier 3, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_03",
+      "name": "5コマ・通常03・2／2／1段組",
+      "name_en": "5 panels · Standard 03 · 2/2/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.5135,
+            0.045,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.4865,
+            0.330333
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.357333,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.4865,
+            0.642667
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_04",
+      "name": "5コマ・通常04・1／1／1／2段組",
+      "name_en": "5 panels · Standard 04 · 1/1/1/2 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.25225
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.27925,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.955,
+            0.72075
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.74775,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.74775,
+            0.4865,
+            0.955
+          ],
+          "position": "tier 4, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_05",
+      "name": "5コマ・通常05・1／2／1／1段組",
+      "name_en": "5 panels · Standard 05 · 1/2/1/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.25225
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.27925,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.27925,
+            0.4865,
+            0.4865
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.955,
+            0.72075
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.74775,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_06",
+      "name": "5コマ・通常06・2／1／1／1段組",
+      "name_en": "5 panels · Standard 06 · 2/1/1/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.5135,
+            0.045,
+            0.955,
+            0.25225
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.4865,
+            0.25225
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.27925,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.955,
+            0.72075
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.74775,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_07",
+      "name": "5コマ・通常07・1／1／2／1段組",
+      "name_en": "5 panels · Standard 07 · 1/1/2/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.25225
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.27925,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.5135,
+            0.955,
+            0.72075
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.4865,
+            0.72075
+          ],
+          "position": "tier 3, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.74775,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_08",
+      "name": "5コマ・通常08・1／3／1段組",
+      "name_en": "5 panels · Standard 08 · 1/3/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.669667,
+            0.357333,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.357333,
+            0.357333,
+            0.642667,
+            0.642667
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.330333,
+            0.642667
+          ],
+          "position": "tier 2, panel 3 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_09",
+      "name": "5コマ・通常09・2／3段組",
+      "name_en": "5 panels · Standard 09 · 2/3 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.5135,
+            0.045,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.4865,
+            0.4865
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.669667,
+            0.5135,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.357333,
+            0.5135,
+            0.642667,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.330333,
+            0.955
+          ],
+          "position": "tier 2, panel 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_10",
+      "name": "5コマ・通常10・3／2段組",
+      "name_en": "5 panels · Standard 10 · 3/2 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.669667,
+            0.045,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.357333,
+            0.045,
+            0.642667,
+            0.4865
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.330333,
+            0.4865
+          ],
+          "position": "tier 1, panel 3 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.5135,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.4865,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_11",
+      "name": "5コマ・通常11・1／1／1／1／1段組",
+      "name_en": "5 panels · Standard 11 · 1/1/1/1/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.2054
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.2324,
+            0.955,
+            0.3928
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.4198,
+            0.955,
+            0.5802
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.6072,
+            0.955,
+            0.7676
+          ],
+          "position": "tier 4, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.7946,
+            0.955,
+            0.955
+          ],
+          "position": "tier 5, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_12",
+      "name": "5コマ・通常12・1／2／2段組・強調コマあり",
+      "name_en": "5 panels · Standard 12 · 1/2/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.425444
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.452444,
+            0.955,
+            0.690222
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.452444,
+            0.588385,
+            0.690222
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.411615,
+            0.717222,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.717222,
+            0.384615,
+            0.955
+          ],
+          "position": "tier 3, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_13",
+      "name": "5コマ・通常13・2／1／2段組・強調コマあり",
+      "name_en": "5 panels · Standard 13 · 2/1/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.411615,
+            0.045,
+            0.955,
+            0.425444
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.384615,
+            0.425444
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.452444,
+            0.955,
+            0.690222
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.411615,
+            0.717222,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.717222,
+            0.384615,
+            0.955
+          ],
+          "position": "tier 3, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_14",
+      "name": "5コマ・通常14・2／2／1段組・強調コマあり",
+      "name_en": "5 panels · Standard 14 · 2/2/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.411615,
+            0.045,
+            0.955,
+            0.425444
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.384615,
+            0.425444
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.452444,
+            0.955,
+            0.690222
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.452444,
+            0.588385,
+            0.690222
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.717222,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_15",
+      "name": "5コマ・通常15・1／1／1／2段組・強調コマあり",
+      "name_en": "5 panels · Standard 15 · 1/1/1/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.333348
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.360348,
+            0.955,
+            0.540565
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.567565,
+            0.955,
+            0.747783
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.774783,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.774783,
+            0.588385,
+            0.955
+          ],
+          "position": "tier 4, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_16",
+      "name": "5コマ・通常16・1／2／1／1段組・強調コマあり",
+      "name_en": "5 panels · Standard 16 · 1/2/1/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.333348
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.360348,
+            0.955,
+            0.540565
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.360348,
+            0.588385,
+            0.540565
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.567565,
+            0.955,
+            0.747783
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.774783,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_17",
+      "name": "5コマ・通常17・2／1／1／1段組・強調コマあり",
+      "name_en": "5 panels · Standard 17 · 2/1/1/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.411615,
+            0.045,
+            0.955,
+            0.333348
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.384615,
+            0.333348
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.360348,
+            0.955,
+            0.540565
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.567565,
+            0.955,
+            0.747783
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.774783,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_18",
+      "name": "5コマ・通常18・1／1／2／1段組・強調コマあり",
+      "name_en": "5 panels · Standard 18 · 1/1/2/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.333348
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.360348,
+            0.955,
+            0.540565
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.411615,
+            0.567565,
+            0.955,
+            0.747783
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.567565,
+            0.384615,
+            0.747783
+          ],
+          "position": "tier 3, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.774783,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_19",
+      "name": "5コマ・通常19・1／3／1段組・強調コマあり",
+      "name_en": "5 panels · Standard 19 · 1/3/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.425444
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.717222,
+            0.452444,
+            0.955,
+            0.690222
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.309778,
+            0.452444,
+            0.690222,
+            0.690222
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.452444,
+            0.282778,
+            0.690222
+          ],
+          "position": "tier 2, panel 3 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.717222,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_5_20",
+      "name": "5コマ・通常20・2／3段組・強調コマあり",
+      "name_en": "5 panels · Standard 20 · 2/3 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.411615,
+            0.045,
+            0.955,
+            0.588385
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.384615,
+            0.588385
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.717222,
+            0.615385,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.309778,
+            0.615385,
+            0.690222,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.615385,
+            0.282778,
+            0.955
+          ],
+          "position": "tier 2, panel 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_01",
+      "name": "6コマ・通常01・2／2／2段組",
+      "name_en": "6 panels · Standard 01 · 2/2/2 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.5135,
+            0.045,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.4865,
+            0.330333
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.357333,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.4865,
+            0.642667
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.669667,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.4865,
+            0.955
+          ],
+          "position": "tier 3, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_02",
+      "name": "6コマ・通常02・1／2／3段組",
+      "name_en": "6 panels · Standard 02 · 1/2/3 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.357333,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.4865,
+            0.642667
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.669667,
+            0.669667,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.357333,
+            0.669667,
+            0.642667,
+            0.955
+          ],
+          "position": "tier 3, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.330333,
+            0.955
+          ],
+          "position": "tier 3, panel 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_03",
+      "name": "6コマ・通常03・3／2／1段組",
+      "name_en": "6 panels · Standard 03 · 3/2/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.669667,
+            0.045,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.357333,
+            0.045,
+            0.642667,
+            0.330333
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.330333,
+            0.330333
+          ],
+          "position": "tier 1, panel 3 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.357333,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.4865,
+            0.642667
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_04",
+      "name": "6コマ・通常04・1／1／2／2段組",
+      "name_en": "6 panels · Standard 04 · 1/1/2/2 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.25225
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.27925,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.5135,
+            0.955,
+            0.72075
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.4865,
+            0.72075
+          ],
+          "position": "tier 3, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.74775,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.74775,
+            0.4865,
+            0.955
+          ],
+          "position": "tier 4, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_05",
+      "name": "6コマ・通常05・2／2／1／1段組",
+      "name_en": "6 panels · Standard 05 · 2/2/1/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.5135,
+            0.045,
+            0.955,
+            0.25225
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.4865,
+            0.25225
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.27925,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.27925,
+            0.4865,
+            0.4865
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.955,
+            0.72075
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.74775,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_06",
+      "name": "6コマ・通常06・2／1／2／1段組",
+      "name_en": "6 panels · Standard 06 · 2/1/2/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.5135,
+            0.045,
+            0.955,
+            0.25225
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.4865,
+            0.25225
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.27925,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.5135,
+            0.955,
+            0.72075
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.4865,
+            0.72075
+          ],
+          "position": "tier 3, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.74775,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_07",
+      "name": "6コマ・通常07・1／2／2／1段組",
+      "name_en": "6 panels · Standard 07 · 1/2/2/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.25225
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.27925,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.27925,
+            0.4865,
+            0.4865
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.5135,
+            0.955,
+            0.72075
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.4865,
+            0.72075
+          ],
+          "position": "tier 3, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.74775,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_08",
+      "name": "6コマ・通常08・1／1／1／1／2段組",
+      "name_en": "6 panels · Standard 08 · 1/1/1/1/2 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.2054
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.2324,
+            0.955,
+            0.3928
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.4198,
+            0.955,
+            0.5802
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.6072,
+            0.955,
+            0.7676
+          ],
+          "position": "tier 4, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.7946,
+            0.955,
+            0.955
+          ],
+          "position": "tier 5, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.7946,
+            0.4865,
+            0.955
+          ],
+          "position": "tier 5, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_09",
+      "name": "6コマ・通常09・1／1／1／2／1段組",
+      "name_en": "6 panels · Standard 09 · 1/1/1/2/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.2054
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.2324,
+            0.955,
+            0.3928
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.4198,
+            0.955,
+            0.5802
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.6072,
+            0.955,
+            0.7676
+          ],
+          "position": "tier 4, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.6072,
+            0.4865,
+            0.7676
+          ],
+          "position": "tier 4, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.7946,
+            0.955,
+            0.955
+          ],
+          "position": "tier 5, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_10",
+      "name": "6コマ・通常10・1／1／2／1／1段組",
+      "name_en": "6 panels · Standard 10 · 1/1/2/1/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.2054
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.2324,
+            0.955,
+            0.3928
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.4198,
+            0.955,
+            0.5802
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.4198,
+            0.4865,
+            0.5802
+          ],
+          "position": "tier 3, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.6072,
+            0.955,
+            0.7676
+          ],
+          "position": "tier 4, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.7946,
+            0.955,
+            0.955
+          ],
+          "position": "tier 5, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_11",
+      "name": "6コマ・通常11・1／2／1／1／1段組",
+      "name_en": "6 panels · Standard 11 · 1/2/1/1/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.2054
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.5135,
+            0.2324,
+            0.955,
+            0.3928
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.2324,
+            0.4865,
+            0.3928
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.4198,
+            0.955,
+            0.5802
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.6072,
+            0.955,
+            0.7676
+          ],
+          "position": "tier 4, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.7946,
+            0.955,
+            0.955
+          ],
+          "position": "tier 5, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_12",
+      "name": "6コマ・通常12・2／1／1／1／1段組",
+      "name_en": "6 panels · Standard 12 · 2/1/1/1/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.5135,
+            0.045,
+            0.955,
+            0.2054
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.4865,
+            0.2054
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.2324,
+            0.955,
+            0.3928
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.4198,
+            0.955,
+            0.5802
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.6072,
+            0.955,
+            0.7676
+          ],
+          "position": "tier 4, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.7946,
+            0.955,
+            0.955
+          ],
+          "position": "tier 5, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_13",
+      "name": "6コマ・通常13・3／3段組",
+      "name_en": "6 panels · Standard 13 · 3/3 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.669667,
+            0.045,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.357333,
+            0.045,
+            0.642667,
+            0.4865
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.330333,
+            0.4865
+          ],
+          "position": "tier 1, panel 3 from the right"
+        },
+        {
+          "bbox": [
+            0.669667,
+            0.5135,
+            0.955,
+            0.955
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.357333,
+            0.5135,
+            0.642667,
+            0.955
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.330333,
+            0.955
+          ],
+          "position": "tier 2, panel 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_14",
+      "name": "6コマ・通常14・1／1／1／1／1／1段組",
+      "name_en": "6 panels · Standard 14 · 1/1/1/1/1/1 tiers",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.174167
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.201167,
+            0.955,
+            0.330333
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.357333,
+            0.955,
+            0.4865
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.5135,
+            0.955,
+            0.642667
+          ],
+          "position": "tier 4, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.669667,
+            0.955,
+            0.798833
+          ],
+          "position": "tier 5, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.825833,
+            0.955,
+            0.955
+          ],
+          "position": "tier 6, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_15",
+      "name": "6コマ・通常15・2／2／2段組・強調コマあり",
+      "name_en": "6 panels · Standard 15 · 2/2/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.411615,
+            0.045,
+            0.955,
+            0.425444
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.384615,
+            0.425444
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.452444,
+            0.955,
+            0.690222
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.452444,
+            0.588385,
+            0.690222
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.411615,
+            0.717222,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.717222,
+            0.384615,
+            0.955
+          ],
+          "position": "tier 3, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_16",
+      "name": "6コマ・通常16・1／2／3段組・強調コマあり",
+      "name_en": "6 panels · Standard 16 · 1/2/3 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.425444
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.452444,
+            0.955,
+            0.690222
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.452444,
+            0.588385,
+            0.690222
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.717222,
+            0.717222,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.452444,
+            0.717222,
+            0.690222,
+            0.955
+          ],
+          "position": "tier 3, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.717222,
+            0.425444,
+            0.955
+          ],
+          "position": "tier 3, panel 3 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_17",
+      "name": "6コマ・通常17・3／2／1段組・強調コマあり",
+      "name_en": "6 panels · Standard 17 · 3/2/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.574556,
+            0.045,
+            0.955,
+            0.425444
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.309778,
+            0.045,
+            0.547556,
+            0.425444
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.282778,
+            0.425444
+          ],
+          "position": "tier 1, panel 3 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.452444,
+            0.955,
+            0.690222
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.452444,
+            0.588385,
+            0.690222
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.717222,
+            0.955,
+            0.955
+          ],
+          "position": "tier 3, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_18",
+      "name": "6コマ・通常18・1／1／2／2段組・強調コマあり",
+      "name_en": "6 panels · Standard 18 · 1/1/2/2 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.955,
+            0.333348
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.360348,
+            0.955,
+            0.540565
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.411615,
+            0.567565,
+            0.955,
+            0.747783
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.567565,
+            0.384615,
+            0.747783
+          ],
+          "position": "tier 3, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.774783,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.774783,
+            0.588385,
+            0.955
+          ],
+          "position": "tier 4, panel 2 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_19",
+      "name": "6コマ・通常19・2／2／1／1段組・強調コマあり",
+      "name_en": "6 panels · Standard 19 · 2/2/1/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.411615,
+            0.045,
+            0.955,
+            0.333348
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.384615,
+            0.333348
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.615385,
+            0.360348,
+            0.955,
+            0.540565
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.360348,
+            0.588385,
+            0.540565
+          ],
+          "position": "tier 2, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.567565,
+            0.955,
+            0.747783
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.774783,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    },
+    {
+      "id": "normal_6_20",
+      "name": "6コマ・通常20・2／1／2／1段組・強調コマあり",
+      "name_en": "6 panels · Standard 20 · 2/1/2/1 tiers, with an emphasis panel",
+      "panels": [
+        {
+          "bbox": [
+            0.411615,
+            0.045,
+            0.955,
+            0.333348
+          ],
+          "position": "tier 1, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.045,
+            0.384615,
+            0.333348
+          ],
+          "position": "tier 1, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.360348,
+            0.955,
+            0.540565
+          ],
+          "position": "tier 2, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.411615,
+            0.567565,
+            0.955,
+            0.747783
+          ],
+          "position": "tier 3, panel 1 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.567565,
+            0.384615,
+            0.747783
+          ],
+          "position": "tier 3, panel 2 from the right"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.774783,
+            0.955,
+            0.955
+          ],
+          "position": "tier 4, panel 1 from the right"
+        }
+      ]
+    }
+  ]
+}
