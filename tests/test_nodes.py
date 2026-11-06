@@ -16,7 +16,7 @@ sys.modules[SPEC.name] = PACKAGE
 SPEC.loader.exec_module(PACKAGE)
 from ph3_manga_tests.fonts import load_font, resolve_font
 from ph3_manga_tests.lettering import _cells, layout_columns, ruby_spans, tatechuyoko
-from ph3_manga_tests.page import PH3MangaPage, PH3MangaPanel
+from ph3_manga_tests.page import PH3MangaPage, PH3MangaPanel, left_to_right_order
 from ph3_manga_tests.nodes import DATA, PH3MangaBalloonGuide, PH3MangaLayout, PH3MangaLettering, layouts
 
 
@@ -154,6 +154,18 @@ class PageTests(unittest.TestCase):
             x0, y0, x1, y1 = rows[panel]["bbox"]
             self.assertGreaterEqual(box["x"], x0 * 1024); self.assertLessEqual(box["x"] + box["width"], x1 * 1024)
             self.assertGreaterEqual(box["y"], y0 * 1536); self.assertLessEqual(box["y"] + box["height"], y1 * 1536)
+
+    def test_left_to_right_order_swaps_only_contents(self):
+        self.assertEqual(left_to_right_order(layouts()["normal_3_01"]), [0, 1, 2])
+        self.assertEqual(left_to_right_order(layouts()["normal_4_05"]), [0, 1, 3, 2])
+        img = torch.ones((1, 8, 8, 3))
+        panels = [self.panel("人物1のみ", scene=f"SCENE{i} 人物1.") for i in range(1, 5)]
+        kw = dict(コマ割り="normal_4_05", 人物1=img, コマ1=panels[0], コマ2=panels[1], コマ3=panels[2], コマ4=panels[3])
+        on = PH3MangaPage().build(**kw)[3]
+        off = PH3MangaPage().build(**kw, 左から埋める癖を補正=False)[3]
+        self.assertIn("Panel 3 (tier 3, panel 1 from the right): SCENE4", on)   # 見出しは番号順、中身は左から
+        self.assertIn("Panel 4 (tier 3, panel 2 from the right): SCENE3", on)
+        self.assertIn("Panel 3 (tier 3, panel 1 from the right): SCENE3", off)
 
     def test_validation(self):
         img = torch.ones((1, 8, 8, 3))

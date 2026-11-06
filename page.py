@@ -147,9 +147,24 @@ non_diegetic_music:
 N/A"""
 
 
-def compile_page(row, present, panels):
+def left_to_right_order(row):
+    """コマ番号（右から読む順）を、段ごとに左から数えた順に並べたもの。段は縦の範囲が半分以上重なるコマどうし。"""
+    boxes = [p["bbox"] for p in row["panels"]]
+    tiers = []
+    for i in sorted(range(len(boxes)), key=lambda i: (boxes[i][1] + boxes[i][3]) / 2):
+        y0, y1 = boxes[i][1], boxes[i][3]
+        for tier in tiers:
+            t0, t1 = min(boxes[j][1] for j in tier), max(boxes[j][3] for j in tier)
+            if min(y1, t1) - max(y0, t0) > 0.5 * min(y1 - y0, t1 - t0):
+                tier.append(i); break
+        else:
+            tiers.append([i])
+    return [i for tier in tiers for i in sorted(tier, key=lambda i: boxes[i][0])]
+
+
+def compile_page(row, present, panels, ltr_order=True):
     labels = picture_labels(present)
-    body, balloons = [], []
+    contents, balloons = [], []
     for i, (spec, panel) in enumerate(zip(row["panels"], panels), 1):
         placed = place_balloons(spec["bbox"], panel["lines"])
         balloons += placed
@@ -162,7 +177,11 @@ def compile_page(row, present, panels):
                 talk += " Each speaker is drawn below their own balloon, which points to them with its tail."
         else:
             talk = " There is no balloon in this panel."
-        body.append(f"Panel {i} ({spec['position']}): {scene_text(panel['scene'], labels)}{cast}{talk}")
+        contents.append(f"{scene_text(panel['scene'], labels)}{cast}{talk}")
+    # P-H3 は k 番目の説明を「段ごとに左から数えて k 番目のコマ」に描く。見出し（番号と位置の言葉）は番号順のまま、
+    # 中身だけを左から数えた順に並べ替えて、右から読む順のコマへ正しく入るようにする（ltr_order）。
+    order = left_to_right_order(row) if ltr_order else list(range(len(panels)))
+    body = [f"Panel {i} ({spec['position']}): {contents[j]}" for i, (spec, j) in enumerate(zip(row["panels"], order), 1)]
     pictures = "\n".join(f"<Picture {n}> is the reference image of character {s[-1]}." for n, s in enumerate(present, 2))
     retention = "\n".join(f"<Picture {n}>: attribute_transfer - character {s[-1]}'s face, hairstyle and clothing." for n, s in enumerate(present, 2))
     prompt = TEMPLATE.format(panels=len(panels), balloons=len(balloons), pictures=pictures, retention=retention, body="\n".join(body))
@@ -179,6 +198,7 @@ class PH3MangaPage:
         }, "optional": {
             "人物2": ("IMAGE",), "人物3": ("IMAGE",),
             **{f"コマ{i}": ("PH3_MANGA_PANEL",) for i in (3, 4, 5, 6)},
+            "左から埋める癖を補正": ("BOOLEAN", {"default": True, "tooltip": "P-H3 は説明を段ごとに左のコマから描くため、同じ段に複数のコマがあると左右が入れ替わります。オンにすると、見出しはそのまま中身だけ並べ替えて渡します。"}),
         }}
 
     RETURN_TYPES = ("IMAGE", "INT", "INT", "STRING", "STRING", "IMAGE", "IMAGE", "IMAGE")
@@ -204,7 +224,7 @@ class PH3MangaPage:
             if missing:
                 raise ValueError(both(f"{i}コマ目の登場人物に{missing[0]}がいますが、{missing[0]}の画像がつながっていません。",
                                       f"Panel {i} uses {missing[0]}, but its image is not connected."))
-        prompt, balloons = compile_page(row, present, panels)
+        prompt, balloons = compile_page(row, present, panels, kw.get("左から埋める癖を補正", True))
         with Image.open(DATA / "layouts" / f"{row['id']}.webp") as source:
             page = torch.from_numpy(np.asarray(source.convert("RGB"), dtype=np.float32) / 255.0)[None]
         width, height = (round(d * 1.625 / 32) * 32 for d in (GUIDE_W, GUIDE_H))  # 1664×2496（約4.15MP）
