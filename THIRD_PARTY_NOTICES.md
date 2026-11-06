@@ -6,6 +6,8 @@
 
 `data/layouts.json` and `data/layouts/` contain a streamlined copy of the panel layout data from [ComfyUI-MossPanelDataset](https://github.com/sepiablue-ai/ComfyUI-MossPanelDataset), under the MIT License, Copyright (c) 2026 sepiablue-ai. The complete notice is retained in [LICENSE](LICENSE). Character images, composition examples and model weights are not included.
 
+`web/picker.js` のコマ割り選択画面は、同じ ComfyUI-MossPanelDataset（MIT License、Copyright (c) 2026 sepiablue-ai）の選択画面を移植したものです。 / The layout picker in `web/picker.js` is ported from the same project.
+
 ## 外部の実行環境 / External runtime
 
 - [ComfyUI](https://github.com/Comfy-Org/ComfyUI): このパッケージとは別のライセンスで配布される実行環境です。The runtime is distributed separately under its own license.

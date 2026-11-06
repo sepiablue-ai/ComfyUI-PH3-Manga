@@ -14,8 +14,9 @@ SPEC = importlib.util.spec_from_file_location("ph3_manga_tests", ROOT / "__init_
 PACKAGE = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = PACKAGE
 SPEC.loader.exec_module(PACKAGE)
-from ph3_manga_tests.fonts import resolve_font
-from ph3_manga_tests.lettering import _cells, layout_columns, ruby_spans
+from ph3_manga_tests.fonts import load_font, resolve_font
+from ph3_manga_tests.lettering import _cells, layout_columns, ruby_spans, tatechuyoko
+from ph3_manga_tests.page import PH3MangaPage, PH3MangaPanel
 from ph3_manga_tests.nodes import DATA, PH3MangaBalloonGuide, PH3MangaLayout, PH3MangaLettering, layouts
 
 
@@ -106,6 +107,17 @@ class LetteringTests(unittest.TestCase):
         self.assertEqual(ruby_spans(cells, "え！？"), [(0, 2)])
         self.assertEqual(ruby_spans(cells, "！"), [])  # starts inside a cell boundary but ends mid-cell
 
+    def test_tatechuyoko_fits_one_cell_tightly(self):
+        size = 80
+        font = load_font(self.kanji, size)
+        for pair in ("！！", "！？", "!?"):
+            with self.subTest(pair=pair):
+                mark = np.asarray(tatechuyoko(pair, font, size)) > 64
+                self.assertLessEqual(mark.shape[1], size * 0.9)
+                cols = np.where(mark.any(axis=0))[0]
+                gaps = np.diff(cols) - 1
+                self.assertLessEqual(int(gaps.max(initial=0)), size * 0.12)  # 2字の間が詰まっている
+
     def test_empty_input_and_invalid_ruby(self):
         image = torch.ones((1, 32, 32, 3))
         output, info = PH3MangaLettering().run(image, "auto", "auto", 0.02, [])
@@ -114,6 +126,44 @@ class LetteringTests(unittest.TestCase):
         for bad in ('{"雨":""}', "[]", '{"雨":42}'):
             with self.assertRaises(ValueError):
                 PH3MangaLettering().run(image, "auto", "auto", 0.02, [], bad)
+
+
+class PageTests(unittest.TestCase):
+    def panel(self, actors, *lines, scene="人物1 waves."):
+        kw = {"場面": scene, "登場人物": actors, "話者1": "セリフなし", "セリフ1": "", "話者2": "セリフなし", "セリフ2": ""}
+        for i, (speaker, text) in enumerate(lines, 1):
+            kw[f"話者{i}"], kw[f"セリフ{i}"] = speaker, text
+        return PH3MangaPanel().build(**kw)[0]
+
+    def test_three_characters_prompt_and_balloons(self):
+        img = torch.ones((1, 8, 8, 3))
+        panels = [self.panel("人物1のみ", ("人物1", "雨、やまないね。")),
+                  self.panel("人物なし", ("画面外・ナレーション（尾なし）", "その日は雨だった。"), scene="A rainy schoolyard."),
+                  self.panel("人物1と人物2と人物3", ("人物2", "一緒に帰ろう。"), ("人物1", "うん！"), ("人物3", "いいなぁ"), scene="人物1, 人物2 and 人物3 walk.")]
+        page, w, h, prompt, balloons, r1, r2, r3 = PH3MangaPage().build(コマ割り="normal_3_01", 人物1=img, 人物2=img, 人物3=img,
+                                                                       コマ1=panels[0], コマ2=panels[1], コマ3=panels[2])
+        self.assertEqual((w, h), (1664, 2496))
+        self.assertIn("<Picture 4>: attribute_transfer", prompt)
+        self.assertIn("the character from <Picture 4> walk", prompt)
+        self.assertNotIn("人物", prompt)
+        boxes = json.loads(balloons)
+        self.assertEqual(len(boxes), 5)
+        self.assertIsNone(json.loads(boxes[1]["metadata"]["desc"])["tail"])
+        rows = layouts()["normal_3_01"]["panels"]
+        for box, panel in zip(boxes, [0, 1, 2, 2, 2]):  # 吹き出しは自分のコマの中
+            x0, y0, x1, y1 = rows[panel]["bbox"]
+            self.assertGreaterEqual(box["x"], x0 * 1024); self.assertLessEqual(box["x"] + box["width"], x1 * 1024)
+            self.assertGreaterEqual(box["y"], y0 * 1536); self.assertLessEqual(box["y"] + box["height"], y1 * 1536)
+
+    def test_validation(self):
+        img = torch.ones((1, 8, 8, 3))
+        with self.assertRaises(ValueError):  # 登場しない人物が話す
+            self.panel("人物1のみ", ("人物2", "a"))
+        p = self.panel("人物2のみ", ("人物2", "a"))
+        with self.assertRaises(ValueError):  # 人物2の画像がない
+            PH3MangaPage().build(コマ割り="normal_2_01", 人物1=img, コマ1=p, コマ2=p)
+        with self.assertRaises(ValueError):  # コマ数が合わない
+            PH3MangaPage().build(コマ割り="normal_3_01", 人物1=img, 人物2=img, コマ1=p, コマ2=p)
 
 
 if __name__ == "__main__":

@@ -4,8 +4,9 @@ A ComfyUI custom node pack for drawing manga pages from character reference imag
 
 ## What you can do
 
-- **Choose a panel layout:** 196 blank page layouts with 2–6 panels are included.
-- **Generate manga from references and scenes:** send character images and per-panel scene descriptions to P-H3-Image. The included generation workflow is a three-panel, two-character example.
+- **Pick a panel layout from preview images:** 196 blank layouts with 2–6 panels, filtered by panel count, type or name, with favorites. Picking one adds or removes "Panel content" nodes to match; removed panels are stashed and restored when the count goes back up.
+- **Generate manga from up to three characters and per-panel content:** each "Panel content" node holds a scene (English), the characters in the panel, and up to three speakers and lines. The node pack builds the P-H3 prompt. Dialogue is never drawn by the model; it is used for balloon placement and lettering.
+- **Place balloons automatically:** balloon sizes are estimated from the dialogue and laid out right to left in reading order.
 - **Edit balloons:** move and resize boxes in ComfyUI's standard `Create Bounding Boxes` editor and specify tail tips. The empty-balloon guide becomes an input to the generation model.
 - **Add Japanese vertical lettering:** dialogue, explicit line breaks, ruby readings, vertical punctuation, basic line-start restrictions, and horizontal-in-vertical pairs such as `！？`. Kana and kanji can use different fonts.
 - **Revise lettering while retaining the artwork:** a separate workflow adds text to an existing page.
@@ -65,13 +66,14 @@ Character images and input pages are not bundled. Upload your own images in each
 
 ### Generate, then letter
 
-1. Select a layout in `Panel Layout`. Its image output is the bundled template; `width` and `height` are the generation dimensions. Aspect ratio is retained and generation dimensions are aligned to multiples of 32.
-2. Load character A and B images and fill in the three scene-description fields. These are user-written prompts. `<Picture 1>` is the balloon guide, `<Picture 2>` is character A, and `<Picture 3>` is character B.
-3. Use the first `Create Bounding Boxes` editor to position balloons, select type `text`, and enter dialogue. Boxes are the enclosing rectangles of the ellipses. Tail settings are described below.
-4. Run the workflow. P-H3 receives the guide and references, then font lettering is added to the generated page. The unlettered model output and lettered page are saved separately.
-5. Adjust text regions in the second `Create Bounding Boxes` editor if needed. For independent lettering revisions with fixed artwork, load the unlettered image into `02_letter_existing_page.json`.
+The workflow has four groups; normally you edit only **① Inputs**.
 
-**The generation example has scene descriptions for three panels.** When selecting a layout with a different panel count, also update the descriptions and balloon count/positions. Selecting one of the 196 layouts does not automatically rewrite or resize the story.
+1. **① Inputs:** upload references to "Character 1" and "Character 2". For a third character, add a `LoadImage` and connect it to `人物3` on the Page node (only when character 2 is connected, so the picture numbers stay contiguous).
+2. On the Page node, click **Choose a layout from images**. Panel content nodes are added or removed to match.
+3. Fill in each Panel content node: `場面` (scene, English; write `人物1`/`人物2`/`人物3` and they become `the character from <Picture N>`), `登場人物` (characters in the panel), and `話者1–3`/`セリフ1–3` (speaker and line). Use `画面外・ナレーション（尾なし）` for off-panel voices or narration.
+4. **② Balloon layout:** running the workflow places balloons from the dialogue; you can drag them before generating. Changing dialogue or the layout resets them to the automatic placement.
+5. **③ Generate with P-H3:** the empty-balloon guide (`<Picture 1>`) and the references (`<Picture 2–4>`) go to P-H3. The seed is here.
+6. **④ Lettering:** fonts render the dialogue. The unlettered output and the lettered page are saved separately. Adjust only the text boxes and rerun to redo lettering without regenerating.
 
 ### Tail tips and text regions
 

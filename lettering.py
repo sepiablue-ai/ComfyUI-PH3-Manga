@@ -36,6 +36,34 @@ def _columns(text):
     return cols
 
 
+HALF_WIDTH = str.maketrans("！？", "!?")
+
+
+def tatechuyoko(pair, font, f_s):
+    """「！！」「！？」などを1マスに横並びで収めたマスク（L）を返す。
+    全角の字は字幅いっぱいの余白があり、そのまま並べると間が空きすぎるので、
+    半角の字形のインクだけを切り出し、狭い間隔で詰めて並べ、1マスに入るよう縮める。"""
+    from PIL import Image as PImage, ImageDraw
+    glyphs = []
+    for c in pair.translate(HALF_WIDTH):
+        g = PImage.new("L", (f_s * 2, f_s * 2), 0)
+        ImageDraw.Draw(g).text((f_s, f_s), c, font=font, fill=255, anchor="ms")
+        box = g.getbbox()
+        glyphs.append((g.crop(box), box[3]) if box else (PImage.new("L", (1, 1), 0), f_s))
+    gap = max(1, round(f_s * 0.06))
+    base = max(b for _, b in glyphs)
+    top = min(b - g.height for g, b in glyphs)
+    out = PImage.new("L", (sum(g.width for g, _ in glyphs) + gap * (len(glyphs) - 1), base - top), 0)
+    x = 0
+    for g, b in glyphs:  # 字の下端（ベースライン基準の位置）をそろえる
+        out.paste(g, (x, b - g.height - top))
+        x += g.width + gap
+    scale = min(1.0, f_s * 0.9 / out.width, f_s * 0.85 / out.height)
+    if scale < 1:
+        out = out.resize((max(1, round(out.width * scale)), max(1, round(out.height * scale))), PImage.LANCZOS)
+    return out
+
+
 def ruby_spans(col, word):
     """列 col（マスの並び）の中で word が占める (先頭のマス番号, マス数) を返す。
     縦中横は2字で1マスなので、文字の位置ではなくマスの位置で数える。マスの途中で始まる・終わる一致は除く。"""
@@ -131,7 +159,8 @@ def draw_text_in_box(page, text, box, fs, fonts, ruby=None):
             y = top + (r + 0.5) * f_s
             font = _font(fonts[0] if _is_kana(ch) else fonts[1], f_s)
             if len(ch) == 2:  # 縦中横
-                td.text((x, y), ch, font=_font(fonts[1], int(f_s * 0.62)), fill=(0, 0, 0, 255), anchor="mm")
+                mark = tatechuyoko(ch, _font(fonts[1], f_s), f_s)
+                layer.paste((0, 0, 0, 255), (round(x - mark.width / 2), round(y - mark.height / 2)), mark)
             elif ch in ROTATE_CH:
                 g = PImage.new("RGBA", (f_s * 2, f_s * 2), (0, 0, 0, 0))
                 ImageDraw.Draw(g).text((f_s, f_s), ch, font=font, fill=(0, 0, 0, 255), anchor="mm")
