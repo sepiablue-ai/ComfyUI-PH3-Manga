@@ -868,8 +868,8 @@
     1.0
    ],
    "widgets_values_named": {
-    "shift_video": 12,
-    "shift_audio": 3
+    "shift_video": 1.0,
+    "shift_audio": 1.0
    }
   },
   {

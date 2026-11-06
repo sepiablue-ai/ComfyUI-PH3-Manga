@@ -141,6 +141,7 @@ retention_analysis:
 {retention}
 detailed_description:
 Strictly black, white and gray ink manga with screentones. Read panels from right to left, top to bottom.
+{geometry}
 {body}
 Draw around and behind the existing empty white balloons. Keep every balloon blank and in place. Do not add lettering, captions, sound effects, page numbers or extra balloons. Nothing crosses the panel frames. A static single page.
 overall_soundscape:
@@ -164,8 +165,9 @@ def left_to_right_order(row):
     return [i for tier in tiers for i in sorted(tier, key=lambda i: boxes[i][0])]
 
 
-def geometry_contract(row):
-    boxes = [p["bbox"] for p in row["panels"]]
+def geometry_contract(row, order=None):
+    order = list(range(len(row["panels"]))) if order is None else order
+    boxes = [row["panels"][j]["bbox"] for j in order]
     if len(boxes) == 3 and abs(boxes[0][1]-boxes[1][1]) < .02 and abs(boxes[0][3]-boxes[1][3]) < .02 and boxes[2][1] > boxes[0][1]+.2:
         x = round((min(boxes[0][2],boxes[1][2])+max(boxes[0][0],boxes[1][0]))*500)
         y = round((max(boxes[0][3],boxes[1][3])+boxes[2][1])*500)
@@ -203,13 +205,14 @@ def compile_page(row, present, panels, ltr_order=True, edited_balloons=None):
         else:
             talk = " There is no balloon in this panel."
         contents.append(f"{scene_text(panel['scene'], labels)}{cast}{talk}")
-    # P-H3 は k 番目の説明を「段ごとに左から数えて k 番目のコマ」に描く。見出し（番号と位置の言葉）は番号順のまま、
-    # 中身だけを左から数えた順に並べ替えて、右から読む順のコマへ正しく入るようにする（ltr_order）。
+    # 説明を左から並べる場合、見出し・領域番号も同じ順にする。
+    # 中身だけを交換すると、場面・吹き出し座標と見出しの左右が矛盾する。
     order = left_to_right_order(row) if ltr_order else list(range(len(panels)))
-    body = [f"Panel {i} ({spec['position']}): {contents[j]}" for i, (spec, j) in enumerate(zip(row["panels"], order), 1)]
+    body = [f"Panel {i} ({row['panels'][j]['position']}): {contents[j]}" for i, j in enumerate(order, 1)]
     pictures = "\n".join(f"<Picture {n}> is the reference image of character {s[-1]}." for n, s in enumerate(present, 2))
     retention = "\n".join(f"<Picture {n}>: attribute_transfer - character {s[-1]}'s face, hairstyle and clothing." for n, s in enumerate(present, 2))
-    prompt = geometry_contract(row) + "\n" + TEMPLATE.format(panels=len(panels), balloons=len(balloons), pictures=pictures, retention=retention, body="\n".join(body))
+    prompt = TEMPLATE.format(panels=len(panels), balloons=len(balloons), pictures=pictures, retention=retention,
+                             geometry=geometry_contract(row, order), body="\n".join(body))
     return prompt, balloons
 
 
@@ -223,7 +226,7 @@ class PH3MangaPage:
         }, "optional": {
             "人物2": ("IMAGE",), "人物3": ("IMAGE",),
             **{f"コマ{i}": ("PH3_MANGA_PANEL",) for i in (3, 4, 5, 6)},
-            "左から埋める癖を補正": ("BOOLEAN", {"default": True, "tooltip": "P-H3 は説明を段ごとに左のコマから描くため、同じ段に複数のコマがあると左右が入れ替わります。オンにすると、見出しはそのまま中身だけ並べ替えて渡します。"}),
+            "左から埋める癖を補正": ("BOOLEAN", {"default": True, "tooltip": "P-H3 は説明を段ごとに左のコマから描くため、同じ段に複数のコマがあると左右が入れ替わります。オンにすると、各段のコマを左から順に説明します。見出しの位置の言葉・場面・領域の座標は、同じコマのものをそろえて渡します。"}),
         }}
 
     RETURN_TYPES = ("IMAGE", "INT", "INT", "STRING", "STRING", "IMAGE", "IMAGE", "IMAGE")
