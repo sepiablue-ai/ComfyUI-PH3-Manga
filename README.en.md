@@ -5,8 +5,9 @@ A ComfyUI custom node pack for drawing manga pages from character reference imag
 ## What you can do
 
 - **Pick a panel layout from preview images:** 196 blank layouts with 2–6 panels, filtered by panel count, type or name, with favorites. Picking one adds or removes scene nodes to match; removed panels are stashed and restored when the count goes back up.
-- **Generate manga from up to three characters and per-panel content:** each scene node holds a scene (English) and the characters in that panel. The node pack builds the P-H3 prompt.
-- **Edit dialogue, speakers, balloons, and tails in one place:** enter dialogue only once, move and resize balloons, and drag each tail tip with the mouse. The empty-balloon guide becomes an input to the generation model.
+- **Generate manga from up to three characters and per-panel content:** each scene node holds a scene and the characters in that panel. The node pack builds the P-H3 prompt. Scenes can be written in English or Japanese; Japanese scenes are translated into English with the P-H3 text encoder.
+- **Edit dialogue, speakers, balloons, and tails in one place:** enter dialogue only once; add, delete, move and resize balloons; drag each tail tip; change the reading order within a panel; and adjust text regions. The dialogue preview uses the same rendering as the lettering node. The empty-balloon guide becomes an input to the generation model.
+- **Correct P-H3's left-first panel filling:** P-H3 fills panels in the same tier from the left, which can swap left and right on a right-to-left manga page. By default, the prompt describes the panels in each tier from left to right to compensate.
 - **Add Japanese vertical lettering:** dialogue, explicit line breaks, ruby readings, vertical punctuation, basic line-start restrictions, and horizontal-in-vertical pairs such as `！？`. Kana and kanji can use different fonts.
 - **Revise lettering while retaining the artwork:** use the separate lettering workflow with a saved unlettered PNG. That workflow contains no P-H3 nodes.
 
@@ -32,11 +33,21 @@ python -m pip install -r ComfyUI/custom_nodes/ComfyUI-PH3-Manga/requirements.txt
 
 If ComfyUI ships with its own Python, replace `python` with that executable. BudouX provides Japanese phrase segmentation. PyTorch, NumPy, and Pillow come from the ComfyUI environment.
 
-### 3. Prepare a Japanese font
+### 3. Check for a Japanese font
 
-Place a Japanese font you are licensed to use in this pack's `fonts/` directory. Supported file types are `.ttf`, `.ttc`, `.otf`, and `.otc`. [Noto CJK](https://github.com/notofonts/noto-cjk) is one option. Fonts are not bundled.
+Lettering uses a Japanese font. No font files are bundled, but when `kana_font` and `kanji_font` on the lettering node are left at the default `auto`, the pack searches the Japanese fonts installed on the OS.
 
-Set `kana_font` and `kanji_font` to `auto` to search the pack's font directory and installed Japanese fonts. Installed Yu Mincho and Yu Gothic fonts are also candidates on Windows. For consistent typography across machines, explicitly select the same font filenames. `PH3_MANGA_FONT_DIR` adds another search directory.
+| Environment | Setup needed |
+|---|---|
+| Windows | None. The standard Yu Mincho and Yu Gothic fonts are used |
+| macOS | Usually none. The standard Hiragino fonts are searched and used |
+| Linux (cloud GPUs, Docker, etc.) | Needed if no Japanese font is installed. Install Noto CJK, for example with `sudo apt install fonts-noto-cjk`, or put a font in `fonts/` as described below |
+
+If no Japanese font is found, lettering stops with the error `No Japanese font found`.
+
+To use a font other than the OS fonts, put a `.ttf`, `.ttc`, `.otf`, or `.otc` file you are licensed to use in this pack's `fonts/` directory and restart ComfyUI. [Noto CJK](https://github.com/notofonts/noto-cjk) is one option. `PH3_MANGA_FONT_DIR` adds another search directory.
+
+`auto` looks for Yu Mincho/Yu Gothic, Noto CJK, IPA fonts and similar fonts in a fixed order. Because the chosen font depends on the machine, set `kana_font` and `kanji_font` to explicit font filenames when you need the same typography everywhere.
 
 ### 4. Install P-H3 model files
 
@@ -67,15 +78,19 @@ If you already use the previous unified editor, save any inputs you need, hard-r
 
 ### Generate, then letter
 
-The workflow has three groups: inputs, P-H3 generation, and saved artwork/lettering. The editor's controls use Japanese labels.
+The workflow has three groups: ① references, scenes and dialogue, ② P-H3 generation, and ③ saving the unlettered and lettered images. The node and editor controls use Japanese labels.
 
 1. Upload the character references. For a third character, add a `LoadImage` and connect it to `人物3` on `PH3MangaStory` (only when character 2 is connected).
 2. On **漫画の編集** (`PH3MangaBalloonEditor`), click **画像からコマ割りを選ぶ** to choose a layout. Scene nodes are added or removed to match.
-3. Fill in each `PH3MangaScene`: `場面` is the scene in English; `登場人物` selects the characters. Write `人物1`/`人物2`/`人物3` in the scene and they become `the character from <Picture N>`. Scene nodes do not contain dialogue fields.
+3. Fill in each `PH3MangaScene`: `場面` is the scene; `登場人物` selects the characters. Scene nodes do not contain dialogue fields.
+   - Scenes can be in English or Japanese. A scene containing Japanese is translated with the text encoder connected to `PH3MangaStory`; English-only scenes are used as they are. After running, check the translation in **P-H3に渡す指示文**.
+   - Refer to characters as `人物1` (or `人物１`) or `Character 1`. `character1`, `Person 1` and similar forms also work, case-insensitively. Each becomes `the character from <Picture N>`, which P-H3 can read.
    - Objects with a strong color association, such as bread, may come out colored even on a black-and-white page. Adding "black and white" to the whole page or to every panel did not prevent it. Describe the object's monochrome look in the scene itself, for example `a croissant drawn as a plain white shape with black ink outlines and light gray screentone` (with a croissant, this removed the color on both seeds tested).
-4. Open the balloon editor on that node. Set each balloon's panel, speaker, and dialogue. Speaker controls remain visible, and the canvas shows the dialogue. Use `画面外・ナレーション（尾なし）` for off-panel voices or narration. A visible speaker must also be included among that panel's characters. Click **変更を保存して閉じる** to save and close.
+4. Click **吹き出し・セリフ・尻尾を編集** on **漫画の編集** to open the editor. Set each balloon's panel, speaker, and dialogue. Add or delete balloons with **このコマに吹き出しを追加** / **選んだ吹き出しを削除**, and change their order within a panel with **読み順を一つ前へ／後へ**. The dialogue preview uses the font and size of the connected lettering node. Use `画面外・ナレーション（尾なし）` for off-panel voices or narration. A visible speaker must also be included among that panel's characters. Click **変更を保存して閉じる** to save and close.
 5. Press the normal **Run** button. P-H3 uses the empty-balloon guide (`<Picture 1>`) and character references (`<Picture 2–4>`), saves an unlettered PNG, then adds font-rendered lettering.
 6. This is the generation workflow. Changing balloon placement, speakers, or scenes and running it again also updates the artwork with P-H3. For dialogue-only changes, use the separate workflow below.
+
+**左から埋める癖を補正** on `PH3MangaStory` is on by default. For layouts with several panels in one tier, it describes the panels in each tier from left to right. The position words, scene and panel coordinates stay matched to the same panel, so keep entering scenes by reading-order panel number (right to left).
 
 `SaveImage` saves unlettered PNGs as `PH3_Manga/raw_*.png` under ComfyUI's output directory. Use this unlettered PNG when revising dialogue.
 
@@ -90,7 +105,9 @@ Use the unlettered PNG: loading an already-lettered image also retains its old t
 
 ### Tail tips and text regions
 
-In the new editor, drag inside a balloon to move it, drag the bottom-right **□** to resize it, and drag the blue **●** to move the tail tip. Use **尻尾を短い初期位置に戻す** to shorten a tail, or toggle **尻尾を付ける** to add/remove it. Moving a balloon also moves its tail.
+In the editor, drag inside a balloon to move it, drag the bottom-right **□** to resize it, and drag the blue **●** to move the tail tip. Use **尻尾を短い初期位置に戻す** to shorten a tail, or toggle **尻尾を付ける** to add/remove it. Moving a balloon also moves its tail.
+
+Switch **編集対象** to **文字領域** to move the lettering area separately from the balloon. **文字領域を吹き出しの内側に戻す** restores the default, whose size is set by **文字領域の比率** on the node.
 
 After generation, adjust lettering regions in `Create Bounding Boxes` in `02_letter_existing_page.json`. To change the balloons or tails themselves, return to the generation workflow and regenerate the artwork.
 
